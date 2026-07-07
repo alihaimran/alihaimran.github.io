@@ -6,16 +6,18 @@
 }
 
 body{
+    margin:0;
+    font-family:Arial, sans-serif;
     background:#0f172a;
     color:white;
 }
 
 header{
-    min-height:100vh;
+    height:100vh;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
     text-align:center;
 }
 
@@ -25,10 +27,19 @@ h1{
 
 h2{
     color:#38bdf8;
-    margin:15px 0;
 }
 
-p{
-    font-size:20px;
-    color:#cbd5e1;
+section{
+    max-width:900px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    padding:8px 0;
 }
