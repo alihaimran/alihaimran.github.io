@@ -1,466 +1,467 @@
-/* ===========================
-   GOOGLE FONT
-=========================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* ===========================
-   RESET
-=========================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-/* ===========================
-   NAVBAR
-=========================== */
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(15,23,42,.95);
-    backdrop-filter:blur(12px);
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.logo{
-    font-size:30px;
-    font-weight:700;
-    color:#38bdf8;
-}
-
-nav ul{
-    display:flex;
-    gap:35px;
-    list-style:none;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:500;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#38bdf8;
-}
-
-/* ===========================
-   HERO
-=========================== */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:130px 8% 80px;
-    gap:70px;
-}
-
-.hero-left{
-    flex:1;
-}
-
-.hero-left h3{
-    color:#38bdf8;
-    font-size:22px;
-    margin-bottom:10px;
-}
-
-.hero-left h1{
-    font-size:72px;
-    font-weight:700;
-    line-height:1.1;
-    margin-bottom:15px;
-}
-
-.hero-left h2{
-    color:#38bdf8;
-    font-size:30px;
-    margin-bottom:18px;
-    line-height:1.4;
-}
-
-.hero-left p{
-    max-width:650px;
-    font-size:18px;
-    line-height:1.8;
-    color:#cbd5e1;
-}
-
-/* ===========================
-   BUTTONS
-=========================== */
-
-.buttons{
-    margin-top:35px;
-    display:flex;
-    gap:20px;
-}
-
-.btn,
-.btn2{
-    padding:14px 34px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.35s;
-}
-
-.btn{
-    background:#38bdf8;
-    color:#0f172a;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 0 25px #38bdf8;
-}
-
-.btn2{
-    border:2px solid #38bdf8;
-    color:#38bdf8;
-}
-
-.btn2:hover{
-    background:#38bdf8;
-    color:#0f172a;
-}
-
-/* ===========================
-   SOCIAL ICONS
-=========================== */
-
-.social{
-    display:flex;
-    gap:20px;
-    margin-top:35px;
-}
-
-.social a{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#16213e;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#38bdf8;
-    text-decoration:none;
-    font-size:22px;
-    transition:.3s;
-}
-
-.social a:hover{
-    background:#38bdf8;
-    color:#0f172a;
-    transform:translateY(-6px);
-}
-
-/* ===========================
-   PROFILE IMAGE
-=========================== */
-
-.hero-right{
-    flex:1;
-    display:flex;
-    justify-content:center;
-}
-
-.hero-right img{
-    width:380px;
-    height:380px;
-    object-fit:cover;
-    border-radius:50%;
-    border:6px solid #38bdf8;
-    box-shadow:0 0 35px rgba(56,189,248,.45);
-    transition:.4s;
-}
-
-.hero-right img:hover{
-    transform:scale(1.03);
-}
-
-/* ===========================
-   SECTION
-=========================== */
-
-.section{
-    width:100%;
-    max-width:1200px;
-    margin:70px auto;
-    padding:0 8%;
-}
-
-.section-title{
-    font-size:40px;
-    color:#38bdf8;
-    margin-bottom:25px;
-}
-/* ===========================
-   CARDS
-=========================== */
-
-.card{
-    background:#16213e;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:30px;
-    margin-top:20px;
-    transition:.35s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 25px rgba(56,189,248,.25);
-}
-
-.card h3{
-    color:#38bdf8;
-    margin-bottom:15px;
-    font-size:24px;
-}
-
-.card p{
-    color:#cbd5e1;
-    line-height:1.8;
-}
-
-/* ===========================
-   ABOUT
-=========================== */
-
-.about-container p{
-    color:#cbd5e1;
-    font-size:17px;
-    line-height:1.9;
-}
-
-/* ===========================
-   SKILLS
-=========================== */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-
-.skills-grid .card{
-    text-align:center;
-}
-
-.skills-grid .card h3{
-    margin-bottom:12px;
-}
-
-.skills-grid .card:hover{
-    border-color:#38bdf8;
-}
-
-/* ===========================
-   PROJECT
-=========================== */
-
-.project-btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 28px;
-    background:#38bdf8;
-    color:#0f172a;
-    text-decoration:none;
-    border-radius:40px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.project-btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 0 20px #38bdf8;
-}
-
-/* Project Image */
-
-.project-image{
-    width:100%;
-    border-radius:15px;
-    margin-bottom:20px;
-    border:2px solid rgba(255,255,255,.08);
-}
-
-/* ===========================
-   CONTACT
-=========================== */
-
-#contact .card p{
-    margin:15px 0;
-    font-size:17px;
-}
-
-#contact a{
-    color:#38bdf8;
-    text-decoration:none;
-}
-
-#contact a:hover{
-    text-decoration:underline;
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-    text-align:center;
-    padding:35px 20px;
-    margin-top:80px;
-    border-top:1px solid rgba(255,255,255,.08);
-    color:#94a3b8;
-    font-size:15px;
-}
-
-/* ===========================
-   SCROLLBAR
-=========================== */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:#0f172a;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#38bdf8;
-    border-radius:20px;
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:992px){
-
-.hero{
-    flex-direction:column-reverse;
-    text-align:center;
-    padding-top:140px;
-}
-
-.hero-left h1{
-    font-size:55px;
-}
-
-.hero-left h2{
-    font-size:24px;
-}
-
-.hero-left p{
-    margin:auto;
-}
-
-.buttons{
-    justify-content:center;
-}
-
-.social{
-    justify-content:center;
-}
-
-.hero-right img{
-    width:300px;
-    height:300px;
-}
-
-nav{
-    flex-direction:column;
-    gap:15px;
-}
-
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-
-.section-title{
-    text-align:center;
-}
-
-}
-
-@media(max-width:600px){
-
-.hero-left h1{
-    font-size:42px;
-}
-
-.hero-left h2{
-    font-size:20px;
-}
-
-.hero-right img{
-    width:230px;
-    height:230px;
-}
-
-.btn,
-.btn2{
-    padding:12px 24px;
-    font-size:14px;
-}
-
-.section{
-    margin:50px auto;
-}
-
-}
-/* ==========================
-Animations
-========================== */
-
-.hidden{
-
-opacity:0;
-
-transform:translateY(50px);
-
-transition:all .8s ease;
-
-}
-
-.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-.active{
-
-color:#38bdf8 !important;
-
-font-weight:700;
-
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aliha Imran | AI/ML Engineer</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--================ NAVBAR ================-->
+
+<nav>
+
+<div class="logo">
+Aliha<span>AI</span>
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#experience">Experience</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#education">Education</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!--================ HERO ================-->
+
+<section class="hero" id="home">
+
+<div class="hero-left">
+
+<h4>Hello, I'm</h4>
+
+<h1>Aliha Imran</h1>
+
+<h2>Python Backend Developer</h2>
+
+<p>
+
+Passionate about Artificial Intelligence,
+Machine Learning,
+Backend Development,
+Generative AI,
+LLMs and RAG Applications.
+
+I love building intelligent software using
+Python and modern AI technologies.
+
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn">
+View Projects
+</a>
+
+<a href="Aliha_Imran_Resume.pdf"
+download
+class="btn2">
+
+Download Resume
+
+</a>
+
+</div>
+
+<div class="social">
+
+<a href="https://github.com/alihaimran" target="_blank">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+<a href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="mailto:alihaimran676@gmail.com">
+
+<i class="fas fa-envelope"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="profile.png" alt="Aliha Imran">
+</div>
+
+</section>
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+
+        <p>
+
+            Hi! I'm <strong>Aliha Imran</strong>, a passionate Python Backend Developer,
+            AI/ML Engineer, and Generative AI enthusiast.
+
+            I enjoy developing intelligent applications using Python,
+            Machine Learning, Deep Learning, Large Language Models (LLMs),
+            Retrieval-Augmented Generation (RAG), and modern AI technologies.
+
+            My goal is to build practical AI solutions that solve real-world
+            problems while continuously learning new technologies.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="section" id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="card">
+
+<h3>AI / ML Trainee</h3>
+
+<h4>Devaspir • 3 Months</h4>
+
+<p>
+
+Worked on Machine Learning,
+Deep Learning,
+TensorFlow,
+Scikit-Learn,
+Data Processing,
+Feature Engineering,
+Model Training,
+Model Evaluation,
+and AI Application Development.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section class="section" id="skills">
+
+<h2 class="section-title">
+
+Technical Skills
+
+</h2>
+
+<div class="skills-grid">
+
+<div class="card">
+
+<h3>Programming</h3>
+
+<p>Python</p>
+
+<p>SQL</p>
+
+<p>HTML5</p>
+
+<p>CSS3</p>
+
+</div>
+
+<div class="card">
+
+<h3>Backend</h3>
+
+<p>Flask</p>
+
+<p>FastAPI</p>
+
+<p>REST API</p>
+
+</div>
+
+<div class="card">
+
+<h3>AI / ML</h3>
+
+<p>Machine Learning</p>
+
+<p>Deep Learning</p>
+
+<p>TensorFlow</p>
+
+<p>Scikit-Learn</p>
+
+</div>
+
+<div class="card">
+
+<h3>Generative AI</h3>
+
+<p>LLMs</p>
+
+<p>Prompt Engineering</p>
+
+<p>LangChain</p>
+
+<p>RAG</p>
+
+<p>ChromaDB</p>
+
+</div>
+
+<div class="card">
+
+<h3>Libraries</h3>
+
+<p>NumPy</p>
+
+<p>Pandas</p>
+
+<p>Matplotlib</p>
+
+</div>
+
+<div class="card">
+
+<h3>Tools</h3>
+
+<p>Git</p>
+
+<p>GitHub</p>
+
+<p>VS Code</p>
+
+<p>Jupyter Notebook</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECT ================= -->
+
+<section class="section" id="projects">
+
+<h2 class="section-title">
+
+Featured Project
+
+</h2>
+
+<div class="card">
+
+<img src="images/project1.png"
+class="project-image"
+alt="Akademus AI">
+
+<h3>Akademus AI</h3>
+
+<p>
+
+An AI-powered Learning Assistant built using
+Python,
+Streamlit,
+LLMs,
+Retrieval-Augmented Generation (RAG),
+and ChromaDB.
+
+</p>
+
+<div class="buttons">
+
+<a href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app"
+target="_blank"
+class="btn">
+
+Live Demo
+
+</a>
+
+<a href="https://github.com/alihaimran"
+target="_blank"
+class="btn2">
+
+GitHub
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/orin.png"
+class="project-image"
+alt="Orin Chatbot">
+
+<h3>Orin</h3>
+
+<p>
+
+An AI chatbot assistant that helps with
+coding,
+debugging,
+brainstorming,
+and learning AI,
+Python,
+Data Science and Web Development concepts.
+
+</p>
+
+<div class="buttons">
+
+<a href="https://alihaimran.github.io/orin-chatbot/orin-chat.html"
+target="_blank"
+class="btn">
+
+Live Demo
+
+</a>
+
+<a href="https://github.com/alihaimran"
+target="_blank"
+class="btn2">
+
+GitHub
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= EDUCATION ================= -->
+
+<section class="section" id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+
+        <h3>BS Computer Science</h3>
+
+        <h4>Virtual University of Pakistan</h4>
+
+        <p>2026 – 2029</p>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+    <h2 class="section-title">Let's Connect</h2>
+
+    <div class="card">
+
+        <p>
+            <i class="fas fa-envelope"></i>
+            <strong>Email:</strong>
+            <a href="mailto:alihaimran676@gmail.com">
+                alihaimran676@gmail.com
+            </a>
+        </p>
+
+        <br>
+
+        <p>
+            <i class="fas fa-phone"></i>
+            <strong>Phone:</strong>
+            +92 309 4146324
+        </p>
+
+        <br>
+
+        <p>
+            <i class="fab fa-github"></i>
+            <strong>GitHub:</strong>
+
+            <a href="https://github.com/alihaimran" target="_blank">
+
+                github.com/alihaimran
+
+            </a>
+        </p>
+
+        <br>
+
+        <p>
+            <i class="fab fa-linkedin"></i>
+            <strong>LinkedIn:</strong>
+
+            <a href="https://www.linkedin.com/in/aliha-imran-400793410"
+               target="_blank">
+
+                Aliha Imran
+
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 Aliha Imran
+
+    </p>
+
+    <p>
+
+        Python Backend Developer • AI/ML Engineer • Generative AI Engineer
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
