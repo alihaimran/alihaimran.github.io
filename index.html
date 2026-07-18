@@ -1,467 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Aliha Imran | AI/ML Engineer</title>
-
-<link rel="stylesheet" href="style.css">
-
+<title>Aliha Imran — AI & ML Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!--================ NAVBAR ================-->
+<header>
+  <nav class="wrap">
+    <a href="#top" class="logo"><span class="dot"></span>Aliha Imran</a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#disciplines">Disciplines</a>
+      <a href="#work">Works</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-ghost nav-cta">Get in touch</a>
+  </nav>
+</header>
 
-<nav>
-
-<div class="logo">
-Aliha<span>AI</span>
-</div>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#experience">Experience</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#education">Education</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<!--================ HERO ================-->
-
-<section class="hero" id="home">
-
-<div class="hero-left">
-
-<h4>Hello, I'm</h4>
-
-<h1>Aliha Imran</h1>
-
-<h2>Python Backend Developer</h2>
-
-<p>
-
-Passionate about Artificial Intelligence,
-Machine Learning,
-Backend Development,
-Generative AI,
-LLMs and RAG Applications.
-
-I love building intelligent software using
-Python and modern AI technologies.
-
-</p>
-
-<div class="buttons">
-
-<a href="#projects" class="btn">
-View Projects
-</a>
-
-<a href="Aliha_Imran_Resume.pdf"
-download
-class="btn2">
-
-Download Resume
-
-</a>
-
-</div>
-
-<div class="social">
-
-<a href="https://github.com/alihaimran" target="_blank">
-
-<i class="fab fa-github"></i>
-
-</a>
-
-<a href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank">
-
-<i class="fab fa-linkedin"></i>
-
-</a>
-
-<a href="mailto:alihaimran676@gmail.com">
-
-<i class="fas fa-envelope"></i>
-
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<img src="profile.png" alt="Aliha Imran">
-</div>
-
-</section>
-<!-- ================= ABOUT ================= -->
-
-<section class="section" id="about">
-
-    <h2 class="section-title">About Me</h2>
-
-    <div class="card">
-
-        <p>
-
-            Hi! I'm <strong>Aliha Imran</strong>, a passionate Python Backend Developer,
-            AI/ML Engineer, and Generative AI enthusiast.
-
-            I enjoy developing intelligent applications using Python,
-            Machine Learning, Deep Learning, Large Language Models (LLMs),
-            Retrieval-Augmented Generation (RAG), and modern AI technologies.
-
-            My goal is to build practical AI solutions that solve real-world
-            problems while continuously learning new technologies.
-
-        </p>
-
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">Portfolio 2026 · Based in Lahore, Pakistan</div>
+      <h1 class="hero-title">I help teams turn raw data into products that <span class="accent-word">think.</span></h1>
+      <p class="hero-sub">AI & ML Developer building end-to-end machine learning and LLM pipelines in Python — from data and features to retrieval-augmented systems in production.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-solid">See Selected Works →</a>
+        <div class="status"><span class="pulse"></span> Available for work</div>
+      </div>
     </div>
 
+    <div class="hero-stack">
+      <div class="float-card fc1">
+        <div class="fc-cover cover-orin"></div>
+        <div class="fc-label">Orin</div>
+      </div>
+      <div class="float-card fc2">
+        <div class="fc-cover cover-akademus"></div>
+        <div class="fc-label">Akademus.ai</div>
+      </div>
+      <div class="float-card fc3">
+        <div class="fc-cover cover-rag"></div>
+        <div class="fc-label">RAG Pipelines</div>
+      </div>
+      <div class="float-card fc4">
+        <div class="fc-cover cover-ml"></div>
+        <div class="fc-label">ML Models</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
-
-<section class="section" id="experience">
-
-<h2 class="section-title">Experience</h2>
-
-<div class="card">
-
-<h3>AI / ML Trainee</h3>
-
-<h4>Devaspir • 3 Months</h4>
-
-<p>
-
-Worked on Machine Learning,
-Deep Learning,
-TensorFlow,
-Scikit-Learn,
-Data Processing,
-Feature Engineering,
-Model Training,
-Model Evaluation,
-and AI Application Development.
-
-</p>
-
+<div class="marquee-wrap">
+  <div class="marquee" id="marquee"></div>
 </div>
 
-</section>
-
-<!-- ================= SKILLS ================= -->
-
-<section class="section" id="skills">
-
-<h2 class="section-title">
-
-Technical Skills
-
-</h2>
-
-<div class="skills-grid">
-
-<div class="card">
-
-<h3>Programming</h3>
-
-<p>Python</p>
-
-<p>SQL</p>
-
-<p>HTML5</p>
-
-<p>CSS3</p>
-
-</div>
-
-<div class="card">
-
-<h3>Backend</h3>
-
-<p>Flask</p>
-
-<p>FastAPI</p>
-
-<p>REST API</p>
-
-</div>
-
-<div class="card">
-
-<h3>AI / ML</h3>
-
-<p>Machine Learning</p>
-
-<p>Deep Learning</p>
-
-<p>TensorFlow</p>
-
-<p>Scikit-Learn</p>
-
-</div>
-
-<div class="card">
-
-<h3>Generative AI</h3>
-
-<p>LLMs</p>
-
-<p>Prompt Engineering</p>
-
-<p>LangChain</p>
-
-<p>RAG</p>
-
-<p>ChromaDB</p>
-
-</div>
-
-<div class="card">
-
-<h3>Libraries</h3>
-
-<p>NumPy</p>
-
-<p>Pandas</p>
-
-<p>Matplotlib</p>
-
-</div>
-
-<div class="card">
-
-<h3>Tools</h3>
-
-<p>Git</p>
-
-<p>GitHub</p>
-
-<p>VS Code</p>
-
-<p>Jupyter Notebook</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= PROJECT ================= -->
-
-<section class="section" id="projects">
-
-<h2 class="section-title">
-
-Featured Project
-
-</h2>
-
-<div class="card">
-
-<img src="images/project1.png"
-class="project-image"
-alt="Akademus AI">
-
-<h3>Akademus AI</h3>
-
-<p>
-
-An AI-powered Learning Assistant built using
-Python,
-Streamlit,
-LLMs,
-Retrieval-Augmented Generation (RAG),
-and ChromaDB.
-
-</p>
-
-<div class="buttons">
-
-<a href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app"
-target="_blank"
-class="btn">
-
-Live Demo
-
-</a>
-
-<a href="https://github.com/alihaimran"
-target="_blank"
-class="btn2">
-
-GitHub
-
-</a>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="images/orin.png"
-class="project-image"
-alt="Orin Chatbot">
-
-<h3>Orin</h3>
-
-<p>
-
-An AI chatbot assistant that helps with
-coding,
-debugging,
-brainstorming,
-and learning AI,
-Python,
-Data Science and Web Development concepts.
-
-</p>
-
-<div class="buttons">
-
-<a href="https://alihaimran.github.io/orin-chatbot/orin-chat.html"
-target="_blank"
-class="btn">
-
-Live Demo
-
-</a>
-
-<a href="https://github.com/alihaimran"
-target="_blank"
-class="btn2">
-
-GitHub
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-<!-- ================= EDUCATION ================= -->
-
-<section class="section" id="education">
-
-    <h2 class="section-title">Education</h2>
-
-    <div class="card">
-
-        <h3>BS Computer Science</h3>
-
-        <h4>Virtual University of Pakistan</h4>
-
-        <p>2026 – 2029</p>
-
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="section-title">Selected Works (2)</h2>
+      <a href="https://github.com/devaspir" target="_blank" class="see-all">See GitHub →</a>
     </div>
 
+    <div class="work-list reveal">
+      <a class="work-card" href="https://github.com/devaspir" target="_blank">
+        <div class="work-top">
+          <div class="wtitle">Orin</div>
+          <div class="wtags"><span class="tag">FastAPI</span><span class="tag">Groq API</span><span class="tag">ChromaDB</span></div>
+        </div>
+        <p class="work-desc">A Retrieval-Augmented Generation chatbot backend with a custom long-term memory system — extracting and persisting durable user facts across sessions, with real-time streaming responses over SSE.</p>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card" href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank">
+        <div class="work-top">
+          <div class="wtitle">Akademus.ai</div>
+          <div class="wtags"><span class="tag">RAG</span><span class="tag">Streamlit</span></div>
+        </div>
+        <p class="work-desc">An AI-powered learning assistant built on a custom Retrieval-Augmented Generation pipeline — delivering context-aware, source-grounded answers, deployed end-to-end to Streamlit Community Cloud.</p>
+        <div class="work-arrow">↗</div>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-
-<section class="section" id="contact">
-
-    <h2 class="section-title">Let's Connect</h2>
-
-    <div class="card">
-
-        <p>
-            <i class="fas fa-envelope"></i>
-            <strong>Email:</strong>
-            <a href="mailto:alihaimran676@gmail.com">
-                alihaimran676@gmail.com
-            </a>
-        </p>
-
-        <br>
-
-        <p>
-            <i class="fas fa-phone"></i>
-            <strong>Phone:</strong>
-            +92 309 4146324
-        </p>
-
-        <br>
-
-        <p>
-            <i class="fab fa-github"></i>
-            <strong>GitHub:</strong>
-
-            <a href="https://github.com/alihaimran" target="_blank">
-
-                github.com/alihaimran
-
-            </a>
-        </p>
-
-        <br>
-
-        <p>
-            <i class="fab fa-linkedin"></i>
-            <strong>LinkedIn:</strong>
-
-            <a href="https://www.linkedin.com/in/aliha-imran-400793410"
-               target="_blank">
-
-                Aliha Imran
-
-            </a>
-        </p>
-
+<section id="about">
+  <div class="wrap">
+    <div class="about-top reveal">
+      <div class="about-name">ALIHA IMRAN</div>
+      <div class="section-num">About</div>
     </div>
 
+    <div class="about-grid reveal">
+      <p class="about-lede">From data pipelines to deployed models, I partner with the full lifecycle of a machine learning system — I build products that hold up in production, not just in a notebook.</p>
+      <p class="about-bio">AI & ML Developer with hands-on experience building end-to-end machine learning pipelines in Python — from data collection and feature engineering to model training, evaluation, and production deployment. Proficient in TensorFlow, Scikit-learn, and the OpenAI/Groq APIs across supervised learning, deep learning, NLP, computer vision, and Retrieval-Augmented Generation. A proactive self-learner who secured an early-career industry placement through personal initiative.</p>
+    </div>
+
+    <div class="stats-grid reveal">
+      <div class="stat"><div class="num">2</div><div class="lbl">AI Projects<br>Shipped</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">Months<br>AI/ML Traineeship</div></div>
+      <div class="stat"><div class="num">1</div><div class="lbl">Production RAG<br>Pipeline Built</div></div>
+      <div class="stat"><div class="num">6+</div><div class="lbl">ML/DL Libraries<br>&amp; Tools Used</div></div>
+    </div>
+
+    <div class="highlights reveal">
+      <div class="hl-item">
+        <h4>Orin — Long-Term Memory Chatbot</h4>
+        <p>Built a RAG chatbot with a custom memory system that persists user facts across sessions.</p>
+      </div>
+      <div class="hl-item">
+        <h4>Akademus.ai — Shipped to Production</h4>
+        <p>Took a learning assistant from RAG pipeline design to a live, deployed Streamlit app.</p>
+      </div>
+      <div class="hl-item">
+        <h4>AI/ML Traineeship — Devaspir</h4>
+        <p>Shipped supervised ML models from prototype through testing to production deployment.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<section id="disciplines">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="section-title">Disciplines (5)</h2>
+      <div class="section-num">(03)</div>
+    </div>
 
-<footer>
+    <div class="disc-list reveal">
+      <div class="disc-item">
+        <div class="disc-num">01</div>
+        <div class="disc-text">
+          <h3>Machine Learning</h3>
+          <p>Supervised learning, classification &amp; regression, and hyperparameter optimization for measurable accuracy gains.</p>
+        </div>
+      </div>
+      <div class="disc-item">
+        <div class="disc-num">02</div>
+        <div class="disc-text">
+          <h3>Deep Learning</h3>
+          <p>Neural network architectures built and trained in TensorFlow for complex pattern recognition tasks.</p>
+        </div>
+      </div>
+      <div class="disc-item">
+        <div class="disc-num">03</div>
+        <div class="disc-text">
+          <h3>NLP &amp; RAG</h3>
+          <p>Retrieval-augmented generation systems connecting LLM APIs to vector stores for grounded, context-aware responses.</p>
+        </div>
+      </div>
+      <div class="disc-item">
+        <div class="disc-num">04</div>
+        <div class="disc-text">
+          <h3>Computer Vision</h3>
+          <p>Feature engineering and model evaluation for vision-based tasks and datasets.</p>
+        </div>
+      </div>
+      <div class="disc-item">
+        <div class="disc-num">05</div>
+        <div class="disc-text">
+          <h3>Deployment &amp; MLOps</h3>
+          <p>Shipping models and pipelines into live systems with FastAPI and Streamlit, end to end.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <p>
+<section id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="section-title">Process (3)</h2>
+      <div class="section-num">(04)</div>
+    </div>
+    <p class="process-lede reveal">My process moves from raw data to a working, deployed system — with clarity at each stage.</p>
 
-        © 2026 Aliha Imran
+    <div class="process-grid reveal">
+      <div class="process-item">
+        <div class="pnum">01</div>
+        <h3>Data &amp; Features</h3>
+        <p>Collect from structured and unstructured sources, clean, validate, and engineer features that improve generalization.</p>
+      </div>
+      <div class="process-item">
+        <div class="pnum">02</div>
+        <h3>Model &amp; Evaluate</h3>
+        <p>Experiment across ML and deep learning architectures, tune hyperparameters, benchmark against precision, recall, and F1.</p>
+      </div>
+      <div class="process-item">
+        <div class="pnum">03</div>
+        <h3>Ship &amp; Integrate</h3>
+        <p>Take models from validated prototype to production — integrated into live systems, documented and reproducible.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    </p>
+<footer id="contact">
+  <div class="wrap">
+    <div class="cta-block reveal">
+      <div class="eyebrow">Let's talk!</div>
+      <h2>Let's build something intelligent.</h2>
+      <p class="foot-lede">An AI &amp; ML Developer turning data pipelines into working, deployed products.</p>
+      <div class="cta-links">
+        <a href="mailto:alihaimran676@gmail.com" class="btn btn-solid">alihaimran676@gmail.com</a>
+        <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+        <a href="https://github.com/devaspir" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+      </div>
+    </div>
 
-    <p>
-
-        Python Backend Developer • AI/ML Engineer • Generative AI Engineer
-
-    </p>
-
+    <div class="foot-bottom">
+      <div>Portfolio 2026 © Aliha Imran</div>
+      <div class="foot-social">
+        <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank">LinkedIn</a>
+        <a href="https://github.com/devaspir" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
