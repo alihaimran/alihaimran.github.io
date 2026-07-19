@@ -27,3 +27,12 @@ const capIo = new IntersectionObserver((entries)=>{
   });
 }, { threshold: 0.2 });
 capCards.forEach(el => capIo.observe(el));
+
+setTimeout(()=>{
+  const line1 = document.querySelector('.ht-1');
+  const line2 = document.querySelector('.ht-2');
+  if(line1 && line2){
+    line1.classList.add('fade-out');
+    setTimeout(()=> line2.classList.add('fade-in'), 400);
+  }
+}, 2800);
