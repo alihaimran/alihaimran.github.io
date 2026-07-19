@@ -28,7 +28,7 @@ const capIo = new IntersectionObserver((entries)=>{
 }, { threshold: 0.2 });
 capCards.forEach(el => capIo.observe(el));
 
-/* Typewriter headline: line 1 types fully, pauses, clears, then line 2 types in the same spot */
+/* Typewriter headline — loops forever: line1 -> line2 -> line1 -> ... */
 const typeOutput = document.getElementById('typeOutput');
 const headlineLines = [
   [{t:"AI"},{t:"that"},{t:"doesn't"},{t:"just"},{t:"predict"},{t:"—"},{t:"it"},{t:"decides.", accent:true}],
@@ -50,18 +50,20 @@ function typeLine(tokens, onDone){
   step();
 }
 
-function eraseAndNext(nextTokens){
+function eraseAndShow(index){
   typeOutput.style.transition = 'opacity .35s ease';
   typeOutput.style.opacity = '0';
   setTimeout(()=>{
     typeOutput.innerHTML = '';
     typeOutput.style.opacity = '1';
-    typeLine(nextTokens, ()=>{});
+    typeLine(headlineLines[index], ()=>{
+      setTimeout(()=> eraseAndShow((index + 1) % headlineLines.length), 1800);
+    });
   }, 380);
 }
 
 if(typeOutput){
   typeLine(headlineLines[0], ()=>{
-    setTimeout(()=> eraseAndNext(headlineLines[1]), 1700);
+    setTimeout(()=> eraseAndShow(1), 1800);
   });
 }
