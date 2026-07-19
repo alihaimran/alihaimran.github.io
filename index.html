@@ -11,20 +11,48 @@
 </head>
 <body>
 
+<div class="grain"></div>
+
 <header>
   <nav class="wrap">
     <a href="#top" class="logo"><span class="dot"></span>Aliha Imran</a>
     <div class="navlinks">
-      <a href="#about">About</a>
-      <a href="#disciplines">Disciplines</a>
-      <a href="#work">Works</a>
-      <a href="#contact">Contact</a>
+      <a href="#about"><span>About</span></a>
+      <a href="#disciplines"><span>Disciplines</span></a>
+      <a href="#work"><span>Works</span></a>
+      <a href="#contact"><span>Contact</span></a>
     </div>
     <a href="#contact" class="btn btn-ghost nav-cta">Get in touch</a>
   </nav>
 </header>
 
 <section class="hero" id="top">
+  <svg class="hero-graph" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <g class="graph-lines" stroke="#FFB454" stroke-width="1" fill="none" opacity="0.14">
+      <line x1="80" y1="120" x2="320" y2="240"/>
+      <line x1="320" y1="240" x2="180" y2="420"/>
+      <line x1="320" y1="240" x2="520" y2="180"/>
+      <line x1="180" y1="420" x2="60" y2="600"/>
+      <line x1="180" y1="420" x2="380" y2="520"/>
+      <line x1="520" y1="180" x2="700" y2="260"/>
+      <line x1="380" y1="520" x2="560" y2="640"/>
+      <line x1="700" y1="260" x2="640" y2="440"/>
+      <line x1="640" y1="440" x2="820" y2="500"/>
+    </g>
+    <g class="graph-nodes" fill="#FFB454">
+      <circle cx="80" cy="120" r="3"/>
+      <circle cx="320" cy="240" r="3.5"/>
+      <circle cx="180" cy="420" r="3"/>
+      <circle cx="520" cy="180" r="3"/>
+      <circle cx="60" cy="600" r="2.5"/>
+      <circle cx="380" cy="520" r="3.5"/>
+      <circle cx="700" cy="260" r="3"/>
+      <circle cx="560" cy="640" r="2.5"/>
+      <circle cx="640" cy="440" r="3"/>
+      <circle cx="820" cy="500" r="2.5"/>
+    </g>
+  </svg>
+
   <div class="wrap hero-inner">
     <div class="hero-text">
       <div class="eyebrow">Portfolio 2026 · Based in Lahore, Pakistan</div>
@@ -36,7 +64,7 @@
       </div>
     </div>
 
-    <div class="hero-stack">
+    <div class="hero-stack" id="heroStack">
       <div class="float-card fc1">
         <div class="fc-cover cover-orin"></div>
         <div class="fc-label">Orin</div>
