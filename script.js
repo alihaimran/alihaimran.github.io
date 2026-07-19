@@ -1,4 +1,4 @@
-const skills = ["Python","TensorFlow","Scikit-learn","RAG","FastAPI","ChromaDB","Groq API","NLP","Computer Vision","Feature Engineering","Streamlit","Deep Learning"];
+const skills = ["Python","TensorFlow",LLMs,"RAG","FastAPI","ChromaDB","Groq API",Agentic AI ,"Computer Vision","Feature Engineering",,"Deep Learning"];
 const marqueeEl = document.getElementById('marquee');
 let marqueeHTML = '';
 for(let i=0;i<2;i++){
