@@ -15,3 +15,20 @@ const io = new IntersectionObserver((entries)=>{
   });
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
+
+const heroStack = document.getElementById('heroStack');
+if(heroStack && window.matchMedia('(min-width: 901px)').matches){
+  const cards = heroStack.querySelectorAll('.float-card');
+  heroStack.addEventListener('mousemove', (e)=>{
+    const rect = heroStack.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    cards.forEach((card, i)=>{
+      const depth = (i + 1) * 4;
+      card.style.transform = `translate(${px * depth}px, ${py * depth}px)`;
+    });
+  });
+  heroStack.addEventListener('mouseleave', ()=>{
+    cards.forEach(card => card.style.transform = '');
+  });
+}
