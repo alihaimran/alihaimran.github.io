@@ -28,42 +28,27 @@ const capIo = new IntersectionObserver((entries)=>{
 }, { threshold: 0.2 });
 capCards.forEach(el => capIo.observe(el));
 
-/* Typewriter headline — loops forever: line1 -> line2 -> line1 -> ... */
+/* Smooth crossfade headline — no typing, just fade out / fade in, loops forever */
 const typeOutput = document.getElementById('typeOutput');
 const headlineLines = [
-  [{t:"AI"},{t:"that"},{t:"doesn't"},{t:"just"},{t:"predict"},{t:"—"},{t:"it"},{t:"decides.", accent:true}],
-  [{t:"I"},{t:"build"},{t:"machines"},{t:"that"},{t:"read,"},{t:"reason,"},{t:"and"},{t:"respond.", accent:true}]
+  `AI that doesn't just predict —<br>it <span class="accent-word">decides.</span>`,
+  `I build machines that<br>read, reason, and <span class="accent-word">respond.</span>`
 ];
 
-function typeLine(tokens, onDone){
-  let i = 0;
-  function step(){
-    if(i >= tokens.length){ onDone(); return; }
-    const tok = tokens[i];
-    const span = document.createElement('span');
-    if(tok.accent) span.className = 'accent-word';
-    span.textContent = tok.t + (i < tokens.length - 1 ? ' ' : '');
-    typeOutput.appendChild(span);
-    i++;
-    setTimeout(step, 190);
-  }
-  step();
-}
-
-function eraseAndShow(index){
-  typeOutput.style.transition = 'opacity .35s ease';
+function showLine(index){
   typeOutput.style.opacity = '0';
+  typeOutput.style.transform = 'translateY(8px)';
   setTimeout(()=>{
-    typeOutput.innerHTML = '';
+    typeOutput.innerHTML = headlineLines[index];
     typeOutput.style.opacity = '1';
-    typeLine(headlineLines[index], ()=>{
-      setTimeout(()=> eraseAndShow((index + 1) % headlineLines.length), 1800);
-    });
-  }, 380);
+    typeOutput.style.transform = 'translateY(0)';
+    setTimeout(()=> showLine((index + 1) % headlineLines.length), 2600);
+  }, 500);
 }
 
 if(typeOutput){
-  typeLine(headlineLines[0], ()=>{
-    setTimeout(()=> eraseAndShow(1), 1800);
-  });
+  typeOutput.style.opacity = '0';
+  typeOutput.innerHTML = headlineLines[0];
+  requestAnimationFrame(()=>{ typeOutput.style.opacity = '1'; });
+  setTimeout(()=> showLine(1), 2600);
 }
