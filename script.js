@@ -15,3 +15,15 @@ const io = new IntersectionObserver((entries)=>{
   });
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
+
+const capCards = document.querySelectorAll('.reveal-cap');
+const capIo = new IntersectionObserver((entries)=>{
+  entries.forEach((e)=>{
+    if(e.isIntersecting){
+      const idx = Array.from(capCards).indexOf(e.target);
+      setTimeout(()=> e.target.classList.add('visible'), idx * 140);
+      capIo.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+capCards.forEach(el => capIo.observe(el));
