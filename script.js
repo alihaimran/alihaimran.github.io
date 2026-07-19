@@ -28,11 +28,40 @@ const capIo = new IntersectionObserver((entries)=>{
 }, { threshold: 0.2 });
 capCards.forEach(el => capIo.observe(el));
 
-setTimeout(()=>{
-  const line1 = document.querySelector('.ht-1');
-  const line2 = document.querySelector('.ht-2');
-  if(line1 && line2){
-    line1.classList.add('fade-out');
-    setTimeout(()=> line2.classList.add('fade-in'), 400);
+/* Typewriter headline: line 1 types fully, pauses, clears, then line 2 types in the same spot */
+const typeOutput = document.getElementById('typeOutput');
+const headlineLines = [
+  [{t:"AI"},{t:"that"},{t:"doesn't"},{t:"just"},{t:"predict"},{t:"—"},{t:"it"},{t:"decides.", accent:true}],
+  [{t:"I"},{t:"build"},{t:"machines"},{t:"that"},{t:"read,"},{t:"reason,"},{t:"and"},{t:"respond.", accent:true}]
+];
+
+function typeLine(tokens, onDone){
+  let i = 0;
+  function step(){
+    if(i >= tokens.length){ onDone(); return; }
+    const tok = tokens[i];
+    const span = document.createElement('span');
+    if(tok.accent) span.className = 'accent-word';
+    span.textContent = tok.t + (i < tokens.length - 1 ? ' ' : '');
+    typeOutput.appendChild(span);
+    i++;
+    setTimeout(step, 190);
   }
-}, 2800);
+  step();
+}
+
+function eraseAndNext(nextTokens){
+  typeOutput.style.transition = 'opacity .35s ease';
+  typeOutput.style.opacity = '0';
+  setTimeout(()=>{
+    typeOutput.innerHTML = '';
+    typeOutput.style.opacity = '1';
+    typeLine(nextTokens, ()=>{});
+  }, 380);
+}
+
+if(typeOutput){
+  typeLine(headlineLines[0], ()=>{
+    setTimeout(()=> eraseAndNext(headlineLines[1]), 1700);
+  });
+}
