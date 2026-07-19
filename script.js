@@ -8,14 +8,19 @@ for(let i=0;i<2;i++){
 }
 marqueeEl.innerHTML = marqueeHTML;
 
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
-  });
-}, { threshold: 0.15 });
-revealEls.forEach(el => io.observe(el));
+/* Distinct reveal-on-scroll: up / left / scale */
+const revealSelectors = ['.reveal-up', '.reveal-left', '.reveal-scale'];
+revealSelectors.forEach(sel=>{
+  const els = document.querySelectorAll(sel);
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(el => obs.observe(el));
+});
 
+/* Cap-strip staggered polaroid entrance */
 const capCards = document.querySelectorAll('.reveal-cap');
 const capIo = new IntersectionObserver((entries)=>{
   entries.forEach((e)=>{
@@ -28,7 +33,33 @@ const capIo = new IntersectionObserver((entries)=>{
 }, { threshold: 0.2 });
 capCards.forEach(el => capIo.observe(el));
 
-/* Smooth crossfade headline — no typing, just fade out / fade in, loops forever */
+/* Skill bars fill on scroll into view */
+const skillFills = document.querySelectorAll('.skill-fill');
+const skillIo = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      setTimeout(()=> e.target.classList.add('filled'), 150);
+      skillIo.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+skillFills.forEach(el => skillIo.observe(el));
+
+/* Cursor-following spotlight (desktop only) */
+const spotlight = document.getElementById('spotlight');
+if(spotlight && window.matchMedia('(pointer:fine)').matches){
+  let raf = null;
+  document.addEventListener('mousemove', (e)=>{
+    if(raf) return;
+    raf = requestAnimationFrame(()=>{
+      document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+      document.documentElement.style.setProperty('--my', e.clientY + 'px');
+      raf = null;
+    });
+  });
+}
+
+/* Smooth crossfade headline — loops forever */
 const typeOutput = document.getElementById('typeOutput');
 const headlineLines = [
   `AI that doesn't just predict —<br>it <span class="accent-word">decides.</span>`,
