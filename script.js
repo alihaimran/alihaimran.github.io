@@ -11,6 +11,7 @@ try{
     marqueeEl.innerHTML = marqueeHTML;
   }
 }catch(e){ console.error('marquee error', e); }
+
 try{
   const highlights = [
     {title:"Orin — Long-Term Memory Chatbot", desc:"Built a RAG chatbot with a custom memory system that persists user facts across sessions."},
@@ -28,38 +29,7 @@ try{
     hlEl.innerHTML = hlHTML;
   }
 }catch(e){ console.error('highlight scroll error', e); }
-try{
-  // hero showcase — click tabs to switch, auto-cycle, pause on hover
-  const tabs = document.querySelectorAll('.tab-btn');
-  const frames = document.querySelectorAll('.frame-img');
-  const frameUrl = document.getElementById('frameUrl');
-  let current = 0;
-  let autoTimer = null;
 
-  function setActive(idx){
-    tabs.forEach((t,i)=>t.classList.toggle('active', i===idx));
-    frames.forEach((f,i)=>f.classList.toggle('active', i===idx));
-    if(frameUrl && tabs[idx]) frameUrl.textContent = tabs[idx].dataset.label || '';
-    current = idx;
-  }
-  function startAuto(){
-    stopAuto();
-    autoTimer = setInterval(()=>{ setActive((current+1) % tabs.length); }, 3500);
-  }
-  function stopAuto(){ if(autoTimer) clearInterval(autoTimer); }
-
-  if(tabs.length && frames.length){
-    tabs.forEach((tab, idx)=>{
-      tab.addEventListener('click', ()=>{ setActive(idx); startAuto(); });
-    });
-    const showcase = document.querySelector('.showcase');
-    if(showcase){
-      showcase.addEventListener('mouseenter', stopAuto);
-      showcase.addEventListener('mouseleave', startAuto);
-    }
-    startAuto();
-  }
-}catch(e){ console.error('showcase error', e); }
 try{
   const revealSelectors = ['.reveal-up', '.reveal-left', '.reveal-scale'];
   revealSelectors.forEach(sel=>{
@@ -72,22 +42,7 @@ try{
     els.forEach(el => obs.observe(el));
   });
 }catch(e){ console.error('reveal error', e); }
-try{
-  // touch devices: tap toggles the description panel on work cards
-  const isTouch = !window.matchMedia('(hover: hover)').matches;
-  if(isTouch){
-    document.querySelectorAll('.work-card').forEach(card=>{
-      card.addEventListener('click', (e)=>{
-        const alreadyActive = card.classList.contains('active');
-        document.querySelectorAll('.work-card.active').forEach(c=>c.classList.remove('active'));
-        if(!alreadyActive){
-          e.preventDefault();
-          card.classList.add('active');
-        }
-      });
-    });
-  }
-}catch(e){ console.error('work-card touch error', e); }
+
 try{
   const spotlight = document.getElementById('spotlight');
   if(spotlight && window.matchMedia('(pointer:fine)').matches){
