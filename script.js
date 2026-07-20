@@ -3,7 +3,7 @@ try{
   const marqueeEl = document.getElementById('marquee');
   if(marqueeEl){
     let marqueeHTML = '';
-    for(let i=0;i<2;i++){
+    for(let i=0;i<3;i++){
       skills.forEach((s,idx)=>{
         marqueeHTML += `<span class="${idx%3===0?'hi':''}">${s} ✦</span>`;
       });
@@ -11,6 +11,24 @@ try{
     marqueeEl.innerHTML = marqueeHTML;
   }
 }catch(e){ console.error('marquee error', e); }
+
+try{
+  const highlights = [
+    {title:"Orin — Long-Term Memory Chatbot", desc:"Built a RAG chatbot with a custom memory system that persists user facts across sessions."},
+    {title:"Akademus.ai — Shipped to Production", desc:"Took a learning assistant from RAG pipeline design to a live, deployed Streamlit app."},
+    {title:"AI/ML Traineeship — Devaspir", desc:"Shipped supervised ML models from prototype through testing to production deployment."}
+  ];
+  const hlEl = document.getElementById('hlScroll');
+  if(hlEl){
+    let hlHTML = '';
+    for(let i=0;i<2;i++){
+      highlights.forEach(h=>{
+        hlHTML += `<div class="hl-card"><h4>${h.title}</h4><p>${h.desc}</p></div>`;
+      });
+    }
+    hlEl.innerHTML = hlHTML;
+  }
+}catch(e){ console.error('highlight scroll error', e); }
 
 try{
   const revealSelectors = ['.reveal-up', '.reveal-left', '.reveal-scale'];
@@ -26,17 +44,21 @@ try{
 }catch(e){ console.error('reveal error', e); }
 
 try{
-  const skillFills = document.querySelectorAll('.skill-fill');
-  const skillIo = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        setTimeout(()=> e.target.classList.add('filled'), 150);
-        skillIo.unobserve(e.target);
-      }
+  // touch devices: tap toggles the description panel on work cards
+  const isTouch = !window.matchMedia('(hover: hover)').matches;
+  if(isTouch){
+    document.querySelectorAll('.work-card').forEach(card=>{
+      card.addEventListener('click', (e)=>{
+        const alreadyActive = card.classList.contains('active');
+        document.querySelectorAll('.work-card.active').forEach(c=>c.classList.remove('active'));
+        if(!alreadyActive){
+          e.preventDefault();
+          card.classList.add('active');
+        }
+      });
     });
-  }, { threshold: 0.4 });
-  skillFills.forEach(el => skillIo.observe(el));
-}catch(e){ console.error('skill-bar error', e); }
+  }
+}catch(e){ console.error('work-card touch error', e); }
 
 try{
   const spotlight = document.getElementById('spotlight');
