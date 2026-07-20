@@ -37,11 +37,25 @@
 
     <h1 class="hero-name">Aliha Imran</h1>
 
-    <div class="fan-wrap">
-      <div class="stack-card sc-1"><img src="orin.png" alt="Orin"><span class="stack-label">Orin</span></div>
-      <div class="stack-card sc-2"><img src="akdemus.ai.png" alt="Akademus.ai"><span class="stack-label">Akademus.ai</span></div>
-      <div class="stack-card sc-3"><img src="rag.png" alt="RAG Pipelines"><span class="stack-label">RAG Pipelines</span></div>
-      <div class="stack-card sc-4"><img src="ML.png" alt="ML Models"><span class="stack-label">ML Models</span></div>
+    <div class="showcase">
+      <div class="showcase-frame">
+        <div class="frame-bar">
+          <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+          <span class="frame-url" id="frameUrl">orin.png</span>
+        </div>
+        <div class="frame-body">
+          <img src="orin.png" alt="Orin" class="frame-img active">
+          <img src="akdemus.ai.png" alt="Akademus.ai" class="frame-img">
+          <img src="rag.png" alt="RAG Pipelines" class="frame-img">
+          <img src="ML.png" alt="ML Models" class="frame-img">
+        </div>
+      </div>
+      <div class="showcase-tabs">
+        <button class="tab-btn active" data-label="orin.png">Orin</button>
+        <button class="tab-btn" data-label="akdemus.ai.png">Akademus.ai</button>
+        <button class="tab-btn" data-label="rag.png">RAG Pipelines</button>
+        <button class="tab-btn" data-label="ML.png">ML Models</button>
+      </div>
     </div>
 
     <p class="hero-tagline">I help teams turn raw data into products that <span class="accent-word">think.</span></p>
