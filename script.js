@@ -26,20 +26,6 @@ try{
 }catch(e){ console.error('reveal error', e); }
 
 try{
-  const capCards = document.querySelectorAll('.reveal-cap');
-  const capIo = new IntersectionObserver((entries)=>{
-    entries.forEach((e)=>{
-      if(e.isIntersecting){
-        const idx = Array.from(capCards).indexOf(e.target);
-        setTimeout(()=> e.target.classList.add('visible'), idx * 140);
-        capIo.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  capCards.forEach(el => capIo.observe(el));
-}catch(e){ console.error('cap-card error', e); }
-
-try{
   const skillFills = document.querySelectorAll('.skill-fill');
   const skillIo = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
@@ -66,26 +52,3 @@ try{
     });
   }
 }catch(e){ console.error('spotlight error', e); }
-
-try{
-  const typeOutput = document.getElementById('typeOutput');
-  const headlineLines = [
-    `AI that doesn't just predict —<br>it <span class="accent-word">decides.</span>`,
-    `I build machines that<br>read, reason, and <span class="accent-word">respond.</span>`
-  ];
-
-  function showLine(index){
-    typeOutput.style.opacity = '0';
-    typeOutput.style.transform = 'translateY(8px)';
-    setTimeout(()=>{
-      typeOutput.innerHTML = headlineLines[index];
-      typeOutput.style.opacity = '1';
-      typeOutput.style.transform = 'translateY(0)';
-      setTimeout(()=> showLine((index + 1) % headlineLines.length), 2600);
-    }, 500);
-  }
-
-  if(typeOutput){
-    setTimeout(()=> showLine(1), 2600);
-  }
-}catch(e){ console.error('headline error', e); }
