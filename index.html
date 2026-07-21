@@ -1,302 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aliha Imran — AI & ML Developer</title>
-<link rel="icon" type="image/png" href="ChatGPT Image Jul 20, 2026, 01_37_17 PM.png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aliha Imran — AI/ML Engineer &amp; Generative AI Developer</title>
+<meta name="description" content="Aliha Imran — AI/ML Engineer building intelligent systems with Python, LLMs, RAG &amp; Agentic AI." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="grain"></div>
-<div class="spotlight" id="spotlight"></div>
-<div class="bg-glow"></div>
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
-<header>
-  <nav class="wrap">
-    <a href="#top" class="logo">
-      <img src="ChatGPT Image Jul 20, 2026, 01_37_17 PM.png" alt="Aliha Imran" class="logo-img">
-    </a>
-    <div class="navlinks">
-      <a href="#about"><span>About</span></a>
-      <a href="#disciplines"><span>Disciplines</span></a>
-      <a href="#work"><span>Works</span></a>
-      <a href="#contact"><span>Contact</span></a>
-    </div>
-    <a href="#contact" class="btn btn-ghost nav-cta">Get in touch</a>
-  </nav>
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Aliha<span class="dot">.</span>ai</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-small btn-primary magnetic">Let's Talk</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
-<section class="hero" id="top">
-  <div class="wrap hero-center">
-    <div class="hero-eyebrow">
-      <span class="eyebrow-line"></span>
-      Portfolio 2026 · Based in Lahore, Pakistan
-    </div>
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <canvas id="neuralCanvas"></canvas>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
 
-    <h1 class="hero-name">Aliha Imran</h1>
+  <div class="floating-tags" id="floatingTags">
+    <span class="tag tag-1">Python</span>
+    <span class="tag tag-2">LLM</span>
+    <span class="tag tag-3">RAG</span>
+    <span class="tag tag-4">Agentic AI</span>
+    <span class="tag tag-5">Neural Network</span>
+    <span class="tag tag-6">Vector Database</span>
+    <span class="tag tag-7">Prompt Engineering</span>
+  </div>
 
-    <div class="showcase">
-      <div class="fan-stack fan-stack-3">
-        <div class="fan-card fan-1"><img src="ChatGPT Image Jul 20, 2026, 01_25_50 PM.png" alt="Python"></div>
-        <div class="fan-card fan-2"><img src="ChatGPT Image Jul 20, 2026, 01_29_24 PM.png" alt="RAG & LLMs"></div>
-        <div class="fan-card fan-3"><img src="ChatGPT Image Jul 20, 2026, 12_52_23 PM.png" alt="AI & ML"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy reveal-up">
+      <span class="eyebrow">AI/ML Engineer · Generative AI Developer</span>
+      <h1 class="hero-title">
+        Building <span class="grad-text">Intelligent AI</span><br/>
+        Solutions with Python &amp; LLMs
+      </h1>
+      <p class="hero-sub">
+        I design and ship real-world AI systems — from Retrieval-Augmented Generation
+        pipelines to autonomous agentic workflows — with clean architecture and thoughtful engineering.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary magnetic" id="resumeBtn">
+          <span>Download Resume</span>
+        </a>
+        <a href="#projects" class="btn btn-ghost magnetic">
+          <span>View Projects</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="12">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">AI Projects Shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="6">0</span>
+          <span class="stat-label">Core AI Stacks</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="100">0</span><span class="stat-plus">%</span>
+          <span class="stat-label">Python-Powered</span>
+        </div>
       </div>
     </div>
 
-    <p class="hero-tagline">I help teams turn raw data into products that <span class="accent-word">think.</span></p>
-
-    <div class="hero-footer-row">
-      <div class="mono-label">Portfolio 2026</div>
-      <div class="status"><span class="pulse"></span> Available for work</div>
+    <div class="hero-visual reveal-up" style="--delay:.15s">
+      <div class="photo-frame">
+        <div class="photo-glow"></div>
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 200 200" class="avatar-svg">
+            <circle cx="100" cy="78" r="38" fill="url(#avatarGrad)"/>
+            <path d="M40 190 C40 130 70 108 100 108 C130 108 160 130 160 190 Z" fill="url(#avatarGrad)"/>
+            <defs>
+              <linearGradient id="avatarGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5B6EF5"/>
+                <stop offset="100%" stop-color="#9B6BF3"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="terminal-chip">
+          <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+          <span class="terminal-text" id="typedTerminal"></span><span class="cursor-blink">|</span>
+        </div>
+        <div class="orbit-icon orbit-1">🐍</div>
+        <div class="orbit-icon orbit-2">🧠</div>
+        <div class="orbit-icon orbit-3">⚡</div>
+      </div>
     </div>
   </div>
+
+  <a href="#about" class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </a>
 </section>
 
-<div class="marquee-wrap">
-  <div class="marquee" id="marquee"></div>
-</div>
-
-<section id="work">
-  <div class="wrap">
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container">
     <div class="section-head reveal-up">
-      <h2 class="section-title">Selected Works (2)</h2>
-      <a href="https://github.com/devaspir" target="_blank" class="see-all">See GitHub →</a>
+      <span class="eyebrow">About Me</span>
+      <h2>Turning research into <span class="grad-text">production-ready AI</span></h2>
     </div>
 
-    <div class="work-list">
-      <a class="work-card reveal-left" href="https://github.com/devaspir" target="_blank">
-        <div class="work-top">
-          <div class="wtitle">Orin</div>
-          <div class="wtags"><span class="tag">FastAPI</span><span class="tag">Groq API</span><span class="tag">ChromaDB</span></div>
-        </div>
-        <p class="work-desc">A Retrieval-Augmented Generation chatbot backend with a custom long-term memory system — extracting and persisting durable user facts across sessions, with real-time streaming responses over SSE.</p>
-        <div class="work-bottom">
-          <span class="work-demo">Live Demo <span class="work-arrow">↗</span></span>
-        </div>
-      </a>
+    <div class="about-grid">
+      <div class="about-text reveal-up">
+        <p class="lead">
+          I'm an AI/ML Developer passionate about building intelligent applications
+          using Python, Machine Learning, Generative AI, LLMs, RAG, and Agentic AI.
+        </p>
+        <p>
+          I enjoy creating scalable AI systems, automation tools, and real-world AI
+          solutions with clean architecture and modern design — bridging the gap
+          between cutting-edge research and products people actually use.
+        </p>
 
-      <a class="work-card reveal-left" href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank" style="transition-delay:0.12s;">
-        <div class="work-top">
-          <div class="wtitle">Akademus.ai</div>
-          <div class="wtags"><span class="tag">RAG</span><span class="tag">Streamlit</span></div>
+        <div class="about-facts">
+          <div class="fact-card glass">
+            <span class="fact-icon">🎓</span>
+            <div>
+              <h4>Education</h4>
+              <p>BS Computer Science, Virtual University of Pakistan</p>
+            </div>
+          </div>
+          <div class="fact-card glass">
+            <span class="fact-icon">📍</span>
+            <div>
+              <h4>Based in</h4>
+              <p>Lahore, Pakistan · Open to Remote</p>
+            </div>
+          </div>
         </div>
-        <p class="work-desc">An AI-powered learning assistant built on a custom Retrieval-Augmented Generation pipeline — delivering context-aware, source-grounded answers, deployed end-to-end to Streamlit Community Cloud.</p>
-        <div class="work-bottom">
-          <span class="work-demo">Live Demo <span class="work-arrow">↗</span></span>
+      </div>
+
+      <div class="about-panel reveal-up" style="--delay:.1s">
+        <div class="glass panel-card">
+          <h4>What I bring</h4>
+          <ul class="check-list">
+            <li>End-to-end RAG &amp; LLM pipelines</li>
+            <li>Multi-agent, tool-using AI systems</li>
+            <li>Clean, scalable Python architecture</li>
+            <li>Fast prototyping with FastAPI &amp; Streamlit</li>
+          </ul>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="about">
-  <div class="wrap">
-    <div class="about-top reveal-up">
-      <div class="section-num">About</div>
-    </div>
-
-    <div class="about-sequence reveal-up">
-      <div class="about-box box-white">
-        <h2 class="about-lede">From data pipelines to deployed models, I partner with the full lifecycle of a machine learning system — building products that hold up in production, not just in a notebook.</h2>
-      </div>
-      <div class="about-box box-dark">
-        <p class="about-bio">AI & ML Developer with hands-on experience building AI and machine learning applications using Python. Skilled in data preprocessing, model training, evaluation, and deployment. Practical experience in Generative AI, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and AI chatbot development. Proficient in TensorFlow, Scikit-learn, OpenAI and Groq APIs, Git, and GitHub.</p>
-      </div>
-      <div class="about-box box-dark box-cta">
-        <p class="about-bio">Want the full story — traineeship, shipped projects, and what's next?</p>
-        <a href="#journey" class="about-more-link">More about me <span class="work-arrow">→</span></a>
-      </div>
-    </div>
-
-
-    <div class="stats-grid">
-      <div class="stat reveal-scale"><div class="num">2</div><div class="lbl">AI Projects<br>Shipped</div></div>
-      <div class="stat reveal-scale" style="transition-delay:0.08s;"><div class="num">3</div><div class="lbl">Months<br>AI/ML Traineeship</div></div>
-      <div class="stat reveal-scale" style="transition-delay:0.16s;"><div class="num">1</div><div class="lbl">Production RAG<br>Pipeline Built</div></div>
-      <div class="stat reveal-scale" style="transition-delay:0.24s;"><div class="num">6+</div><div class="lbl">ML/DL Libraries<br>&amp; Tools Used</div></div>
-    </div>
-
-    <div class="hl-scroll-wrap">
-      <div class="hl-scroll" id="hlScroll"></div>
-    </div>
-  </div>
-</section>
-
-<section id="journey">
-  <div class="wrap">
+<!-- ============ SKILLS ============ -->
+<section class="skills" id="skills">
+  <div class="container">
     <div class="section-head reveal-up">
-      <h2 class="section-title">Journey (4)</h2>
-      <div class="section-num">(03)</div>
+      <span class="eyebrow">Skills</span>
+      <h2>Core <span class="grad-text">Competencies</span></h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-bars reveal-up">
+        <div class="skill-bar-item" data-level="95">
+          <div class="skill-bar-top"><span>Python</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-bar-item" data-level="90">
+          <div class="skill-bar-top"><span>Large Language Models</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-bar-item" data-level="88">
+          <div class="skill-bar-top"><span>RAG Systems</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-bar-item" data-level="85">
+          <div class="skill-bar-top"><span>Agentic AI</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-bar-item" data-level="80">
+          <div class="skill-bar-top"><span>Machine Learning</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-bar-item" data-level="75">
+          <div class="skill-bar-top"><span>Deep Learning</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-rings reveal-up" style="--delay:.1s">
+        <div class="ring-card glass">
+          <svg class="ring-svg" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill" cx="60" cy="60" r="52" data-pct="92"/>
+          </svg>
+          <div class="ring-label"><strong>92%</strong><span>Prompt Engineering</span></div>
+        </div>
+        <div class="ring-card glass">
+          <svg class="ring-svg" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill" cx="60" cy="60" r="52" data-pct="87"/>
+          </svg>
+          <div class="ring-label"><strong>87%</strong><span>Vector Databases</span></div>
+        </div>
+        <div class="ring-card glass">
+          <svg class="ring-svg" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill" cx="60" cy="60" r="52" data-pct="83"/>
+          </svg>
+          <div class="ring-label"><strong>83%</strong><span>LangChain</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH STACK ============ -->
+<section class="tech-stack" id="tech-stack">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow">Tech Stack</span>
+      <h2>Tools I work <span class="grad-text">with daily</span></h2>
+    </div>
+
+    <div class="stack-marquee-wrap reveal-up">
+      <div class="stack-marquee">
+        <div class="stack-track" id="stackTrack">
+          <!-- duplicated by JS for infinite loop -->
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-chip glass">Python</div>
+      <div class="stack-chip glass">LangChain</div>
+      <div class="stack-chip glass">FastAPI</div>
+      <div class="stack-chip glass">Streamlit</div>
+      <div class="stack-chip glass">ChromaDB</div>
+      <div class="stack-chip glass">Scikit-learn</div>
+      <div class="stack-chip glass">Git &amp; GitHub</div>
+      <div class="stack-chip glass">HTML/CSS/JS</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Projects that <span class="grad-text">solve real problems</span></h2>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card glass reveal-up">
+        <div class="project-media">
+          <div class="media-placeholder ph-1"></div>
+          <div class="project-links">
+            <a href="#" class="icon-btn" aria-label="GitHub repository">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="Live demo">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>AI Chat Assistant</h3>
+          <p>A conversational LLM assistant with contextual memory and streaming responses.</p>
+          <div class="badges">
+            <span>Python</span><span>LLM</span><span>LangChain</span><span>Streamlit</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal-up" style="--delay:.05s">
+        <div class="project-media">
+          <div class="media-placeholder ph-2"></div>
+          <div class="project-links">
+            <a href="#" class="icon-btn" aria-label="GitHub repository">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="Live demo">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>RAG Knowledge Assistant</h3>
+          <p>Retrieval-augmented Q&amp;A over private documents using vector search.</p>
+          <div class="badges">
+            <span>Python</span><span>RAG</span><span>Vector DB</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal-up" style="--delay:.1s">
+        <div class="project-media">
+          <div class="media-placeholder ph-3"></div>
+          <div class="project-links">
+            <a href="#" class="icon-btn" aria-label="GitHub repository">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="Live demo">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Agentic AI Workflow</h3>
+          <p>Multi-agent system where autonomous agents plan, delegate and execute tasks.</p>
+          <div class="badges">
+            <span>Python</span><span>Multi-Agent Systems</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal-up" style="--delay:.15s">
+        <div class="project-media">
+          <div class="media-placeholder ph-4"></div>
+          <div class="project-links">
+            <a href="#" class="icon-btn" aria-label="GitHub repository">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="Live demo">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>ML Prediction System</h3>
+          <p>Supervised prediction pipeline with feature engineering and model evaluation.</p>
+          <div class="badges">
+            <span>Python</span><span>Scikit-learn</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal-up" style="--delay:.2s">
+        <div class="project-media">
+          <div class="media-placeholder ph-5"></div>
+          <div class="project-links">
+            <a href="#" class="icon-btn" aria-label="GitHub repository">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="Live demo">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Generative AI Content Assistant</h3>
+          <p>Automated content generation assistant powered by prompt-engineered LLM chains.</p>
+          <div class="badges">
+            <span>Python</span><span>Generative AI</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal-up" style="--delay:.25s">
+        <div class="project-media">
+          <div class="media-placeholder ph-6"></div>
+          <div class="project-links">
+            <a href="#" class="icon-btn" aria-label="GitHub repository">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </a>
+            <a href="#" class="icon-btn" aria-label="Live demo">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Computer Vision Project</h3>
+          <p>Image recognition pipeline for object classification and detection.</p>
+          <div class="badges">
+            <span>Python</span><span>Computer Vision</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE / TIMELINE ============ -->
+<section class="timeline-section" id="experience">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow">Journey</span>
+      <h2>Experience &amp; <span class="grad-text">Timeline</span></h2>
     </div>
 
     <div class="timeline">
-      <div class="tl-item reveal-left">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-tag">Traineeship</div>
-          <h3>AI/ML Traineeship at Devaspir</h3>
-          <p>Started hands-on with supervised ML — data preprocessing, model training, and shipping models from prototype to production.</p>
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <span class="timeline-tag">Current</span>
+          <h3>AI/ML Developer</h3>
+          <p>Building AI applications, automation systems, intelligent assistants and modern AI workflows.</p>
         </div>
       </div>
-      <div class="tl-item reveal-left" style="transition-delay:0.12s;">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-tag">Built</div>
-          <h3>Orin — Long-Term Memory Chatbot</h3>
-          <p>Designed a RAG backend on FastAPI with ChromaDB and Groq API, adding a custom memory system that persists facts across sessions.</p>
+
+      <div class="timeline-item reveal-up" style="--delay:.1s">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <span class="timeline-tag">Education</span>
+          <h3>BS Computer Science</h3>
+          <p>Virtual University of Pakistan — foundation in algorithms, systems and software engineering.</p>
         </div>
       </div>
-      <div class="tl-item reveal-left" style="transition-delay:0.24s;">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-tag">Shipped</div>
-          <h3>Akademus.ai — Live in Production</h3>
-          <p>Took a RAG-based learning assistant from pipeline design to a fully deployed app on Streamlit Community Cloud.</p>
-        </div>
-      </div>
-      <div class="tl-item reveal-left tl-active" style="transition-delay:0.36s;">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-tag">Now</div>
-          <h3>Open to New Opportunities</h3>
-          <p>Actively looking to bring production AI/ML and LLM systems to a team that ships.</p>
+
+      <div class="timeline-item reveal-up" style="--delay:.2s">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <span class="timeline-tag">Focus</span>
+          <h3>Deepening into Agentic AI</h3>
+          <p>Continuously exploring multi-agent orchestration, RAG optimization and LLM tooling.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="disciplines">
-  <div class="wrap">
+<!-- ============ EDUCATION ============ -->
+<section class="education" id="education">
+  <div class="container">
+    <div class="edu-card glass reveal-up">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <span class="eyebrow">Education</span>
+        <h3>BS Computer Science</h3>
+        <p>Virtual University of Pakistan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container">
     <div class="section-head reveal-up">
-      <h2 class="section-title">Disciplines (5)</h2>
-      <div class="section-num">(04)</div>
+      <span class="eyebrow">Services</span>
+      <h2>How I can <span class="grad-text">help you</span></h2>
     </div>
 
-    <div class="disc-list">
-      <div class="disc-item reveal-left">
-        <div class="disc-num">01</div>
-        <div class="disc-text">
-          <h3>Machine Learning</h3>
-          <p>Supervised learning, classification &amp; regression, and hyperparameter optimization for measurable accuracy gains.</p>
-        </div>
-        <div class="disc-preview">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 14l4-5 3 3 5-7"/></svg>
+    <div class="services-grid">
+      <div class="service-card glass reveal-up">
+        <div class="service-icon">🤖</div>
+        <h3>LLM &amp; RAG Systems</h3>
+        <p>Design and deployment of retrieval-augmented generation pipelines tailored to your data.</p>
+      </div>
+      <div class="service-card glass reveal-up" style="--delay:.05s">
+        <div class="service-icon">🧩</div>
+        <h3>Agentic AI Workflows</h3>
+        <p>Multi-agent systems that plan, reason, and execute tasks autonomously.</p>
+      </div>
+      <div class="service-card glass reveal-up" style="--delay:.1s">
+        <div class="service-icon">📊</div>
+        <h3>ML Modeling</h3>
+        <p>End-to-end machine learning pipelines — from data to deployed prediction models.</p>
+      </div>
+      <div class="service-card glass reveal-up" style="--delay:.15s">
+        <div class="service-icon">⚙️</div>
+        <h3>AI Automation</h3>
+        <p>Automation tools and intelligent assistants that streamline repetitive workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What people <span class="grad-text">say</span></h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card glass reveal-up">
+        <p>"Aliha turned a vague idea into a working RAG assistant in days. Clear communication throughout."</p>
+        <div class="testimonial-author">
+          <div class="avatar-dot">SM</div>
+          <div><strong>Sara M.</strong><span>Product Manager</span></div>
         </div>
       </div>
-      <div class="disc-item reveal-left" style="transition-delay:0.08s;">
-        <div class="disc-num">02</div>
-        <div class="disc-text">
-          <h3>Deep Learning</h3>
-          <p>Neural network architectures built and trained in TensorFlow for complex pattern recognition tasks.</p>
-        </div>
-        <div class="disc-preview">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.7 7.2 10.3 11M6.7 16.8 10.3 13M13.7 11l3.6-3.8M13.7 13l3.6 3.8"/></svg>
+      <div class="testimonial-card glass reveal-up" style="--delay:.05s">
+        <p>"Genuinely impressive grasp of agentic systems. The workflow she built saved us hours every week."</p>
+        <div class="testimonial-author">
+          <div class="avatar-dot">RK</div>
+          <div><strong>Rehan K.</strong><span>Startup Founder</span></div>
         </div>
       </div>
-      <div class="disc-item reveal-left" style="transition-delay:0.16s;">
-        <div class="disc-num">03</div>
-        <div class="disc-text">
-          <h3>NLP &amp; RAG</h3>
-          <p>Retrieval-augmented generation systems connecting LLM APIs to vector stores for grounded, context-aware responses.</p>
-        </div>
-        <div class="disc-preview">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        </div>
-      </div>
-      <div class="disc-item reveal-left" style="transition-delay:0.24s;">
-        <div class="disc-num">04</div>
-        <div class="disc-text">
-          <h3>Computer Vision</h3>
-          <p>Feature engineering and model evaluation for vision-based tasks and datasets.</p>
-        </div>
-        <div class="disc-preview">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-      </div>
-      <div class="disc-item reveal-left" style="transition-delay:0.32s;">
-        <div class="disc-num">05</div>
-        <div class="disc-text">
-          <h3>Deployment &amp; MLOps</h3>
-          <p>Shipping models and pipelines into live systems with FastAPI and Streamlit, end to end.</p>
-        </div>
-        <div class="disc-preview">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 15 8l6 1-4.5 4.4L17.5 20 12 17l-5.5 3 1-6.6L3 9l6-1 3-6Z"/></svg>
+      <div class="testimonial-card glass reveal-up" style="--delay:.1s">
+        <p>"Clean code, clear documentation, and a genuine passion for AI. Would work with her again."</p>
+        <div class="testimonial-author">
+          <div class="avatar-dot">HJ</div>
+          <div><strong>Hina J.</strong><span>Engineering Lead</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="process">
-  <div class="wrap process-wrap">
-    <div class="process-left reveal-up">
-      <div class="section-num">(05)</div>
-      <h2 class="process-title">Process</h2>
-      <p class="process-lede">My process moves from raw data to a working, deployed system — with clarity at each stage, using AI to move faster without losing rigor.</p>
-      <div class="process-img"><img src="ChatGPT Image Jul 20, 2026, 01_24_42 PM.png" alt="Process preview"></div>
-    </div>
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-panel glass reveal-up">
+      <div class="contact-info">
+        <span class="eyebrow">Contact</span>
+        <h2>Let's build something <span class="grad-text">intelligent</span></h2>
+        <p>Open to remote roles, internships and freelance AI/ML collaborations.</p>
 
-    <div class="process-right">
-      <div class="process-item reveal-up">
-        <div class="pnum">01</div>
-        <div class="process-body">
-          <h3>Data &amp; Features</h3>
-          <p>Collect from structured and unstructured sources, clean, validate, and engineer features that improve generalization.</p>
-        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-ic">✉️</span>
+            <a href="mailto:alihaimran676@gmail.com">alihaimran676@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-ic">💼</span>
+            <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">linkedin.com/in/aliha-imran</a>
+          </li>
+          <li>
+            <span class="contact-ic">💻</span>
+            <a href="https://github.com/devaspir" target="_blank" rel="noopener">github.com/devaspir</a>
+          </li>
+          <li>
+            <span class="contact-ic">📍</span>
+            <span>Lahore, Pakistan</span>
+          </li>
+        </ul>
       </div>
-      <div class="process-item reveal-up" style="transition-delay:0.1s;">
-        <div class="pnum">02</div>
-        <div class="process-body">
-          <h3>Model &amp; Evaluate</h3>
-          <p>Experiment across ML and deep learning architectures, tune hyperparameters, benchmark against precision, recall, and F1.</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required placeholder=" " />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required placeholder=" " />
+            <label for="email">Your Email</label>
+          </div>
         </div>
-      </div>
-      <div class="process-item reveal-up" style="transition-delay:0.2s;">
-        <div class="pnum">03</div>
-        <div class="process-body">
-          <h3>Ship &amp; Integrate</h3>
-          <p>Take models from validated prototype to production — integrated into live systems, documented and reproducible.</p>
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" placeholder=" " />
+          <label for="subject">Subject</label>
         </div>
-      </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+          <label for="message">Message</label>
+        </div>
+        <button type="submit" class="btn btn-primary magnetic full-width">
+          <span id="submitLabel">Send Message</span>
+        </button>
+        <p class="form-note" id="formNote"></p>
+      </form>
     </div>
   </div>
 </section>
 
-<footer id="contact">
-  <div class="wrap foot-grid">
-    <div class="foot-left reveal-up">
-      <h2>Let's talk!</h2>
-      <a href="mailto:alihaimran676@gmail.com" class="btn btn-solid btn-light">Contact Me</a>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#hero" class="nav-logo">Aliha<span class="dot">.</span>ai</a>
+    <p class="footer-tagline">Building Intelligent AI Solutions with Python, LLMs, RAG &amp; Agentic AI.</p>
+
+    <div class="footer-socials">
+      <a href="https://github.com/devaspir" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+      <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      <a href="mailto:alihaimran676@gmail.com" aria-label="Email">Email</a>
     </div>
 
-    <div class="foot-right reveal-up">
-      <p class="foot-intro">An AI &amp; ML Developer transforming data pipelines into working, deployed products.</p>
-
-      <div class="foot-block">
-        <h4>Email</h4>
-        <a href="mailto:alihaimran676@gmail.com">alihaimran676@gmail.com</a>
-      </div>
-
-      <div class="foot-block">
-        <h4>GitHub</h4>
-        <a href="https://github.com/devaspir" target="_blank">devaspir</a>
-      </div>
-    </div>
+    <p class="footer-copy">© <span id="footerYear"></span> Aliha Imran. Crafted with Python-brained precision.</p>
   </div>
-
-  <div class="wrap foot-bottom">
-    <div>Portfolio 2026 © Aliha Imran</div>
-    <div class="foot-social">
-      <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank">LinkedIn</a>
-      <a href="https://github.com/devaspir" target="_blank">GitHub</a>
-    </div>
-  </div>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 </footer>
 
 <script src="script.js"></script>
