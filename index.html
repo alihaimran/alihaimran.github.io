@@ -1,551 +1,1892 @@
+<!-- =========================================================
+PART 1 - index.html
+HEAD + CUSTOM CURSOR + NAVBAR + HERO
+========================================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aliha Imran — AI/ML Engineer &amp; Generative AI Developer</title>
-<meta name="description" content="Aliha Imran — AI/ML Engineer building intelligent systems with Python, LLMs, RAG &amp; Agentic AI." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css" />
+    <!-- SEO -->
+    <title>Aliha Imran | AI/ML Engineer | Generative AI Developer</title>
+
+    <meta name="description"
+        content="Portfolio of Aliha Imran, AI/ML Engineer specializing in Python, Generative AI, Large Language Models, Retrieval-Augmented Generation, Agentic AI, Machine Learning, and intelligent software solutions.">
+
+    <meta name="keywords"
+        content="Aliha Imran, AI Engineer, Machine Learning, Python Developer, LLM, RAG, LangChain, FastAPI, AI Portfolio">
+
+    <meta name="author" content="Aliha Imran">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Aliha Imran | AI Engineer">
+    <meta property="og:description"
+        content="Building intelligent AI products with Python, LLMs, RAG & Agentic AI.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<!-- Custom cursor -->
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+    <!-- =====================================================
+    CUSTOM CURSOR
+    ====================================================== -->
 
-<!-- Scroll progress bar -->
-<div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
 
-<!-- ============ NAVBAR ============ -->
-<header class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Aliha<span class="logo-accent">Imran</span></a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-    <a href="#contact" class="btn btn-small btn-primary magnetic">Let's Talk</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+    <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <div class="hero-bg">
-    <canvas id="neuralCanvas"></canvas>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="grid-overlay"></div>
-  </div>
+    <!-- =====================================================
+    SCROLL PROGRESS
+    ====================================================== -->
 
-  <div class="floating-tags" id="floatingTags">
-    <span class="tag tag-1">Python</span>
-    <span class="tag tag-2">LLM</span>
-    <span class="tag tag-3">RAG</span>
-    <span class="tag tag-4">Agentic AI</span>
-    <span class="tag tag-5">Neural Network</span>
-    <span class="tag tag-6">Vector Database</span>
-    <span class="tag tag-7">Prompt Engineering</span>
-  </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-  <div class="container hero-inner">
-    <div class="hero-copy reveal-up">
-      <span class="eyebrow">AI/ML Engineer · Generative AI Developer</span>
-      <h1 class="hero-title">
-        Building <span class="grad-text">Intelligent AI</span><br/>
-        Solutions with Python &amp; LLMs
-      </h1>
-      <p class="hero-sub">
-        I design and ship real-world AI systems — from Retrieval-Augmented Generation
-        pipelines to autonomous agentic workflows — with clean architecture and thoughtful engineering.
-      </p>
-      <div class="hero-actions">
-        <a href="#" class="btn btn-primary magnetic" id="resumeBtn">
-          <span>Download Resume</span>
-        </a>
-        <a href="#projects" class="btn btn-ghost magnetic">
-          <span>View Projects</span>
-        </a>
-      </div>
+    <!-- =====================================================
+    HEADER
+    ====================================================== -->
 
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num" data-count="12">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">AI Projects Shipped</span>
+    <header class="header" id="header">
+
+        <div class="container nav-container">
+
+            <!-- Logo -->
+
+            <a href="#hero" class="logo">
+
+                Aliha<span>Imran</span>
+
+            </a>
+
+            <!-- Navigation -->
+
+            <nav class="navigation" id="navigation">
+
+                <ul>
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#skills">Skills</a></li>
+
+                    <li><a href="#projects">Projects</a></li>
+
+                    <li><a href="#experience">Experience</a></li>
+
+                    <li><a href="#services">Services</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+            <!-- CTA -->
+
+            <a href="#contact" class="btn btn-primary">
+
+                Let's Talk
+
+            </a>
+
+            <!-- Mobile Toggle -->
+
+            <button class="menu-toggle" id="menuToggle">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </button>
+
         </div>
-        <div class="stat">
-          <span class="stat-num" data-count="6">0</span>
-          <span class="stat-label">Core AI Stacks</span>
+
+    </header>
+
+    <!-- =====================================================
+    HERO SECTION
+    ====================================================== -->
+
+    <section class="hero" id="hero">
+
+        <!-- Background -->
+
+        <div class="hero-background">
+
+            <canvas id="neuralCanvas"></canvas>
+
+            <div class="blob blob-one"></div>
+
+            <div class="blob blob-two"></div>
+
+            <div class="blob blob-three"></div>
+
+            <div class="grid-overlay"></div>
+
         </div>
-        <div class="stat">
-          <span class="stat-num" data-count="100">0</span><span class="stat-plus">%</span>
-          <span class="stat-label">Python-Powered</span>
+
+        <!-- Floating Tech Tags -->
+
+        <div class="floating-tech">
+
+            <span>Python</span>
+
+            <span>Machine Learning</span>
+
+            <span>Generative AI</span>
+
+            <span>LLM</span>
+
+            <span>RAG</span>
+
+            <span>LangChain</span>
+
+            <span>FastAPI</span>
+
+            <span>Agentic AI</span>
+
         </div>
-      </div>
-    </div>
 
-    <div class="hero-visual reveal-up" style="--delay:.15s">
-      <div class="photo-frame">
-        <div class="photo-glow"></div>
-        <div class="photo-placeholder">
-          <svg viewBox="0 0 200 200" class="avatar-svg">
-            <circle cx="100" cy="78" r="38" fill="url(#avatarGrad)"/>
-            <path d="M40 190 C40 130 70 108 100 108 C130 108 160 130 160 190 Z" fill="url(#avatarGrad)"/>
-            <defs>
-              <linearGradient id="avatarGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#5B6EF5"/>
-                <stop offset="100%" stop-color="#9B6BF3"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="terminal-chip">
-          <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-          <span class="terminal-text" id="typedTerminal"></span><span class="cursor-blink">|</span>
-        </div>
-        <div class="orbit-icon orbit-1">🐍</div>
-        <div class="orbit-icon orbit-2">🧠</div>
-        <div class="orbit-icon orbit-3">⚡</div>
-      </div>
-    </div>
-  </div>
+        <!-- Container -->
 
-  <a href="#about" class="scroll-cue">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </a>
-</section>
+        <div class="container hero-wrapper">
 
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="section-head reveal-up">
-      <span class="eyebrow">About Me</span>
-      <h2>Turning research into <span class="grad-text">production-ready AI</span></h2>
-    </div>
+            <!-- Left -->
 
-    <div class="about-grid">
-      <div class="about-text reveal-up">
-        <p class="lead">
-          I'm an AI/ML Developer passionate about building intelligent applications
-          using Python, Machine Learning, Generative AI, LLMs, RAG, and Agentic AI.
-        </p>
-        <p>
-          I enjoy creating scalable AI systems, automation tools, and real-world AI
-          solutions with clean architecture and modern design — bridging the gap
-          between cutting-edge research and products people actually use.
-        </p>
+            <div class="hero-content reveal-up">
 
-        <div class="about-facts">
-          <div class="fact-card glass">
-            <span class="fact-icon">🎓</span>
-            <div>
-              <h4>Education</h4>
-              <p>BS Computer Science, Virtual University of Pakistan</p>
+                <span class="hero-label">
+
+                    AI/ML Engineer • Generative AI Developer
+
+                </span>
+
+                <h1>
+
+                    Building
+
+                    <span class="gradient">
+
+                        Intelligent AI Solutions
+
+                    </span>
+
+                    with Python & LLMs
+
+                </h1>
+
+                <p>
+
+                    I design and build scalable AI systems using Python,
+                    Large Language Models, Retrieval-Augmented Generation,
+                    Machine Learning, Deep Learning and Agentic AI.
+
+                    My focus is creating production-ready applications
+                    that solve real-world business problems.
+
+                </p>
+
+                <!-- Buttons -->
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="btn btn-primary" id="resumeBtn">
+
+                        Download Resume
+
+                    </a>
+
+                    <a href="#projects" class="btn btn-outline">
+
+                        View Projects
+
+                    </a>
+
+                </div>
+
+                <!-- Stats -->
+
+                <div class="hero-stats">
+
+                    <div class="stat-box">
+
+                        <h2>
+
+                            <span data-count="12">
+
+                                0
+
+                            </span>+
+
+                        </h2>
+
+                        <p>
+
+                            AI Projects
+
+                        </p>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h2>
+
+                            <span data-count="6">
+
+                                0
+
+                            </span>
+
+                        </h2>
+
+                        <p>
+
+                            AI Technologies
+
+                        </p>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h2>
+
+                            <span data-count="100">
+
+                                0
+
+                            </span>%
+
+                        </h2>
+
+                        <p>
+
+                            Python Focused
+
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
-          </div>
-          <div class="fact-card glass">
-            <span class="fact-icon">📍</span>
-            <div>
-              <h4>Based in</h4>
-              <p>Lahore, Pakistan · Open to Remote</p>
+
+            <!-- Right -->
+
+            <div class="hero-image reveal-up">
+
+                <div class="image-wrapper">
+
+                    <div class="image-glow"></div>
+
+                    <img src="images/profile.png"
+                        alt="Aliha Imran"
+                        class="profile-image">
+
+                    <!-- Terminal -->
+
+                    <div class="terminal-card">
+
+                        <div class="terminal-header">
+
+                            <span class="red"></span>
+
+                            <span class="yellow"></span>
+
+                            <span class="green"></span>
+
+                        </div>
+
+                        <div class="terminal-body">
+
+                            <span id="typedTerminal"></span>
+
+                            <span class="typing">|</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Floating Icons -->
+
+                    <div class="floating-icon python">
+
+                        🐍
+
+                    </div>
+
+                    <div class="floating-icon ai">
+
+                        🧠
+
+                    </div>
+
+                    <div class="floating-icon lightning">
+
+                        ⚡
+
+                    </div>
+
+                </div>
+
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="about-panel reveal-up" style="--delay:.1s">
-        <div class="glass panel-card">
-          <h4>What I bring</h4>
-          <ul class="check-list">
-            <li>End-to-end RAG &amp; LLM pipelines</li>
-            <li>Multi-agent, tool-using AI systems</li>
-            <li>Clean, scalable Python architecture</li>
-            <li>Fast prototyping with FastAPI &amp; Streamlit</li>
-          </ul>
         </div>
-      </div>
+
+        <!-- Scroll Down -->
+
+        <a href="#about" class="scroll-indicator">
+
+            <span>
+
+                Scroll Down
+
+            </span>
+
+            <div class="line"></div>
+
+        </a>
+
+    </section>
+
+<!-- ========= PART 2 STARTS FROM HERE ========= -->
+
+  <!-- ==========================================================
+PART 2
+ABOUT + SKILLS + TECH STACK
+========================================================== -->
+
+<!-- ===========================
+ABOUT
+=========================== -->
+
+<section class="about section" id="about">
+
+    <div class="container">
+
+        <div class="section-title reveal-up">
+
+            <span class="section-tag">
+
+                About Me
+
+            </span>
+
+            <h2>
+
+                Turning AI Ideas Into
+
+                <span class="gradient">
+
+                    Production Solutions
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <div class="about-grid">
+
+            <!-- LEFT -->
+
+            <div class="about-content reveal-up">
+
+                <p class="about-intro">
+
+                    I'm an AI & Machine Learning Engineer passionate about
+                    developing production-ready AI applications using Python,
+                    Large Language Models, Retrieval-Augmented Generation,
+                    Machine Learning and Agentic AI.
+
+                </p>
+
+                <p>
+
+                    I enjoy designing scalable AI architectures,
+                    intelligent assistants, automation systems,
+                    AI-powered web applications and modern software
+                    that solve real-world business problems.
+
+                </p>
+
+                <p>
+
+                    My primary focus is creating clean,
+                    maintainable and scalable AI solutions
+                    that combine excellent engineering
+                    with modern user experiences.
+
+                </p>
+
+                <div class="about-cards">
+
+                    <div class="about-card glass">
+
+                        <div class="about-icon">
+
+                            🎓
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Education
+
+                            </h4>
+
+                            <p>
+
+                                BS Computer Science
+
+                            </p>
+
+                            <small>
+
+                                Virtual University of Pakistan
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="about-card glass">
+
+                        <div class="about-icon">
+
+                            📍
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Location
+
+                            </h4>
+
+                            <p>
+
+                                Lahore, Pakistan
+
+                            </p>
+
+                            <small>
+
+                                Open to Remote Work
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="about-right reveal-up">
+
+                <div class="glass about-box">
+
+                    <h3>
+
+                        What I Do
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+
+                            ✔ End-to-End AI Application Development
+
+                        </li>
+
+                        <li>
+
+                            ✔ Large Language Model Integration
+
+                        </li>
+
+                        <li>
+
+                            ✔ Retrieval-Augmented Generation (RAG)
+
+                        </li>
+
+                        <li>
+
+                            ✔ Multi-Agent AI Systems
+
+                        </li>
+
+                        <li>
+
+                            ✔ FastAPI Backend Development
+
+                        </li>
+
+                        <li>
+
+                            ✔ Streamlit AI Dashboards
+
+                        </li>
+
+                        <li>
+
+                            ✔ AI Workflow Automation
+
+                        </li>
+
+                        <li>
+
+                            ✔ Production Deployment
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
 
-<!-- ============ SKILLS ============ -->
-<section class="skills" id="skills">
-  <div class="container">
-    <div class="section-head reveal-up">
-      <span class="eyebrow">Skills</span>
-      <h2>Core <span class="grad-text">Competencies</span></h2>
+<!-- ===========================
+SKILLS
+=========================== -->
+
+<section class="skills section" id="skills">
+
+    <div class="container">
+
+        <div class="section-title reveal-up">
+
+            <span class="section-tag">
+
+                Skills
+
+            </span>
+
+            <h2>
+
+                Core
+
+                <span class="gradient">
+
+                    Technical Skills
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <!-- LEFT -->
+
+            <div class="skills-left">
+
+                <div class="skill" data-progress="95">
+
+                    <div class="skill-info">
+
+                        <span>Python</span>
+
+                        <span>95%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="skill" data-progress="90">
+
+                    <div class="skill-info">
+
+                        <span>Large Language Models</span>
+
+                        <span>90%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="skill" data-progress="88">
+
+                    <div class="skill-info">
+
+                        <span>RAG Systems</span>
+
+                        <span>88%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="skill" data-progress="86">
+
+                    <div class="skill-info">
+
+                        <span>Agentic AI</span>
+
+                        <span>86%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="skill" data-progress="84">
+
+                    <div class="skill-info">
+
+                        <span>Machine Learning</span>
+
+                        <span>84%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="skill" data-progress="80">
+
+                    <div class="skill-info">
+
+                        <span>Deep Learning</span>
+
+                        <span>80%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="skills-right">
+
+                <div class="skill-circle glass">
+
+                    <div class="circle-value">
+
+                        92%
+
+                    </div>
+
+                    <p>
+
+                        Prompt Engineering
+
+                    </p>
+
+                </div>
+
+                <div class="skill-circle glass">
+
+                    <div class="circle-value">
+
+                        88%
+
+                    </div>
+
+                    <p>
+
+                        LangChain
+
+                    </p>
+
+                </div>
+
+                <div class="skill-circle glass">
+
+                    <div class="circle-value">
+
+                        86%
+
+                    </div>
+
+                    <p>
+
+                        Vector Database
+
+                    </p>
+
+                </div>
+
+                <div class="skill-circle glass">
+
+                    <div class="circle-value">
+
+                        90%
+
+                    </div>
+
+                    <p>
+
+                        FastAPI
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="skills-grid">
-      <div class="skill-bars reveal-up">
-        <div class="skill-bar-item" data-level="95">
-          <div class="skill-bar-top"><span>Python</span><span class="skill-pct">95%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-        </div>
-        <div class="skill-bar-item" data-level="90">
-          <div class="skill-bar-top"><span>Large Language Models</span><span class="skill-pct">90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-        </div>
-        <div class="skill-bar-item" data-level="88">
-          <div class="skill-bar-top"><span>RAG Systems</span><span class="skill-pct">88%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-        </div>
-        <div class="skill-bar-item" data-level="85">
-          <div class="skill-bar-top"><span>Agentic AI</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-        </div>
-        <div class="skill-bar-item" data-level="80">
-          <div class="skill-bar-top"><span>Machine Learning</span><span class="skill-pct">80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-        </div>
-        <div class="skill-bar-item" data-level="75">
-          <div class="skill-bar-top"><span>Deep Learning</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-rings reveal-up" style="--delay:.1s">
-        <div class="ring-card glass">
-          <svg class="ring-svg" viewBox="0 0 120 120">
-            <circle class="ring-bg" cx="60" cy="60" r="52"/>
-            <circle class="ring-fill" cx="60" cy="60" r="52" data-pct="92"/>
-          </svg>
-          <div class="ring-label"><strong>92%</strong><span>Prompt Engineering</span></div>
-        </div>
-        <div class="ring-card glass">
-          <svg class="ring-svg" viewBox="0 0 120 120">
-            <circle class="ring-bg" cx="60" cy="60" r="52"/>
-            <circle class="ring-fill" cx="60" cy="60" r="52" data-pct="87"/>
-          </svg>
-          <div class="ring-label"><strong>87%</strong><span>Vector Databases</span></div>
-        </div>
-        <div class="ring-card glass">
-          <svg class="ring-svg" viewBox="0 0 120 120">
-            <circle class="ring-bg" cx="60" cy="60" r="52"/>
-            <circle class="ring-fill" cx="60" cy="60" r="52" data-pct="83"/>
-          </svg>
-          <div class="ring-label"><strong>83%</strong><span>LangChain</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- ============ TECH STACK ============ -->
-<section class="tech-stack" id="tech-stack">
-  <div class="container">
-    <div class="section-head reveal-up">
-      <span class="eyebrow">Tech Stack</span>
-      <h2>Tools I work <span class="grad-text">with daily</span></h2>
-    </div>
+<!-- ===========================
+TECH STACK
+=========================== -->
 
-    <div class="stack-marquee-wrap reveal-up">
-      <div class="stack-marquee">
-        <div class="stack-track" id="stackTrack">
-          <!-- duplicated by JS for infinite loop -->
+<section class="tech-stack section" id="tech-stack">
+
+    <div class="container">
+
+        <div class="section-title reveal-up">
+
+            <span class="section-tag">
+
+                Technology Stack
+
+            </span>
+
+            <h2>
+
+                Tools I Use
+
+                <span class="gradient">
+
+                    Every Day
+
+                </span>
+
+            </h2>
+
         </div>
-      </div>
+
+        <div class="tech-grid">
+
+            <div class="tech-card glass">Python</div>
+
+            <div class="tech-card glass">FastAPI</div>
+
+            <div class="tech-card glass">LangChain</div>
+
+            <div class="tech-card glass">LangGraph</div>
+
+            <div class="tech-card glass">OpenAI API</div>
+
+            <div class="tech-card glass">Groq API</div>
+
+            <div class="tech-card glass">Llama 3</div>
+
+            <div class="tech-card glass">Gemini API</div>
+
+            <div class="tech-card glass">TensorFlow</div>
+
+            <div class="tech-card glass">Scikit-Learn</div>
+
+            <div class="tech-card glass">Pandas</div>
+
+            <div class="tech-card glass">NumPy</div>
+
+            <div class="tech-card glass">ChromaDB</div>
+
+            <div class="tech-card glass">FAISS</div>
+
+            <div class="tech-card glass">Pinecone</div>
+
+            <div class="tech-card glass">Git</div>
+
+            <div class="tech-card glass">GitHub</div>
+
+            <div class="tech-card glass">Docker</div>
+
+            <div class="tech-card glass">Streamlit</div>
+
+            <div class="tech-card glass">HTML5</div>
+
+            <div class="tech-card glass">CSS3</div>
+
+            <div class="tech-card glass">JavaScript</div>
+
+        </div>
+
     </div>
 
-    <div class="stack-grid">
-      <div class="stack-chip glass">Python</div>
-      <div class="stack-chip glass">LangChain</div>
-      <div class="stack-chip glass">FastAPI</div>
-      <div class="stack-chip glass">Streamlit</div>
-      <div class="stack-chip glass">ChromaDB</div>
-      <div class="stack-chip glass">Scikit-learn</div>
-      <div class="stack-chip glass">Git &amp; GitHub</div>
-      <div class="stack-chip glass">HTML/CSS/JS</div>
-    </div>
-  </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
-<section class="projects" id="projects">
-  <div class="container">
-    <div class="section-head reveal-up">
-      <span class="eyebrow">Selected Work</span>
-      <h2>Projects that <span class="grad-text">solve real problems</span></h2>
+<!-- ===========================
+PART 3 STARTS HERE
+=========================== -->
+
+
+  <!-- ==========================================================
+PART 3
+PROJECTS + EXPERIENCE + EDUCATION + SERVICES
+========================================================== -->
+
+<!-- ===========================
+PROJECTS
+=========================== -->
+
+<section class="projects section" id="projects">
+
+    <div class="container">
+
+        <div class="section-title reveal-up">
+
+            <span class="section-tag">
+
+                Featured Projects
+
+            </span>
+
+            <h2>
+
+                Building
+
+                <span class="gradient">
+
+                    Intelligent Solutions
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card glass reveal-up">
+
+                <div class="project-image">
+
+                    <img src="images/project-1.jpg"
+                        alt="Orin AI Assistant">
+
+                    <div class="project-overlay">
+
+                        <a href="#" class="project-btn">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="https://github.com/devaspir"
+                            target="_blank"
+                            class="project-btn">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+
+                        Orin AI Assistant
+
+                    </h3>
+
+                    <p>
+
+                        Production-ready RAG chatbot powered by
+                        Llama 3.3 70B, FastAPI, ChromaDB,
+                        LangChain and Groq API with
+                        long-term memory support.
+
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Python</span>
+
+                        <span>FastAPI</span>
+
+                        <span>RAG</span>
+
+                        <span>LLM</span>
+
+                        <span>ChromaDB</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card glass reveal-up">
+
+                <div class="project-image">
+
+                    <img src="images/project-2.jpg"
+                        alt="Akademus AI">
+
+                    <div class="project-overlay">
+
+                        <a href="#" class="project-btn">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="https://github.com/devaspir"
+                            target="_blank"
+                            class="project-btn">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+
+                        Akademus.ai
+
+                    </h3>
+
+                    <p>
+
+                        AI-powered educational platform
+                        integrating Generative AI,
+                        backend APIs and intelligent
+                        automation workflows.
+
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Python</span>
+
+                        <span>Generative AI</span>
+
+                        <span>FastAPI</span>
+
+                        <span>LLM</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card glass reveal-up">
+
+                <div class="project-image">
+
+                    <img src="images/project-3.jpg"
+                        alt="PDF Chatbot">
+
+                    <div class="project-overlay">
+
+                        <a href="#" class="project-btn">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="https://github.com/devaspir"
+                            target="_blank"
+                            class="project-btn">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+
+                        PDF AI Chatbot
+
+                    </h3>
+
+                    <p>
+
+                        Intelligent chatbot capable of
+                        answering questions directly from
+                        uploaded PDF documents using
+                        Retrieval-Augmented Generation.
+
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Python</span>
+
+                        <span>LangChain</span>
+
+                        <span>RAG</span>
+
+                        <span>FAISS</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </div>
 
-    <div class="project-grid project-grid-3">
-
-      <article class="project-card glass reveal-up">
-        <div class="project-media">
-          <div class="media-placeholder ph-1"></div>
-          <div class="project-links">
-            <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub repository">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            </a>
-            <a href="#" class="icon-btn" aria-label="Live demo">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="project-body">
-          <h3>Orin</h3>
-          <p>A RAG-based AI chatbot with a FastAPI backend, Groq-hosted Llama 3.3 70B, and ChromaDB vector storage — with a custom long-term memory system and streaming responses over SSE.</p>
-          <div class="badges">
-            <span>Python</span><span>FastAPI</span><span>RAG</span><span>ChromaDB</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card glass reveal-up" style="--delay:.05s">
-        <div class="project-media">
-          <div class="media-placeholder ph-2"></div>
-          <div class="project-links">
-            <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub repository">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            </a>
-            <a href="#" class="icon-btn" aria-label="Live demo">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="project-body">
-          <h3>Akademus.ai</h3>
-          <p>An AI-powered platform built with Python, blending clean backend architecture with an intelligent, user-facing experience.</p>
-          <div class="badges">
-            <span>Python</span><span>Generative AI</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card glass reveal-up" style="--delay:.1s">
-        <div class="project-media">
-          <div class="media-placeholder ph-3"></div>
-          <div class="project-links">
-            <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub repository">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            </a>
-            <a href="#" class="icon-btn" aria-label="Live demo">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="project-body">
-          <h3>PDF Chatbot</h3>
-          <p>A document-aware chatbot that answers questions directly from uploaded PDFs using retrieval-augmented generation.</p>
-          <div class="badges">
-            <span>Python</span><span>RAG</span><span>PDF Parsing</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
 </section>
 
-<!-- ============ EXPERIENCE / TIMELINE ============ -->
-<section class="timeline-section" id="experience">
-  <div class="container">
-    <div class="section-head reveal-up">
-      <span class="eyebrow">Journey</span>
-      <h2>Experience &amp; <span class="grad-text">Timeline</span></h2>
+<!-- ===========================
+EXPERIENCE
+=========================== -->
+
+<section class="experience section" id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                Experience
+
+            </span>
+
+            <h2>
+
+                My
+
+                <span class="gradient">
+
+                    Journey
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card glass">
+
+                    <span class="timeline-date">
+
+                        Present
+
+                    </span>
+
+                    <h3>
+
+                        AI / ML Developer
+
+                    </h3>
+
+                    <p>
+
+                        Building AI products,
+                        intelligent assistants,
+                        automation systems,
+                        RAG pipelines,
+                        LLM integrations,
+                        FastAPI applications
+                        and scalable AI solutions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card glass">
+
+                    <span class="timeline-date">
+
+                        Education
+
+                    </span>
+
+                    <h3>
+
+                        BS Computer Science
+
+                    </h3>
+
+                    <p>
+
+                        Virtual University of Pakistan
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card glass">
+
+                    <span class="timeline-date">
+
+                        Current Focus
+
+                    </span>
+
+                    <h3>
+
+                        Agentic AI
+
+                    </h3>
+
+                    <p>
+
+                        Building autonomous AI agents,
+                        workflow orchestration,
+                        LangGraph,
+                        multi-agent systems,
+                        MCP servers
+                        and production AI applications.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="timeline">
-      <div class="timeline-line"></div>
-
-      <div class="timeline-item reveal-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card glass">
-          <span class="timeline-tag">Current</span>
-          <h3>AI/ML Developer</h3>
-          <p>Building AI applications, automation systems, intelligent assistants and modern AI workflows.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal-up" style="--delay:.1s">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card glass">
-          <span class="timeline-tag">Education</span>
-          <h3>BS Computer Science</h3>
-          <p>Virtual University of Pakistan — foundation in algorithms, systems and software engineering.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal-up" style="--delay:.2s">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card glass">
-          <span class="timeline-tag">Focus</span>
-          <h3>Deepening into Agentic AI</h3>
-          <p>Continuously exploring multi-agent orchestration, RAG optimization and LLM tooling.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- ============ EDUCATION ============ -->
-<section class="education" id="education">
-  <div class="container">
-    <div class="edu-card glass reveal-up">
-      <div class="edu-icon">🎓</div>
-      <div>
-        <span class="eyebrow">Education</span>
-        <h3>BS Computer Science</h3>
-        <p>Virtual University of Pakistan</p>
-      </div>
+<!-- ===========================
+EDUCATION
+=========================== -->
+
+<section class="education section">
+
+    <div class="container">
+
+        <div class="education-card glass">
+
+            <div class="education-icon">
+
+                🎓
+
+            </div>
+
+            <div>
+
+                <span>
+
+                    Education
+
+                </span>
+
+                <h2>
+
+                    Bachelor of Science
+                    in Computer Science
+
+                </h2>
+
+                <p>
+
+                    Virtual University of Pakistan
+
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-head reveal-up">
-      <span class="eyebrow">Services</span>
-      <h2>How I can <span class="grad-text">help you</span></h2>
+<!-- ===========================
+SERVICES
+=========================== -->
+
+<section class="services section" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                Services
+
+            </span>
+
+            <h2>
+
+                What I
+
+                <span class="gradient">
+
+                    Build
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card glass">
+
+                <div class="service-icon">
+
+                    🤖
+
+                </div>
+
+                <h3>
+
+                    AI Chatbots
+
+                </h3>
+
+                <p>
+
+                    Intelligent conversational
+                    assistants powered by
+                    modern Large Language Models.
+
+                </p>
+
+            </div>
+
+            <div class="service-card glass">
+
+                <div class="service-icon">
+
+                    📚
+
+                </div>
+
+                <h3>
+
+                    RAG Systems
+
+                </h3>
+
+                <p>
+
+                    Enterprise Retrieval-Augmented
+                    Generation solutions using
+                    vector databases.
+
+                </p>
+
+            </div>
+
+            <div class="service-card glass">
+
+                <div class="service-icon">
+
+                    🧠
+
+                </div>
+
+                <h3>
+
+                    Agentic AI
+
+                </h3>
+
+                <p>
+
+                    Autonomous AI agents capable
+                    of planning,
+                    reasoning
+                    and executing tasks.
+
+                </p>
+
+            </div>
+
+            <div class="service-card glass">
+
+                <div class="service-icon">
+
+                    ⚙️
+
+                </div>
+
+                <h3>
+
+                    AI Automation
+
+                </h3>
+
+                <p>
+
+                    Workflow automation,
+                    document processing,
+                    business intelligence
+                    and AI integrations.
+
+                </p>
+
+            </div>
+
+            <div class="service-card glass">
+
+                <div class="service-icon">
+
+                    📊
+
+                </div>
+
+                <h3>
+
+                    Machine Learning
+
+                </h3>
+
+                <p>
+
+                    End-to-end machine learning
+                    pipelines from
+                    preprocessing
+                    to deployment.
+
+                </p>
+
+            </div>
+
+            <div class="service-card glass">
+
+                <div class="service-icon">
+
+                    🚀
+
+                </div>
+
+                <h3>
+
+                    FastAPI Backend
+
+                </h3>
+
+                <p>
+
+                    High-performance Python APIs
+                    for AI-powered
+                    production systems.
+
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="services-grid">
-      <div class="service-card glass reveal-up">
-        <div class="service-icon">🤖</div>
-        <h3>LLM &amp; RAG Systems</h3>
-        <p>Design and deployment of retrieval-augmented generation pipelines tailored to your data.</p>
-      </div>
-      <div class="service-card glass reveal-up" style="--delay:.05s">
-        <div class="service-icon">🧩</div>
-        <h3>Agentic AI Workflows</h3>
-        <p>Multi-agent systems that plan, reason, and execute tasks autonomously.</p>
-      </div>
-      <div class="service-card glass reveal-up" style="--delay:.1s">
-        <div class="service-icon">📊</div>
-        <h3>ML Modeling</h3>
-        <p>End-to-end machine learning pipelines — from data to deployed prediction models.</p>
-      </div>
-      <div class="service-card glass reveal-up" style="--delay:.15s">
-        <div class="service-icon">⚙️</div>
-        <h3>AI Automation</h3>
-        <p>Automation tools and intelligent assistants that streamline repetitive workflows.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
-<section class="testimonials" id="testimonials">
-  <div class="container">
-    <div class="section-head reveal-up">
-      <span class="eyebrow">Testimonials</span>
-      <h2>What people <span class="grad-text">say</span></h2>
+<!-- ==========================================================
+PART 4 STARTS HERE
+========================================================== -->
+
+  <!-- ==========================================================
+PART 4
+TESTIMONIALS + CONTACT + FOOTER + SCRIPTS
+========================================================== -->
+
+<!-- ===========================
+TESTIMONIALS
+=========================== -->
+
+<section class="testimonials section" id="testimonials">
+
+    <div class="container">
+
+        <div class="section-title reveal-up">
+
+            <span class="section-tag">
+
+                Testimonials
+
+            </span>
+
+            <h2>
+
+                What Clients
+
+                <span class="gradient">
+
+                    Say
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <div class="testimonials-grid">
+
+            <article class="testimonial-card glass">
+
+                <p>
+
+                    "Aliha delivered an intelligent RAG system
+                    that exceeded our expectations.
+                    Clean architecture, excellent communication
+                    and outstanding implementation."
+
+                </p>
+
+                <div class="testimonial-author">
+
+                    <div class="avatar">
+
+                        SM
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Sarah Malik
+
+                        </h4>
+
+                        <span>
+
+                            Product Manager
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="testimonial-card glass">
+
+                <p>
+
+                    "Professional AI Engineer with excellent
+                    knowledge of LLMs, FastAPI,
+                    LangChain and modern AI systems."
+
+                </p>
+
+                <div class="testimonial-author">
+
+                    <div class="avatar">
+
+                        RK
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Rehan Khan
+
+                        </h4>
+
+                        <span>
+
+                            Startup Founder
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="testimonial-card glass">
+
+                <p>
+
+                    "Highly recommended for
+                    AI automation,
+                    Machine Learning
+                    and production-ready applications."
+
+                </p>
+
+                <div class="testimonial-author">
+
+                    <div class="avatar">
+
+                        HJ
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Hina Javaid
+
+                        </h4>
+
+                        <span>
+
+                            Engineering Lead
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </div>
 
-    <div class="testimonial-grid">
-      <div class="testimonial-card glass reveal-up">
-        <p>"Aliha turned a vague idea into a working RAG assistant in days. Clear communication throughout."</p>
-        <div class="testimonial-author">
-          <div class="avatar-dot">SM</div>
-          <div><strong>Sara M.</strong><span>Product Manager</span></div>
-        </div>
-      </div>
-      <div class="testimonial-card glass reveal-up" style="--delay:.05s">
-        <p>"Genuinely impressive grasp of agentic systems. The workflow she built saved us hours every week."</p>
-        <div class="testimonial-author">
-          <div class="avatar-dot">RK</div>
-          <div><strong>Rehan K.</strong><span>Startup Founder</span></div>
-        </div>
-      </div>
-      <div class="testimonial-card glass reveal-up" style="--delay:.1s">
-        <p>"Clean code, clear documentation, and a genuine passion for AI. Would work with her again."</p>
-        <div class="testimonial-author">
-          <div class="avatar-dot">HJ</div>
-          <div><strong>Hina J.</strong><span>Engineering Lead</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-panel glass reveal-up">
-      <div class="contact-info">
-        <span class="eyebrow">Contact</span>
-        <h2>Let's build something <span class="grad-text">intelligent</span></h2>
-        <p>Open to remote roles, internships and freelance AI/ML collaborations.</p>
+<!-- ===========================
+CONTACT
+=========================== -->
 
-        <ul class="contact-list">
-          <li>
-            <span class="contact-ic">✉️</span>
-            <a href="mailto:alihaimran676@gmail.com">alihaimran676@gmail.com</a>
-          </li>
-          <li>
-            <span class="contact-ic">💼</span>
-            <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">linkedin.com/in/aliha-imran</a>
-          </li>
-          <li>
-            <span class="contact-ic">💻</span>
-            <a href="https://github.com/devaspir" target="_blank" rel="noopener">github.com/devaspir</a>
-          </li>
-          <li>
-            <span class="contact-ic">📍</span>
-            <span>Lahore, Pakistan</span>
-          </li>
-        </ul>
-      </div>
+<section class="contact section" id="contact">
 
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <div class="form-group">
-            <input type="text" id="name" name="name" required placeholder=" " />
-            <label for="name">Your Name</label>
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" required placeholder=" " />
-            <label for="email">Your Email</label>
-          </div>
+    <div class="container">
+
+        <div class="contact-wrapper glass">
+
+            <!-- LEFT -->
+
+            <div class="contact-info">
+
+                <span class="section-tag">
+
+                    Contact
+
+                </span>
+
+                <h2>
+
+                    Let's Build Something
+
+                    <span class="gradient">
+
+                        Intelligent
+
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Available for Full-Time,
+                    Internship,
+                    Freelance
+                    and Remote Opportunities.
+
+                </p>
+
+                <ul class="contact-list">
+
+                    <li>
+
+                        <strong>Email</strong>
+
+                        <a href="mailto:alihaimran676@gmail.com">
+
+                            alihaimran676@gmail.com
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <strong>GitHub</strong>
+
+                        <a href="https://github.com/devaspir"
+                            target="_blank">
+
+                            github.com/devaspir
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <strong>LinkedIn</strong>
+
+                        <a href="https://linkedin.com/in/aliha-imran-400793410"
+                            target="_blank">
+
+                            linkedin.com/in/aliha-imran-400793410
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <strong>Location</strong>
+
+                        Lahore, Pakistan
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <form class="contact-form" id="contactForm">
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject">
+
+                </div>
+
+                <div class="input-group">
+
+                    <textarea
+                        name="message"
+                        rows="6"
+                        placeholder="Write your message..."
+                        required></textarea>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary full-width">
+
+                    Send Message
+
+                </button>
+
+            </form>
+
         </div>
-        <div class="form-group">
-          <input type="text" id="subject" name="subject" placeholder=" " />
-          <label for="subject">Subject</label>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
-          <label for="message">Message</label>
-        </div>
-        <button type="submit" class="btn btn-primary magnetic full-width">
-          <span id="submitLabel">Send Message</span>
-        </button>
-        <p class="form-note" id="formNote"></p>
-      </form>
+
     </div>
-  </div>
+
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- ===========================
+FOOTER
+=========================== -->
+
 <footer class="footer">
-  <div class="container footer-inner">
-    <a href="#hero" class="nav-logo">Aliha<span class="logo-accent">Imran</span></a>
-    <p class="footer-tagline">Building Intelligent AI Solutions with Python, LLMs, RAG &amp; Agentic AI.</p>
 
-    <div class="footer-socials">
-      <a href="https://github.com/devaspir" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-      <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-      <a href="mailto:alihaimran676@gmail.com" aria-label="Email">Email</a>
+    <div class="container">
+
+        <div class="footer-top">
+
+            <a href="#hero" class="logo">
+
+                Aliha<span>Imran</span>
+
+            </a>
+
+            <p>
+
+                AI/ML Engineer • Generative AI Developer
+
+            </p>
+
+        </div>
+
+        <div class="footer-social">
+
+            <a
+                href="https://github.com/devaspir"
+                target="_blank">
+
+                GitHub
+
+            </a>
+
+            <a
+                href="https://linkedin.com/in/aliha-imran-400793410"
+                target="_blank">
+
+                LinkedIn
+
+            </a>
+
+            <a
+                href="mailto:alihaimran676@gmail.com">
+
+                Email
+
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © <span id="year"></span>
+                Aliha Imran.
+
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
     </div>
 
-    <p class="footer-copy">© <span id="footerYear"></span> Aliha Imran. Crafted with Python-brained precision.</p>
-  </div>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <!-- Back To Top -->
+
+    <button
+        id="backToTop"
+        class="back-to-top">
+
+        ↑
+
+    </button>
+
 </footer>
 
+<!-- ===========================
+JAVASCRIPT
+=========================== -->
+
 <script src="script.js"></script>
+
 </body>
+
 </html>
