@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Navbar scroll state + progress ---------- */
   const navbar = document.getElementById('navbar');
   const navProgress = document.getElementById('navProgress');
-
   function onScroll() {
     navbar.classList.toggle('scrolled', window.scrollY > 20);
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -35,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
-        navItems.forEach(link => {
-          link.classList.toggle('active', link.dataset.section === id);
-        });
+        navItems.forEach(link => link.classList.toggle('active', link.dataset.section === id));
       }
     });
   }, { rootMargin: '-45% 0px -45% 0px' });
@@ -104,8 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const skillObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const fill = entry.target.querySelector('.skill-fill');
-        fill.style.width = entry.target.dataset.value + '%';
+        entry.target.querySelector('.skill-fill').style.width = entry.target.dataset.value + '%';
         obs.unobserve(entry.target);
       }
     });
@@ -135,6 +131,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.5 });
   statNums.forEach(el => statObserver.observe(el));
 
+  /* ---------- Testimonial slider ---------- */
+  const testiWrap = document.getElementById('testiWrap');
+  const testiTrack = document.getElementById('testiTrack');
+  const testiSlides = testiTrack ? testiTrack.querySelectorAll('.testi-slide') : [];
+  const testiPrev = document.getElementById('testiPrev');
+  const testiNext = document.getElementById('testiNext');
+  const testiDotsWrap = document.getElementById('testiDots');
+  let testiIndex = 0;
+  let testiTimer = null;
+
+  if (testiTrack && testiSlides.length) {
+    testiSlides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToTesti(i));
+      testiDotsWrap.appendChild(dot);
+    });
+    const dots = testiDotsWrap.querySelectorAll('.testi-dot');
+
+    function goToTesti(i) {
+      testiIndex = (i + testiSlides.length) % testiSlides.length;
+      testiTrack.style.transform = `translateX(-${testiIndex * 100}%)`;
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === testiIndex));
+    }
+    function nextTesti() { goToTesti(testiIndex + 1); }
+    function prevTesti() { goToTesti(testiIndex - 1); }
+
+    testiNext.addEventListener('click', () => { nextTesti(); restartAutoplay(); });
+    testiPrev.addEventListener('click', () => { prevTesti(); restartAutoplay(); });
+
+    function startAutoplay() {
+      if (prefersReducedMotion || testiSlides.length < 2) return;
+      testiTimer = setInterval(nextTesti, 6000);
+    }
+    function restartAutoplay() {
+      clearInterval(testiTimer);
+      startAutoplay();
+    }
+    testiWrap.addEventListener('mouseenter', () => clearInterval(testiTimer));
+    testiWrap.addEventListener('mouseleave', startAutoplay);
+    startAutoplay();
+  }
+
   /* ---------- Contact form (mailto fallback) ---------- */
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
@@ -152,76 +191,64 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------- Hero neural canvas ---------- */
-  const canvas = document.getElementById('heroCanvas');
-  const ctx = canvas.getContext('2d');
-  let w, h, nodes = [];
-  const NODE_COUNT = window.innerWidth < 720 ? 28 : 55;
-  const LINK_DIST = 140;
-  let pointer = { x: null, y: null };
+  function buildNodeCanvas(canvas, options) {
+    const ctx = canvas.getContext('2d');
+    let w, h, nodes = [];
+    const count = options.count;
+    const linkDist = options.linkDist;
+    const color = options.color;
+    let pointer = { x: null, y: null };
 
-  function resizeCanvas() {
-    w = canvas.width = canvas.offsetWidth;
-    h = canvas.height = canvas.offsetHeight;
-  }
-
-  function initNodes() {
-    nodes = Array.from({ length: NODE_COUNT }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-    }));
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    for (const n of nodes) {
-      n.x += n.vx; n.y += n.vy;
-      if (n.x < 0 || n.x > w) n.vx *= -1;
-      if (n.y < 0 || n.y > h) n.vy *= -1;
+    function resize() { w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+    function init() {
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
+      }));
     }
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i], b = nodes[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < LINK_DIST) {
-          ctx.strokeStyle = `rgba(124,92,252,${(1 - dist / LINK_DIST) * 0.35})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (const n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
       }
-      if (pointer.x !== null) {
-        const dx = n.x - pointer.x, dy = n.y - pointer.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 180) {
-          ctx.strokeStyle = `rgba(34,211,238,${(1 - dist / 180) * 0.5})`;
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(pointer.x, pointer.y);
-          ctx.stroke();
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < linkDist) {
+            ctx.strokeStyle = `rgba(${color},${(1 - dist / linkDist) * 0.32})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
         }
+        if (pointer.x !== null) {
+          const dx = n.x - pointer.x, dy = n.y - pointer.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 170) {
+            ctx.strokeStyle = `rgba(34,211,238,${(1 - dist / 170) * 0.45})`;
+            ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(pointer.x, pointer.y); ctx.stroke();
+          }
+        }
+        ctx.fillStyle = 'rgba(238,241,246,0.5)';
+        ctx.beginPath(); ctx.arc(n.x, n.y, 1.5, 0, Math.PI * 2); ctx.fill();
       }
-      ctx.fillStyle = 'rgba(238,241,246,0.55)';
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
-      ctx.fill();
+      if (!prefersReducedMotion) requestAnimationFrame(draw);
     }
-    if (!prefersReducedMotion) requestAnimationFrame(draw);
+    canvas.parentElement.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      pointer.x = e.clientX - rect.left; pointer.y = e.clientY - rect.top;
+    });
+    canvas.parentElement.addEventListener('mouseleave', () => { pointer.x = null; pointer.y = null; });
+    window.addEventListener('resize', () => { resize(); init(); });
+    resize(); init(); draw();
   }
 
-  canvas.parentElement.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    pointer.x = e.clientX - rect.left;
-    pointer.y = e.clientY - rect.top;
-  });
-  canvas.parentElement.addEventListener('mouseleave', () => { pointer.x = null; pointer.y = null; });
+  const heroCanvas = document.getElementById('heroCanvas');
+  buildNodeCanvas(heroCanvas, { count: window.innerWidth < 720 ? 28 : 55, linkDist: 140, color: '124,92,252' });
 
-  window.addEventListener('resize', () => { resizeCanvas(); initNodes(); });
-  resizeCanvas();
-  initNodes();
-  draw();
+  const contactCanvas = document.getElementById('contactCanvas');
+  buildNodeCanvas(contactCanvas, { count: window.innerWidth < 720 ? 16 : 30, linkDist: 130, color: '124,92,252' });
 });
