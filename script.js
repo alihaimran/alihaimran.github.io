@@ -16,14 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Mobile menu ---------- */
   const navToggle = document.getElementById('navToggle');
+  const navCenter = document.querySelector('.nav-center');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
+    const isOpen = navCenter.classList.toggle('open');
     navToggle.classList.toggle('open', isOpen);
     navToggle.setAttribute('aria-expanded', isOpen);
   });
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
+    navCenter.classList.remove('open');
     navToggle.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
   }));
@@ -53,63 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15 });
   revealEls.forEach(el => revealObserver.observe(el));
 
-  /* ---------- Cursor glow ---------- */
-  const cursorGlow = document.getElementById('cursorGlow');
-  if (!prefersReducedMotion && window.matchMedia('(hover:hover)').matches) {
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2, cx = mx, cy = my;
-    window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animateGlow() {
-      cx += (mx - cx) * 0.15;
-      cy += (my - cy) * 0.15;
-      cursorGlow.style.transform = `translate(${cx}px, ${cy}px)`;
-      requestAnimationFrame(animateGlow);
-    }
-    animateGlow();
-  } else {
-    cursorGlow.style.display = 'none';
-  }
-
-  /* ---------- Magnetic buttons ---------- */
-  if (!prefersReducedMotion && window.matchMedia('(hover:hover)').matches) {
-    document.querySelectorAll('.magnetic').forEach(el => {
-      el.addEventListener('mousemove', e => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        el.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
-      });
-      el.addEventListener('mouseleave', () => { el.style.transform = 'translate(0,0)'; });
-    });
-  }
-
-  /* ---------- Project card tilt ---------- */
-  if (!prefersReducedMotion && window.matchMedia('(hover:hover)').matches) {
-    document.querySelectorAll('.project-card, .project-featured').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(900px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg) translateY(-4px)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(900px) rotateY(0) rotateX(0) translateY(0)';
-      });
-    });
-  }
-
-  /* ---------- Architecture flow: tap-to-reveal on touch devices ---------- */
-  const flowNodes = document.querySelectorAll('.flow-node');
-  const isTouch = !window.matchMedia('(hover:hover)').matches;
-  if (isTouch) {
-    flowNodes.forEach(node => {
-      node.addEventListener('click', () => {
-        const wasActive = node.classList.contains('touch-active');
-        flowNodes.forEach(n => n.classList.remove('touch-active'));
-        if (!wasActive) node.classList.add('touch-active');
-      });
-    });
-  }
-
   /* ---------- Contact form (mailto fallback) ---------- */
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
@@ -126,65 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 
-  /* ---------- Hero neural canvas ---------- */
-  function buildNodeCanvas(canvas, options) {
-    const ctx = canvas.getContext('2d');
-    let w, h, nodes = [];
-    const count = options.count;
-    const linkDist = options.linkDist;
-    const color = options.color;
-    let pointer = { x: null, y: null };
-
-    function resize() { w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
-    function init() {
-      nodes = Array.from({ length: count }, () => ({
-        x: Math.random() * w, y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
-      }));
-    }
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      for (const n of nodes) {
-        n.x += n.vx; n.y += n.vy;
-        if (n.x < 0 || n.x > w) n.vx *= -1;
-        if (n.y < 0 || n.y > h) n.vy *= -1;
-      }
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const a = nodes[i], b = nodes[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < linkDist) {
-            ctx.strokeStyle = `rgba(${color},${(1 - dist / linkDist) * 0.32})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-          }
-        }
-        if (pointer.x !== null) {
-          const dx = n.x - pointer.x, dy = n.y - pointer.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 170) {
-            ctx.strokeStyle = `rgba(34,211,238,${(1 - dist / 170) * 0.45})`;
-            ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(pointer.x, pointer.y); ctx.stroke();
-          }
-        }
-        ctx.fillStyle = 'rgba(238,241,246,0.5)';
-        ctx.beginPath(); ctx.arc(n.x, n.y, 1.5, 0, Math.PI * 2); ctx.fill();
-      }
-      if (!prefersReducedMotion) requestAnimationFrame(draw);
-    }
-    canvas.parentElement.addEventListener('mousemove', e => {
-      const rect = canvas.getBoundingClientRect();
-      pointer.x = e.clientX - rect.left; pointer.y = e.clientY - rect.top;
-    });
-    canvas.parentElement.addEventListener('mouseleave', () => { pointer.x = null; pointer.y = null; });
-    window.addEventListener('resize', () => { resize(); init(); });
-    resize(); init(); draw();
+  if (prefersReducedMotion) {
+    document.querySelectorAll('.pulse, .pulse-h').forEach(el => { el.style.animation = 'none'; el.style.opacity = '0'; });
   }
-
-  const heroCanvas = document.getElementById('heroCanvas');
-  buildNodeCanvas(heroCanvas, { count: window.innerWidth < 720 ? 28 : 55, linkDist: 140, color: '124,92,252' });
-
-  const contactCanvas = document.getElementById('contactCanvas');
-  buildNodeCanvas(contactCanvas, { count: window.innerWidth < 720 ? 16 : 30, linkDist: 130, color: '124,92,252' });
 });
