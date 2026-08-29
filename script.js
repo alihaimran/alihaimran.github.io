@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     navLinks.classList.remove('open');
     navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
   }));
 
   /* ---------- Active nav link on scroll ---------- */
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- Magnetic buttons ---------- */
-  if (!prefersReducedMotion) {
+  if (!prefersReducedMotion && window.matchMedia('(hover:hover)').matches) {
     document.querySelectorAll('.magnetic').forEach(el => {
       el.addEventListener('mousemove', e => {
         const rect = el.getBoundingClientRect();
@@ -82,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- Project card tilt ---------- */
-  if (!prefersReducedMotion) {
-    document.querySelectorAll('.project-card').forEach(card => {
+  if (!prefersReducedMotion && window.matchMedia('(hover:hover)').matches) {
+    document.querySelectorAll('.project-card, .project-featured').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-4px)`;
+        card.style.transform = `perspective(900px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg) translateY(-4px)`;
       });
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(900px) rotateY(0) rotateX(0) translateY(0)';
@@ -96,82 +97,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Skill bars fill on view ---------- */
-  const skillBars = document.querySelectorAll('.skill-bar');
-  const skillObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelector('.skill-fill').style.width = entry.target.dataset.value + '%';
-        obs.unobserve(entry.target);
-      }
+  /* ---------- Architecture flow: tap-to-reveal on touch devices ---------- */
+  const flowNodes = document.querySelectorAll('.flow-node');
+  const isTouch = !window.matchMedia('(hover:hover)').matches;
+  if (isTouch) {
+    flowNodes.forEach(node => {
+      node.addEventListener('click', () => {
+        const wasActive = node.classList.contains('touch-active');
+        flowNodes.forEach(n => n.classList.remove('touch-active'));
+        if (!wasActive) node.classList.add('touch-active');
+      });
     });
-  }, { threshold: 0.4 });
-  skillBars.forEach(bar => skillObserver.observe(bar));
-
-  /* ---------- Stat counters ---------- */
-  const statNums = document.querySelectorAll('.stat-num');
-  const statObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.target, 10);
-        const suffix = el.dataset.suffix || '';
-        const duration = 1200;
-        const start = performance.now();
-        function tick(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(eased * target) + suffix;
-          if (progress < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-        obs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  statNums.forEach(el => statObserver.observe(el));
-
-  /* ---------- Testimonial slider ---------- */
-  const testiWrap = document.getElementById('testiWrap');
-  const testiTrack = document.getElementById('testiTrack');
-  const testiSlides = testiTrack ? testiTrack.querySelectorAll('.testi-slide') : [];
-  const testiPrev = document.getElementById('testiPrev');
-  const testiNext = document.getElementById('testiNext');
-  const testiDotsWrap = document.getElementById('testiDots');
-  let testiIndex = 0;
-  let testiTimer = null;
-
-  if (testiTrack && testiSlides.length) {
-    testiSlides.forEach((_, i) => {
-      const dot = document.createElement('span');
-      dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => goToTesti(i));
-      testiDotsWrap.appendChild(dot);
-    });
-    const dots = testiDotsWrap.querySelectorAll('.testi-dot');
-
-    function goToTesti(i) {
-      testiIndex = (i + testiSlides.length) % testiSlides.length;
-      testiTrack.style.transform = `translateX(-${testiIndex * 100}%)`;
-      dots.forEach((d, idx) => d.classList.toggle('active', idx === testiIndex));
-    }
-    function nextTesti() { goToTesti(testiIndex + 1); }
-    function prevTesti() { goToTesti(testiIndex - 1); }
-
-    testiNext.addEventListener('click', () => { nextTesti(); restartAutoplay(); });
-    testiPrev.addEventListener('click', () => { prevTesti(); restartAutoplay(); });
-
-    function startAutoplay() {
-      if (prefersReducedMotion || testiSlides.length < 2) return;
-      testiTimer = setInterval(nextTesti, 6000);
-    }
-    function restartAutoplay() {
-      clearInterval(testiTimer);
-      startAutoplay();
-    }
-    testiWrap.addEventListener('mouseenter', () => clearInterval(testiTimer));
-    testiWrap.addEventListener('mouseleave', startAutoplay);
-    startAutoplay();
   }
 
   /* ---------- Contact form (mailto fallback) ---------- */
