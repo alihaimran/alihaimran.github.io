@@ -4,392 +4,495 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aliha Imran — AI/ML Engineer & Generative AI Developer</title>
-<meta name="description" content="Aliha Imran — AI/ML Engineer building intelligent systems with Python, LLMs, RAG & Agentic AI.">
+<meta name="description" content="Aliha Imran is an AI/ML Engineer and Generative AI Developer building RAG systems, LLM applications, agentic AI workflows and AI automation with Python and FastAPI.">
+<meta name="author" content="Aliha Imran">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aliha Imran — AI/ML Engineer & Generative AI Developer">
+<meta property="og:description" content="Building intelligent AI systems with Python & LLMs — RAG pipelines, agentic workflows, and AI automation.">
+<meta property="og:url" content="https://alihaimran.github.io">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2242%22 fill=%22%23050505%22 stroke=%22%2300E5CC%22 stroke-width=%224%22/><circle cx=%2250%22 cy=%2250%22 r=%2210%22 fill=%22%2300E5CC%22/></svg>">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-<a class="skip-link" href="#main">Skip to content</a>
+<div class="grain"></div>
 
-<nav class="navbar" id="navbar">
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Aliha<span>.</span>Imran</a>
+    <a href="#home" class="nav-logo">Aliha<span class="dot">.</span>Imran</a>
 
-    <div class="nav-center">
-      <div class="nav-links" id="navLinks">
-        <a href="#about" class="nav-link" data-section="about">About</a>
-        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
-        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-      </div>
-    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#services" class="nav-link" data-section="services">Services</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
 
-    <div class="nav-right">
-      <span class="status-badge"><span class="status-dot"></span>Open to opportunities</span>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div class="nav-progress" id="navProgress"></div>
-</nav>
+    <a href="#contact" class="btn btn-nav">Let's Talk</a>
 
-<header class="hero" id="hero">
-  <div class="grid-bg" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-grid">
-
-      <div class="hero-copy">
-        <p class="badge reveal">AI/ML ENGINEER · GENERATIVE AI · AGENTIC AI</p>
-        <h1 class="hero-title reveal">
-          Building Intelligent Systems<br>
-          with <span class="accent-text">AI, LLMs & Agents.</span>
-        </h1>
-        <p class="hero-desc reveal">
-          I build real-world AI systems using Python, LLMs, Retrieval-Augmented Generation
-          and Agentic AI — turning research-grade techniques into production-ready software.
-        </p>
-        <div class="hero-actions reveal">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
-          <a href="#" class="btn btn-ghost">Resume</a>
-        </div>
-
-        <div class="spec-strip reveal">
-          <div class="spec-item">
-            <span class="spec-label">Location</span>
-            <span class="spec-value">Lahore, PK · Remote</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Education</span>
-            <span class="spec-value">BS Computer Science</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Focus</span>
-            <span class="spec-value">LLMs · RAG · Agents</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal">
-        <div class="schematic-panel corner-brackets">
-          <p class="schematic-label">// SYSTEM ARCHITECTURE</p>
-          <div class="flow-vertical" id="heroFlow">
-            <div class="flow-node-v"><span class="flow-node-label">USER</span></div>
-            <div class="flow-line-v"><i class="pulse"></i></div>
-            <div class="flow-node-v"><span class="flow-node-label">LLM</span></div>
-            <div class="flow-line-v"><i class="pulse"></i></div>
-            <div class="flow-node-v"><span class="flow-node-label">RAG</span></div>
-            <div class="flow-line-v"><i class="pulse"></i></div>
-            <div class="flow-node-v"><span class="flow-node-label">TOOLS</span></div>
-            <div class="flow-line-v"><i class="pulse"></i></div>
-            <div class="flow-node-v"><span class="flow-node-label">AGENT</span></div>
-            <div class="flow-line-v"><i class="pulse"></i></div>
-            <div class="flow-node-v flow-node-final"><span class="flow-node-label">RESULT</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <a href="#about" class="scroll-cue" aria-label="Scroll to About">
-    <span>Scroll</span>
-    <div class="scroll-line"><i></i></div>
-  </a>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#home" class="nav-mobile-link">Home</a>
+    <a href="#about" class="nav-mobile-link">About</a>
+    <a href="#skills" class="nav-mobile-link">Skills</a>
+    <a href="#projects" class="nav-mobile-link">Projects</a>
+    <a href="#experience" class="nav-mobile-link">Experience</a>
+    <a href="#services" class="nav-mobile-link">Services</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <a href="#contact" class="btn btn-primary nav-mobile-cta">Let's Talk</a>
+  </div>
 </header>
 
-<main id="main">
+<main>
 
-  <section class="section" id="about">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">// 01 — About</p>
-      <h2 class="section-title reveal">Engineering, not <span class="accent-text">experimentation.</span></h2>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="badge reveal">
+        <span class="badge-dot"></span>
+        AI/ML Engineer · Generative AI Developer
+      </div>
 
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            I'm an AI/ML Developer and Generative AI Engineer building intelligent
-            applications with Python — spanning LLM-powered products, Retrieval-Augmented
-            Generation systems, and autonomous, tool-using AI agents.
-          </p>
-          <p>
-            My focus is bridging research-grade AI techniques with production-ready
-            engineering: clean architecture, sensible data pipelines, and systems that
-            actually work outside a notebook.
-          </p>
+      <h1 class="hero-title reveal">
+        Building intelligent<br>
+        AI systems with<br>
+        <span class="grad-text">Python &amp; LLMs</span>
+      </h1>
 
-          <div class="mindset-panel corner-brackets">
-            <p class="schematic-label">// ENGINEERING MINDSET</p>
-            <ul class="mindset-list">
-              <li>Clean architecture</li>
-              <li>Practical AI, not just research</li>
-              <li>Scalable systems</li>
-              <li>Real-world problem solving</li>
-            </ul>
+      <p class="hero-desc reveal">
+        I design and build retrieval-augmented generation pipelines, LLM-powered
+        applications, agentic AI workflows, and automation systems — turning
+        language models into products that actually work in production.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
+        <a href="#contact" class="btn btn-outline">Let's Work Together</a>
+      </div>
+
+      <a href="#" class="resume-link reveal" id="resumeLink">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        Download Resume
+      </a>
+
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-label">Focus</span>
+          <span class="stat-value">AI Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Stack</span>
+          <span class="stat-value">GenAI Stack</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Language</span>
+          <span class="stat-value">Python</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Specialty</span>
+          <span class="stat-value">RAG &amp; LLM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg class="net-svg" viewBox="0 0 480 480" id="netSvg">
+        <defs>
+          <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00E5CC" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#00E5CC" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g id="netLines" stroke="#00E5CC" stroke-opacity="0.18" stroke-width="1"></g>
+        <g id="netNodes"></g>
+      </svg>
+      <div class="visual-ring"></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span></span>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="section-inner about-grid">
+    <div class="section-head">
+      <p class="eyebrow">About</p>
+      <h2>Engineering AI that solves real problems</h2>
+    </div>
+
+    <div class="about-body">
+      <p>
+        I'm Aliha Imran, an AI/ML Engineer and Generative AI Developer focused on
+        turning large language models into working systems, not demos. My work sits
+        at the intersection of machine learning, retrieval-augmented generation, and
+        backend engineering — I build the pipelines that let AI reason over real data
+        and act on it reliably.
+      </p>
+      <p>
+        Day to day, that means building RAG pipelines with FastAPI and vector
+        databases, designing agentic AI workflows that chain reasoning and tool use,
+        and writing the Python architecture that keeps it all fast and maintainable.
+        I care as much about system design and clean APIs as I do about model output.
+      </p>
+
+      <div class="bring-list">
+        <div class="bring-item">
+          <span class="bring-num">01</span>
+          <div>
+            <h3>End-to-end AI systems</h3>
+            <p>From data ingestion to a deployed, user-facing application.</p>
           </div>
         </div>
-
-        <div class="build-grid reveal">
-          <p class="highlights-label">What I build</p>
-          <div class="build-cards">
-            <div class="build-card"><span>RAG Systems</span></div>
-            <div class="build-card"><span>LLM Applications</span></div>
-            <div class="build-card"><span>Agentic AI</span></div>
-            <div class="build-card"><span>AI Automation</span></div>
-            <div class="build-card"><span>ML Solutions</span></div>
-            <div class="build-card"><span>Python AI Backends</span></div>
+        <div class="bring-item">
+          <span class="bring-num">02</span>
+          <div>
+            <h3>RAG &amp; LLM applications</h3>
+            <p>Retrieval pipelines, vector search, and grounded LLM responses.</p>
+          </div>
+        </div>
+        <div class="bring-item">
+          <span class="bring-num">03</span>
+          <div>
+            <h3>Agentic AI workflows</h3>
+            <p>Multi-step reasoning, tool use, and autonomous task execution.</p>
+          </div>
+        </div>
+        <div class="bring-item">
+          <span class="bring-num">04</span>
+          <div>
+            <h3>Scalable Python architecture</h3>
+            <p>FastAPI backends built to stay clean as they grow.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="skills">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">// 02 — Skills</p>
-      <h2 class="section-title reveal">Technology <span class="accent-text">stack.</span></h2>
+<!-- ================= SKILLS ================= -->
+<section class="section section-alt" id="skills">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="eyebrow">Skills</p>
+      <h2>The stack behind the systems</h2>
+    </div>
 
-      <div class="skills-cats">
-        <div class="skill-cat reveal">
-          <h3>AI / ML</h3>
-          <div class="skill-chips">
-            <span>Python</span><span>Machine Learning</span><span>Deep Learning</span>
-          </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>AI / ML</h3>
+        <div class="tags">
+          <span>Python</span><span>Machine Learning</span><span>Deep Learning</span>
+          <span>Scikit-learn</span><span>Neural Networks</span>
         </div>
-        <div class="skill-cat reveal">
-          <h3>Generative AI</h3>
-          <div class="skill-chips">
-            <span>LLMs</span><span>RAG</span><span>Prompt Engineering</span><span>Agentic AI</span>
-          </div>
+      </div>
+      <div class="skill-card">
+        <h3>Generative AI</h3>
+        <div class="tags">
+          <span>LLMs</span><span>RAG</span><span>Prompt Engineering</span>
+          <span>AI Agents</span><span>Agentic AI</span><span>LLM Applications</span>
         </div>
-        <div class="skill-cat reveal">
-          <h3>Frameworks</h3>
-          <div class="skill-chips">
-            <span>LangChain</span><span>FastAPI</span><span>Streamlit</span>
-          </div>
+      </div>
+      <div class="skill-card">
+        <h3>Backend</h3>
+        <div class="tags">
+          <span>Python</span><span>FastAPI</span><span>REST APIs</span><span>API Integration</span>
         </div>
-        <div class="skill-cat reveal">
-          <h3>Data</h3>
-          <div class="skill-chips">
-            <span>ChromaDB</span><span>Vector Databases</span>
-          </div>
+      </div>
+      <div class="skill-card">
+        <h3>AI Infrastructure</h3>
+        <div class="tags">
+          <span>Vector Databases</span><span>ChromaDB</span><span>Embeddings</span><span>Retrieval Pipelines</span>
         </div>
-        <div class="skill-cat reveal">
-          <h3>Tools</h3>
-          <div class="skill-chips">
-            <span>Git</span><span>GitHub</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <div class="tags">
+          <span>Git</span><span>GitHub</span><span>Streamlit</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="projects">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">// 03 — Selected Work</p>
-      <h2 class="section-title reveal">Projects that solve <span class="accent-text">real problems.</span></h2>
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="eyebrow">Featured Projects</p>
+      <h2>Systems I've built end to end</h2>
+    </div>
 
-      <article class="project-featured corner-brackets reveal">
-        <div class="project-featured-head">
-          <div>
-            <p class="project-kicker">FEATURED PROJECT</p>
-            <h3>ORIN</h3>
-            <p class="project-tagline">RAG-based AI Assistant</p>
-          </div>
-          <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
-            View on GitHub <span class="arrow">→</span>
-          </a>
-        </div>
+    <div class="projects-list">
 
-        <div class="project-pair">
-          <div>
-            <span class="project-label">Problem</span>
-            <p>Conversational AI tools often lose context and hallucinate answers instead of
-              grounding responses in real, retrievable knowledge.</p>
-          </div>
-          <div>
-            <span class="project-label">Solution</span>
-            <p>A FastAPI backend built around a Retrieval-Augmented Generation pipeline —
-              Groq-hosted Llama 3.3 70B for inference, ChromaDB for vector storage, a custom
-              long-term memory system for continuity across sessions, and Server-Sent Events
-              for real-time streaming responses.</p>
+      <article class="project-card" data-project="orin">
+        <div class="project-media">
+          <div class="project-preview">
+            <span>Project Preview</span>
           </div>
         </div>
-
-        <div class="project-arch">
-          <p class="schematic-label">// ARCHITECTURE</p>
-          <div class="flow-horizontal" id="orinFlow">
-            <div class="flow-node-h">User</div>
-            <div class="flow-line-h"><i class="pulse-h"></i></div>
-            <div class="flow-node-h">FastAPI</div>
-            <div class="flow-line-h"><i class="pulse-h"></i></div>
-            <div class="flow-node-h">RAG Pipeline</div>
-            <div class="flow-line-h"><i class="pulse-h"></i></div>
-            <div class="flow-node-h">ChromaDB</div>
-            <div class="flow-line-h"><i class="pulse-h"></i></div>
-            <div class="flow-node-h">Llama 3.3 70B</div>
-            <div class="flow-line-h"><i class="pulse-h"></i></div>
-            <div class="flow-node-h flow-node-final">Streaming Response</div>
+        <div class="project-body">
+          <span class="project-num">01</span>
+          <h3>Orin</h3>
+          <p>RAG-based AI chatbot with a FastAPI backend, Llama 3.3 70B, ChromaDB vector storage, long-term memory and streaming responses.</p>
+          <div class="tags">
+            <span>Python</span><span>FastAPI</span><span>RAG</span><span>ChromaDB</span><span>LLM</span><span>SSE</span>
           </div>
-        </div>
-
-        <div class="project-stack">
-          <span class="project-label">Stack</span>
-          <div class="project-tags">
-            <span>Python</span><span>FastAPI</span><span>RAG</span><span>ChromaDB</span>
-            <span>Llama 3.3 70B</span><span>Groq</span><span>SSE</span><span>Long-term memory</span>
+          <div class="project-actions">
+            <a href="https://alihaimran.pythonanywhere.com" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://github.com/devaspir" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+            <button class="btn btn-sm btn-ghost" data-modal-open="orin">View Details</button>
           </div>
         </div>
       </article>
 
-      <div class="projects-grid">
-        <article class="project-card reveal">
-          <p class="project-card-index">02</p>
+      <article class="project-card" data-project="akademus">
+        <div class="project-media">
+          <div class="project-preview">
+            <span>Project Preview</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-num">02</span>
           <h3>Akademus.ai</h3>
-          <p class="project-card-desc">An AI-powered platform built with Python, blending clean
-            backend architecture with an intelligent, user-facing experience.</p>
-          <div class="project-tags">
-            <span>Python</span><span>Generative AI</span>
+          <p>AI-powered platform built with Python, combining intelligent AI functionality with a modern user experience.</p>
+          <div class="tags">
+            <span>Python</span><span>Generative AI</span><span>AI</span><span>Backend</span>
           </div>
-          <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="project-link">
-            View on GitHub <span class="arrow">→</span>
-          </a>
-        </article>
+          <div class="project-actions">
+            <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+            <a href="https://github.com/devaspir" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+            <button class="btn btn-sm btn-ghost" data-modal-open="akademus">View Details</button>
+          </div>
+        </div>
+      </article>
 
-        <article class="project-card reveal">
-          <p class="project-card-index">03</p>
-          <h3>PDF Chatbot</h3>
-          <p class="project-card-desc">A document-aware chatbot that answers questions directly
-            from uploaded PDFs using retrieval-augmented generation.</p>
-          <div class="project-tags">
-            <span>Python</span><span>RAG</span><span>PDF Parsing</span>
+      <article class="project-card" data-project="pdf">
+        <div class="project-media">
+          <div class="project-preview">
+            <span>Project Preview</span>
           </div>
-          <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="project-link">
-            View on GitHub <span class="arrow">→</span>
-          </a>
-        </article>
+        </div>
+        <div class="project-body">
+          <span class="project-num">03</span>
+          <h3>PDF Chatbot</h3>
+          <p>Document-aware AI chatbot that allows users to ask questions about uploaded PDF documents using retrieval-augmented generation.</p>
+          <div class="tags">
+            <span>Python</span><span>RAG</span><span>PDF Parsing</span><span>LLM</span><span>Vector Database</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+            <a href="https://github.com/devaspir" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
+            <button class="btn btn-sm btn-ghost" data-modal-open="pdf">View Details</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Architecture visualization -->
+    <div class="architecture">
+      <p class="eyebrow">How a RAG system flows</p>
+      <div class="arch-flow">
+        <div class="arch-step"><span>User</span></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-step"><span>FastAPI</span></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-step"><span>Retriever</span></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-step"><span>Vector Database</span></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-step"><span>LLM</span></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-step arch-final"><span>Response</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="experience">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">// 04 — Experience</p>
-      <h2 class="section-title reveal">Timeline.</h2>
+<!-- ================= PROJECT MODAL ================= -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <span class="project-num" id="modalNum">01</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <div class="tags" id="modalTags"></div>
+    <div class="project-actions" id="modalActions"></div>
+  </div>
+</div>
 
-      <div class="timeline">
-        <div class="timeline-item reveal">
+<!-- ================= EXPERIENCE ================= -->
+<section class="section section-alt" id="experience">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've applied this</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
           <span class="timeline-tag">Current</span>
           <h3>AI/ML Developer</h3>
-          <p>Building AI applications, automation systems, intelligent assistants and modern AI workflows.</p>
+          <p>Building AI applications, intelligent assistants, automation systems, RAG pipelines and modern AI workflows.</p>
         </div>
-        <div class="timeline-item reveal">
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
           <span class="timeline-tag">Education</span>
           <h3>BS Computer Science</h3>
-          <p>Virtual University of Pakistan — foundation in algorithms, systems and software engineering.</p>
-        </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-tag">Focus</span>
-          <h3>Deepening into Agentic AI</h3>
-          <p>Continuously exploring multi-agent orchestration, RAG optimization and LLM tooling.</p>
+          <p>Virtual University of Pakistan — focus on Generative AI, Agentic AI, RAG and LLM Engineering.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="build">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">// 05 — Capabilities</p>
-      <h2 class="section-title reveal">What I <span class="accent-text">build.</span></h2>
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>How I can help</h2>
+    </div>
 
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <h3>LLM & RAG Systems</h3>
-          <p>Retrieval-augmented generation pipelines grounded in real, retrievable data.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3>Agentic AI</h3>
-          <p>Multi-agent systems that plan, reason, and execute tasks autonomously.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3>ML Systems</h3>
-          <p>End-to-end machine learning pipelines, from data to deployed models.</p>
-        </div>
-        <div class="service-card reveal">
-          <h3>AI Automation</h3>
-          <p>Automation tools and intelligent assistants that streamline repetitive work.</p>
-        </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        <h3>LLM &amp; RAG Systems</h3>
+        <p>Design and build retrieval-augmented AI applications.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Agentic AI</h3>
+        <p>Build intelligent workflows and AI agents.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        <h3>Machine Learning</h3>
+        <p>Develop end-to-end machine learning solutions.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+        <h3>AI Automation</h3>
+        <p>Build intelligent automation tools and assistants.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section-contact" id="contact">
-    <div class="grid-bg" aria-hidden="true"></div>
-    <div class="section-inner contact-inner">
-      <p class="section-eyebrow reveal centered">// 06 — Contact</p>
-      <h2 class="section-title contact-title reveal centered">Have an AI problem <span class="accent-text">worth solving?</span></h2>
-      <p class="contact-sub reveal centered">Open to remote roles, internships and freelance AI/ML collaborations.</p>
+<!-- ================= ENGINEERING / TERMINAL ================= -->
+<section class="section section-alt" id="engineering">
+  <div class="section-inner engineering-grid">
+    <div class="section-head">
+      <p class="eyebrow">Engineering</p>
+      <h2>Built with care, not shortcuts</h2>
+      <ul class="care-list">
+        <li>Clean, readable code</li>
+        <li>Thoughtful system architecture</li>
+        <li>Deliberate API design</li>
+        <li>Documentation that's actually useful</li>
+        <li>AI systems designed to scale</li>
+      </ul>
+    </div>
 
-      <div class="contact-actions reveal">
-        <a href="mailto:alihaimran676@gmail.com" class="btn btn-primary">Let's Talk</a>
-        <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
-        <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span></span><span></span><span></span>
       </div>
+      <div class="terminal-body" id="terminalBody"></div>
+    </div>
+  </div>
+</section>
 
-      <div class="contact-panel corner-brackets reveal">
-        <div class="contact-info">
-          <a href="mailto:alihaimran676@gmail.com" class="contact-item">
-            <div><span class="contact-label">Email</span><span class="contact-value">alihaimran676@gmail.com</span></div>
-          </a>
-          <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener" class="contact-item">
-            <div><span class="contact-label">LinkedIn</span><span class="contact-value">linkedin.com/in/aliha-imran</span></div>
-          </a>
-          <a href="https://github.com/devaspir" target="_blank" rel="noopener" class="contact-item">
-            <div><span class="contact-label">GitHub</span><span class="contact-value">github.com/devaspir</span></div>
-          </a>
-          <div class="contact-item contact-item-static">
-            <div><span class="contact-label">Location</span><span class="contact-value">Lahore, Pakistan</span></div>
-          </div>
-        </div>
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="section-inner contact-grid">
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build something intelligent</h2>
+      <p class="contact-desc">Open to AI/ML opportunities, GenAI projects, internships and collaborations.</p>
 
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <label class="sr-only" for="fName">Your Name</label>
-            <input id="fName" type="text" name="name" placeholder="Your Name" required>
-            <label class="sr-only" for="fEmail">Your Email</label>
-            <input id="fEmail" type="email" name="email" placeholder="Your Email" required>
-          </div>
-          <label class="sr-only" for="fSubject">Subject</label>
-          <input id="fSubject" type="text" name="subject" placeholder="Subject" required>
-          <label class="sr-only" for="fMessage">Message</label>
-          <textarea id="fMessage" name="message" rows="4" placeholder="Message" required></textarea>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-          <p class="form-note" id="formNote" role="status"></p>
-        </form>
+      <div class="contact-links">
+        <a href="mailto:alihaimran676@gmail.com" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          alihaimran676@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/aliha-imran-400793410" class="contact-link" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/aliha-imran
+        </a>
+        <a href="https://github.com/devaspir" class="contact-link" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 00-1-2.6c3 0 6-2 6-5.5.1-1.3-.4-2.6-1.3-3.6.4-1.2.4-2.6 0-3.8 0 0-1 0-3 1.4a12 12 0 00-6 0C8 2.6 7 2.6 7 2.6c-.4 1.2-.4 2.6 0 3.8-.9 1-1.4 2.3-1.3 3.6 0 3.5 3 5.5 6 5.5a3.4 3.4 0 00-1 2.6V22"/></svg>
+          github.com/devaspir
+        </a>
       </div>
     </div>
-  </section>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <label for="fName">Name</label>
+        <input type="text" id="fName" name="name" placeholder="Your name">
+        <span class="form-error" id="errName"></span>
+      </div>
+      <div class="form-row">
+        <label for="fEmail">Email</label>
+        <input type="email" id="fEmail" name="email" placeholder="you@example.com">
+        <span class="form-error" id="errEmail"></span>
+      </div>
+      <div class="form-row">
+        <label for="fSubject">Subject</label>
+        <input type="text" id="fSubject" name="subject" placeholder="What's this about?">
+        <span class="form-error" id="errSubject"></span>
+      </div>
+      <div class="form-row">
+        <label for="fMessage">Message</label>
+        <textarea id="fMessage" name="message" rows="5" placeholder="Tell me about your project or opportunity..."></textarea>
+        <span class="form-error" id="errMessage"></span>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-inner">
-    <a href="#hero" class="nav-logo">Aliha<span>.</span>Imran</a>
-    <p>Building Intelligent AI Solutions with Python, LLMs, RAG & Agentic AI.</p>
+    <div>
+      <a href="#home" class="nav-logo">Aliha<span class="dot">.</span>Imran</a>
+      <p>AI/ML Engineer · Generative AI Developer</p>
+    </div>
     <div class="footer-links">
       <a href="https://github.com/devaspir" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:alihaimran676@gmail.com">Email</a>
     </div>
-    <p class="footer-copy">© <span id="year"></span> Aliha Imran. Built with intent, not templates.</p>
+    <p class="footer-copy">© 2026 Aliha Imran. All rights reserved.</p>
   </div>
-  <a href="#hero" class="back-to-top" aria-label="Back to top">↑</a>
 </footer>
 
 <script src="script.js"></script>
