@@ -1,5 +1,5 @@
 // =========================================================
-// NAVBAR: sticky/blur on scroll + active section highlight
+// NAVBAR: sticky shadow on scroll + active section highlight
 // =========================================================
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -66,58 +66,6 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 revealTargets.forEach((el) => revealObserver.observe(el));
-
-// =========================================================
-// HERO PIPELINE PANEL — staged row reveal + node graph
-// =========================================================
-(function animatePipeline() {
-  const rows = document.querySelectorAll('.pipeline-row');
-  if (!rows.length) return;
-
-  let started = false;
-  function runSequence() {
-    if (started) return;
-    started = true;
-    rows.forEach((row, i) => {
-      setTimeout(() => row.classList.add('active'), 700 + i * 260);
-    });
-  }
-  // hero animates on load rather than on scroll, matching the reveal sequence
-  window.addEventListener('load', runSequence);
-  setTimeout(runSequence, 1200); // fallback if load already fired
-
-  const svg = document.getElementById('pipelineSvg');
-  if (!svg) return;
-  const lineGroup = document.getElementById('pipelineLines');
-  const nodeGroup = document.getElementById('pipelineNodes');
-  const W = 320, H = 120;
-  const positions = [
-    { x: 24, y: 60 }, { x: 100, y: 30 }, { x: 100, y: 90 },
-    { x: 190, y: 20 }, { x: 190, y: 60 }, { x: 190, y: 100 },
-    { x: 280, y: 60 }
-  ];
-  const links = [
-    [0, 1], [0, 2], [1, 3], [1, 4], [2, 4], [2, 5], [3, 6], [4, 6], [5, 6]
-  ];
-  links.forEach(([a, b]) => {
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.setAttribute('x1', positions[a].x);
-    line.setAttribute('y1', positions[a].y);
-    line.setAttribute('x2', positions[b].x);
-    line.setAttribute('y2', positions[b].y);
-    lineGroup.appendChild(line);
-  });
-  positions.forEach((p, i) => {
-    const isEdge = i === 0 || i === positions.length - 1;
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', p.x);
-    circle.setAttribute('cy', p.y);
-    circle.setAttribute('r', isEdge ? 5 : 3);
-    circle.setAttribute('fill', isEdge ? '#378FE9' : '#0A66C2');
-    circle.setAttribute('opacity', isEdge ? '0.95' : '0.6');
-    nodeGroup.appendChild(circle);
-  });
-})();
 
 // =========================================================
 // PROJECT MODAL
