@@ -68,60 +68,53 @@ const revealObserver = new IntersectionObserver(
 revealTargets.forEach((el) => revealObserver.observe(el));
 
 // =========================================================
-// HERO NETWORK VISUAL (procedural node graph)
+// HERO PIPELINE PANEL — staged row reveal + node graph
 // =========================================================
-(function buildNetwork() {
-  const svg = document.getElementById('netSvg');
-  if (!svg) return;
-  const lineGroup = document.getElementById('netLines');
-  const nodeGroup = document.getElementById('netNodes');
-  const W = 480, H = 480;
-  const nodeCount = 14;
-  const nodes = [];
+(function animatePipeline() {
+  const rows = document.querySelectorAll('.pipeline-row');
+  if (!rows.length) return;
 
-  for (let i = 0; i < nodeCount; i++) {
-    const angle = (i / nodeCount) * Math.PI * 2;
-    const radius = 90 + Math.random() * 90;
-    const x = W / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 30;
-    const y = H / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 30;
-    nodes.push({ x, y });
+  let started = false;
+  function runSequence() {
+    if (started) return;
+    started = true;
+    rows.forEach((row, i) => {
+      setTimeout(() => row.classList.add('active'), 700 + i * 260);
+    });
   }
-  nodes.push({ x: W / 2, y: H / 2 }); // center hub
+  // hero animates on load rather than on scroll, matching the reveal sequence
+  window.addEventListener('load', runSequence);
+  setTimeout(runSequence, 1200); // fallback if load already fired
 
-  const centerIdx = nodes.length - 1;
-  nodes.forEach((n, i) => {
-    if (i === centerIdx) return;
-    if (Math.random() > 0.4) {
-      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      line.setAttribute('x1', n.x);
-      line.setAttribute('y1', n.y);
-      line.setAttribute('x2', nodes[centerIdx].x);
-      line.setAttribute('y2', nodes[centerIdx].y);
-      lineGroup.appendChild(line);
-    }
-    const next = nodes[(i + 1) % (nodes.length - 1)];
-    if (Math.random() > 0.55) {
-      const line2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      line2.setAttribute('x1', n.x);
-      line2.setAttribute('y1', n.y);
-      line2.setAttribute('x2', next.x);
-      line2.setAttribute('y2', next.y);
-      lineGroup.appendChild(line2);
-    }
+  const svg = document.getElementById('pipelineSvg');
+  if (!svg) return;
+  const lineGroup = document.getElementById('pipelineLines');
+  const nodeGroup = document.getElementById('pipelineNodes');
+  const W = 320, H = 120;
+  const positions = [
+    { x: 24, y: 60 }, { x: 100, y: 30 }, { x: 100, y: 90 },
+    { x: 190, y: 20 }, { x: 190, y: 60 }, { x: 190, y: 100 },
+    { x: 280, y: 60 }
+  ];
+  const links = [
+    [0, 1], [0, 2], [1, 3], [1, 4], [2, 4], [2, 5], [3, 6], [4, 6], [5, 6]
+  ];
+  links.forEach(([a, b]) => {
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', positions[a].x);
+    line.setAttribute('y1', positions[a].y);
+    line.setAttribute('x2', positions[b].x);
+    line.setAttribute('y2', positions[b].y);
+    lineGroup.appendChild(line);
   });
-
-  nodes.forEach((n, i) => {
-    const isCenter = i === centerIdx;
-    const r = isCenter ? 7 : 2.5 + Math.random() * 2.5;
+  positions.forEach((p, i) => {
+    const isEdge = i === 0 || i === positions.length - 1;
     const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', n.x);
-    circle.setAttribute('cy', n.y);
-    circle.setAttribute('r', r);
-    circle.setAttribute('fill', isCenter ? 'url(#nodeGlow)' : '#00e5cc');
-    circle.setAttribute('opacity', isCenter ? '1' : String(0.35 + Math.random() * 0.5));
-    if (!isCenter) {
-      circle.style.animation = `pulse ${2 + Math.random() * 3}s ease-in-out ${Math.random() * 2}s infinite`;
-    }
+    circle.setAttribute('cx', p.x);
+    circle.setAttribute('cy', p.y);
+    circle.setAttribute('r', isEdge ? 5 : 3);
+    circle.setAttribute('fill', isEdge ? '#378FE9' : '#0A66C2');
+    circle.setAttribute('opacity', isEdge ? '0.95' : '0.6');
     nodeGroup.appendChild(circle);
   });
 })();
@@ -134,7 +127,6 @@ const projectData = {
     title: 'Orin',
     desc: 'RAG-based AI chatbot with a FastAPI backend, Llama 3.3 70B, ChromaDB vector storage, long-term memory and streaming responses. Built to hold context across sessions and answer with retrieved, grounded information rather than relying on the model alone.',
     tags: ['Python', 'FastAPI', 'RAG', 'ChromaDB', 'LLM', 'SSE'],
-    num: '01',
     live: 'https://alihaimran.pythonanywhere.com',
     github: 'https://github.com/devaspir'
   },
@@ -142,16 +134,14 @@ const projectData = {
     title: 'Akademus.ai',
     desc: 'AI-powered platform built with Python, combining intelligent AI functionality with a modern user experience.',
     tags: ['Python', 'Generative AI', 'AI', 'Backend'],
-    num: '02',
-    live: '#',
+    live: '',
     github: 'https://github.com/devaspir'
   },
   pdf: {
     title: 'PDF Chatbot',
     desc: 'Document-aware AI chatbot that allows users to ask questions about uploaded PDF documents using retrieval-augmented generation.',
     tags: ['Python', 'RAG', 'PDF Parsing', 'LLM', 'Vector Database'],
-    num: '03',
-    live: '#',
+    live: '',
     github: 'https://github.com/devaspir'
   }
 };
@@ -162,17 +152,18 @@ const modalTitle = document.getElementById('modalTitle');
 const modalDesc = document.getElementById('modalDesc');
 const modalTags = document.getElementById('modalTags');
 const modalActions = document.getElementById('modalActions');
-const modalNum = document.getElementById('modalNum');
 
 function openModal(key) {
   const data = projectData[key];
   if (!data) return;
-  modalNum.textContent = data.num;
   modalTitle.textContent = data.title;
   modalDesc.textContent = data.desc;
   modalTags.innerHTML = data.tags.map((t) => `<span>${t}</span>`).join('');
+  const liveBtn = data.live
+    ? `<a href="${data.live}" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Live demo</a>`
+    : `<a href="#" class="btn btn-sm btn-primary btn-disabled" aria-disabled="true">Live demo</a>`;
   modalActions.innerHTML = `
-    <a href="${data.live}" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Live Demo</a>
+    ${liveBtn}
     <a href="${data.github}" class="btn btn-sm btn-outline" target="_blank" rel="noopener">GitHub</a>
   `;
   modalBackdrop.classList.add('open');
@@ -313,6 +304,6 @@ const resumeLink = document.getElementById('resumeLink');
 resumeLink.addEventListener('click', (e) => {
   if (resumeLink.getAttribute('href') === '#') {
     e.preventDefault();
-    formNote?.scrollIntoView;
+    formNote?.scrollIntoView({ behavior: 'smooth' });
   }
 });
