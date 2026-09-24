@@ -4,106 +4,141 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aliha Imran | AI/ML Engineer</title>
-<meta name="description" content="AI Engineer specializing in GenAI, LLM systems, RAG and Agentic AI.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="rose">
+<canvas id="bg"></canvas>
 
-<header>
-  <a href="#home" class="logo">Aliha<b>.</b></a>
-  <nav id="nav">
-    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
-    <a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
-    <button id="themeBtn" title="Change theme">🌗</button>
+<header class="nav">
+  <div class="logo">Aliha<span>.</span></div>
+  <nav>
+    <button class="tab active" data-page="0">Home</button>
+    <button class="tab" data-page="1">Portfolio</button>
   </nav>
-  <button id="menuBtn">☰</button>
+  <button id="themeBtn" aria-label="Toggle theme">◐ Black</button>
 </header>
 
-<section id="home">
-  <div class="hero-text">
-    <span class="tag">Build Intelligent Solutions for a Smarter Tomorrow</span>
-    <h1>Hi, I'm <span class="grad">Aliha Imran</span></h1>
-    <div class="role"><span id="typing"></span><span>|</span></div>
-    <p>AI/ML Engineer focused on GenAI &amp; LLM systems, RAG pipelines and Agentic AI. I build intelligent, production-ready applications.</p>
-    <div class="btns">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="#contact" class="btn ghost">Contact Me</a>
-    </div>
-    <div class="socials">
-      <a href="https://github.com/devaspir" target="_blank" title="GitHub">GH</a>
-      <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" title="LinkedIn">in</a>
-      <a href="mailto:alihaimran676@gmail.com" title="Email">@</a>
-    </div>
-  </div>
-  <div class="photo"><img src="profile.png" alt="Aliha Imran"></div>
-</section>
+<main>
+  <!-- PAGE 1 -->
+  <section class="page active" id="p0">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="hello">Hello, I'm</p>
+        <h1>Aliha <span class="grad">Imran</span></h1>
+        <h2>I'm an <span id="typed"></span><span class="caret">|</span></h2>
+        <p class="intro">AI/ML Developer &amp; Generative AI Engineer building intelligent solutions for a smarter tomorrow. I work with LLMs, RAG systems and Agentic AI to turn ideas into real products.</p>
+        <div class="chips">
+          <span>Python</span><span>LLMs</span><span>RAG</span><span>Agentic AI</span>
+          <span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span>
+        </div>
+        <div class="cta">
+          <button class="btn primary" data-go="1">View My Work →</button>
+          <a class="btn ghost" href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
 
-<section id="about">
-  <h2 class="reveal">About <span>Me</span></h2>
-  <p class="sub reveal">AI/ML Developer &amp; Generative AI Engineer</p>
-  <div class="about-grid reveal">
-    <div>
-      <p>I'm an AI Engineer who loves turning ideas into working intelligent systems. My work revolves around Large Language Models, Retrieval-Augmented Generation (RAG), and autonomous AI agents.</p>
-      <p>I build end-to-end solutions: from vector databases and LLM pipelines to FastAPI backends and clean user interfaces, and I'm actively looking for AI/ML Engineer opportunities.</p>
-    </div>
-    <div class="stats">
-      <div class="stat"><h3 class="grad">5+</h3><p>AI Projects</p></div>
-      <div class="stat"><h3 class="grad">RAG</h3><p>Specialty</p></div>
-      <div class="stat"><h3 class="grad">LLMs</h3><p>&amp; Agents</p></div>
-      <div class="stat"><h3 class="grad">Full</h3><p>Stack AI</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <h2 class="reveal">My <span>Skills</span></h2>
-  <p class="sub reveal">Tools and technologies I work with</p>
-  <div class="skills">
-    <div class="card reveal"><h3>🧠 AI / ML</h3><div class="chips"><span>Machine Learning</span><span>Deep Learning</span><span>LLMs</span><span>RAG</span><span>Agentic AI</span><span>Prompt Engineering</span></div></div>
-    <div class="card reveal"><h3>⚙️ Frameworks</h3><div class="chips"><span>LangChain</span><span>FastAPI</span><span>Flask</span><span>Streamlit</span></div></div>
-    <div class="card reveal"><h3>🗄️ Data</h3><div class="chips"><span>ChromaDB</span><span>Vector Databases</span><span>Embeddings</span></div></div>
-    <div class="card reveal"><h3>💻 Languages &amp; Web</h3><div class="chips"><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git / GitHub</span></div></div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 class="reveal">Featured <span>Projects</span></h2>
-  <p class="sub reveal">Some of the things I've built</p>
-  <div class="projects">
-    <div class="card reveal"><div class="ico">🚀</div><h3>ARX AI</h3><p>AI-powered platform built with modern LLM tooling and agent workflows.</p><a class="link" href="https://github.com/devaspir" target="_blank">View on GitHub →</a></div>
-    <div class="card reveal"><div class="ico">🎓</div><h3>Akademus.ai</h3><p>AI-driven academic assistant helping students learn and research smarter.</p><a class="link" href="https://github.com/devaspir" target="_blank">View on GitHub →</a></div>
-    <div class="card reveal"><div class="ico">🤖</div><h3>Orin Chatbot</h3><p>RAG-based chatbot with a FastAPI backend, Groq LLM and ChromaDB vector store.</p><a class="link" href="https://github.com/devaspir" target="_blank">View on GitHub →</a></div>
-    <div class="card reveal"><div class="ico">💬</div><h3>BrainX</h3><p>Intelligent chatbot with a Flask backend and a responsive HTML/CSS/JS frontend.</p><a class="link" href="https://github.com/devaspir" target="_blank">View on GitHub →</a></div>
-    <div class="card reveal"><div class="ico">⚓</div><h3>MarinOps</h3><p>Maritime SaaS platform (StarboardNav AI) with role-based dashboards for captains, fleet managers and owners.</p><a class="link" href="https://github.com/devaspir" target="_blank">View on GitHub →</a></div>
-  </div>
-</section>
-
-<section id="education">
-  <h2 class="reveal">My <span>Education</span></h2>
-  <p class="sub reveal">Academic background</p>
-  <div class="timeline reveal">
-    <h3>BS Computer Science</h3>
-    <p>Virtual University of Pakistan</p>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="contact-box reveal">
-    <h2>Let's <span>Work Together</span></h2>
-    <p class="sub">Have an AI project or opportunity in mind? Let's talk.</p>
-    <div class="card">
-      <p>📍 Lahore, Pakistan</p>
-      <a class="mail grad" href="mailto:alihaimran676@gmail.com">alihaimran676@gmail.com</a>
-      <div class="btns" style="justify-content:center">
-        <a href="https://linkedin.com/in/aliha-imran-400793410" target="_blank" class="btn primary">LinkedIn</a>
-        <a href="https://github.com/devaspir" target="_blank" class="btn ghost">GitHub</a>
+      <div class="robot-wrap">
+        <div class="glow"></div>
+        <div class="robot" id="robot">
+          <div class="antenna"></div>
+          <div class="head">
+            <div class="face">
+              <span class="eye"><i></i></span>
+              <span class="eye"><i></i></span>
+            </div>
+            <div class="mouth"></div>
+          </div>
+          <div class="body"><div class="core"></div></div>
+          <div class="arm l"></div>
+          <div class="arm r"></div>
+        </div>
+        <div class="bubble">Hi! I'm Aliha's AI assistant 👋</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>© <span id="year"></span> Aliha Imran. All rights reserved.</footer>
+  <!-- PAGE 2 -->
+  <section class="page" id="p1">
+    <div class="wrap">
+
+      <div class="block reveal">
+        <h3 class="title">About <span class="grad">Me</span></h3>
+        <p class="about">I'm a Computer Science student and AI/ML Engineer focused on Generative AI. I build LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines and agentic workflows, from the backend API to a clean frontend. I love shipping projects that are live, fast and useful.</p>
+      </div>
+
+      <div class="block reveal">
+        <h3 class="title">Tech <span class="grad">Skills</span></h3>
+        <div class="grid skills">
+          <div class="card"><h4>Generative AI</h4><p>LLMs · RAG · Agentic AI · Prompt Engineering</p></div>
+          <div class="card"><h4>Frameworks</h4><p>LangChain · FastAPI · Flask · Streamlit</p></div>
+          <div class="card"><h4>Data &amp; Vector DB</h4><p>ChromaDB · Vector Databases · Embeddings</p></div>
+          <div class="card"><h4>Languages &amp; Web</h4><p>Python · HTML · CSS · JavaScript</p></div>
+        </div>
+      </div>
+
+      <div class="block reveal">
+        <h3 class="title">Experience &amp; <span class="grad">Education</span></h3>
+        <div class="timeline">
+          <div class="t-item">
+            <span class="date">Mar 2026 – Mar 2029</span>
+            <h4>BS Computer Science</h4>
+            <p class="sub">Virtual University of Pakistan</p>
+            <p>Currently studying, building a strong foundation in CS, algorithms and software engineering alongside AI/ML.</p>
+          </div>
+          <div class="t-item">
+            <span class="date">Present</span>
+            <h4>AI/ML Developer &amp; Generative AI Engineer</h4>
+            <p class="sub">Independent Projects</p>
+            <p>Designed and deployed RAG chatbots and AI apps (BrainX, Orin, Akademus.ai) using Python, FastAPI, Flask, LangChain and ChromaDB.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block reveal">
+        <h3 class="title">Featured <span class="grad">Projects</span></h3>
+        <div class="grid projects">
+          <article class="card project">
+            <div class="tag">Chatbot · Flask</div>
+            <h4>BrainX</h4>
+            <p>AI chatbot with a Flask backend and a clean HTML/CSS/JS frontend, deployed live.</p>
+            <div class="links">
+              <a href="https://alihaimran.pythonanywhere.com" target="_blank" rel="noopener">Live Demo ↗</a>
+              <a href="https://github.com/alihaimran/BrainX.git" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </article>
+          <article class="card project">
+            <div class="tag">RAG · FastAPI</div>
+            <h4>Orin Chatbot</h4>
+            <p>RAG-based assistant powered by a FastAPI backend, Groq LLM and ChromaDB vector search.</p>
+            <div class="links">
+              <a href="https://alihaimran.github.io/orin-chatbot/orin-chat.html" target="_blank" rel="noopener">Live Demo ↗</a>
+            </div>
+          </article>
+          <article class="card project">
+            <div class="tag">AI · Streamlit</div>
+            <h4>Akademus.ai</h4>
+            <p>AI-powered academic assistant built with Streamlit and LLMs, live on Streamlit Cloud.</p>
+            <div class="links">
+              <a href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank" rel="noopener">Live Demo ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="block reveal contact">
+        <h3 class="title">Let's <span class="grad">Connect</span></h3>
+        <p class="about">Open to AI/ML Engineer and Agentic AI opportunities.</p>
+        <div class="cta center">
+          <a class="btn primary" href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn ghost" href="https://github.com/alihaimran" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn ghost" href="mailto:alihaimran676@gmail.com">Email Me</a>
+        </div>
+      </div>
+
+      <footer>© 2026 Aliha Imran · Built with ♥ and AI</footer>
+    </div>
+  </section>
+</main>
 
 <script src="script.js"></script>
 </body>
