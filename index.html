@@ -23,13 +23,13 @@
   </div>
 </header>
 
-<button class="side-cta" id="touch"><span class="live"></span>Get in touch<b>→</b></button>
-
 <nav class="dots" id="dots">
   <a href="#about" data-t="About"></a>
-  <a href="#skills" data-t="Skills"></a>
-  <a href="#education" data-t="Education"></a>
   <a href="#experience" data-t="Experience"></a>
+  <a href="#education" data-t="Education"></a>
+  <a href="#skills" data-t="Skills"></a>
+  <a href="#tools" data-t="Tools"></a>
+  <a href="#lab" data-t="AI Lab"></a>
   <a href="#projects" data-t="Projects"></a>
   <a href="#connect" data-t="Connect"></a>
 </nav>
@@ -37,32 +37,68 @@
 <main>
 <!-- ================= PAGE 1 ================= -->
 <section class="page active" id="p0">
-  <div class="hero">
-    <div class="hero-text">
-      <div class="status"><span class="live"></span> Open to AI/ML opportunities</div>
-      <p class="hello">Hello, I'm</p>
-      <h1>Aliha <span class="grad">Imran</span></h1>
-      <h2>I build <span id="typed"></span><span class="caret">|</span></h2>
-      <p class="intro">AI/ML Developer &amp; Generative AI Engineer building intelligent solutions for a smarter tomorrow. I turn LLMs, RAG pipelines and autonomous agents into real, live products.</p>
-      <div class="chips">
-        <span>Python</span><span>LLMs</span><span>RAG</span><span>Agentic AI</span>
-        <span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span>
-      </div>
-      <p class="hint">Click <b>Get in touch</b> on the right edge to see my full portfolio →</p>
+
+  <!-- ---- block A: the robot, first thing you see ---- -->
+  <div class="hero-robot">
+    <div class="hr-tag">AI / ML Engineer &nbsp;·&nbsp; GenAI &nbsp;·&nbsp; Agentic Systems</div>
+
+    <div class="robot-stage" id="robotStage">
+      <div class="rb-scanring"></div>
+      <svg class="rb-svg" id="robotSvg" viewBox="0 0 300 300">
+        <!-- connective nodes -->
+        <g class="rb-nodes">
+          <line x1="70" y1="90" x2="26" y2="60"></line>
+          <line x1="230" y1="90" x2="274" y2="60"></line>
+          <line x1="70" y1="190" x2="24" y2="220"></line>
+          <line x1="230" y1="190" x2="276" y2="220"></line>
+          <circle cx="26" cy="60" r="4"></circle>
+          <circle cx="274" cy="60" r="4"></circle>
+          <circle cx="24" cy="220" r="4"></circle>
+          <circle cx="276" cy="220" r="4"></circle>
+        </g>
+        <!-- antenna -->
+        <line class="rb-line" x1="150" y1="60" x2="150" y2="32"></line>
+        <circle class="rb-pulse-dot" cx="150" cy="26" r="6"></circle>
+        <!-- head -->
+        <rect class="rb-line" x="68" y="60" width="164" height="150" rx="30"></rect>
+        <!-- visor -->
+        <rect class="rb-visor" x="92" y="102" width="116" height="46" rx="20"></rect>
+        <circle class="rb-eye" cx="122" cy="125" r="10"></circle>
+        <circle class="rb-eye" cx="178" cy="125" r="10"></circle>
+        <!-- mouth equalizer -->
+        <g class="rb-eq">
+          <rect x="112" y="172" width="6" height="10" rx="2"></rect>
+          <rect x="126" y="166" width="6" height="22" rx="2"></rect>
+          <rect x="140" y="160" width="6" height="34" rx="2"></rect>
+          <rect x="154" y="164" width="6" height="26" rx="2"></rect>
+          <rect x="168" y="170" width="6" height="14" rx="2"></rect>
+          <rect x="182" y="163" width="6" height="30" rx="2"></rect>
+        </g>
+        <!-- neck + shoulders -->
+        <rect class="rb-line" x="132" y="210" width="36" height="16" rx="4"></rect>
+        <path class="rb-line" d="M84 260 C84 228 110 226 150 226 C190 226 216 228 216 260 L216 268 L84 268 Z"></path>
+      </svg>
     </div>
 
-    <div class="stage-wrap">
-      <div class="stage" id="stage">
-        <div class="pulse-ring"></div><div class="pulse-ring d2"></div>
-        <div class="orbit o1" id="o1"></div>
-        <div class="orbit o2" id="o2"></div>
-        <div class="brain"><svg class="net" id="net" viewBox="0 0 200 200"></svg></div>
+    <a class="scroll-cue" href="#heroIntro">
+      <span>Scroll to explore</span>
+      <i></i>
+    </a>
+  </div>
 
-        <div class="fcard c1"><i></i><span id="log">Loading vectors…</span></div>
-        <div class="fcard c2"><b>RAG</b> pipeline <em>● live</em></div>
-        <div class="fcard c3"><b>Agent</b> reasoning<span class="dots3"><u></u><u></u><u></u></span></div>
-      </div>
+  <!-- ---- block B: the intro ---- -->
+  <div class="hero-intro" id="heroIntro">
+    <div class="status"><span class="live"></span> Open to AI/ML opportunities</div>
+    <p class="hello">Hello, I'm</p>
+    <h1>Aliha <span class="grad">Imran</span></h1>
+    <h2>I build <span id="typed"></span><span class="caret">|</span></h2>
+    <p class="intro">AI/ML Developer &amp; Generative AI Engineer building intelligent solutions for a smarter tomorrow. I turn LLMs, RAG pipelines and autonomous agents into real, live products.</p>
+    <div class="chips">
+      <span>Python</span><span>LLMs</span><span>RAG</span><span>Agentic AI</span>
+      <span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span>
     </div>
+    <button class="btn primary big-cta go-page2"><span class="live"></span>Get in touch<b>→</b></button>
+    <p class="hint">01 <i></i> 02 — my full profile, experience &amp; work</p>
   </div>
 </section>
 
@@ -70,8 +106,8 @@
 <section class="page" id="p1">
   <div class="wrap">
 
-    <!-- ABOUT -->
-    <div class="block reveal" id="about">
+    <!-- ABOUT — split panel -->
+    <div class="block reveal sec-about" id="about">
       <p class="idx">01 — About</p>
       <h3 class="title">About <span class="grad">Me</span></h3>
       <div class="about-grid">
@@ -90,55 +126,89 @@
       </div>
     </div>
 
-    <!-- SKILLS -->
-    <div class="block reveal" id="skills">
-      <p class="idx">02 — Skills</p>
-      <h3 class="title">Tech <span class="grad">Skills</span></h3>
-      <div class="skill-grid">
-        <div class="skill"><div class="row"><span>Python</span><em data-count="90">0</em></div><div class="bar"><i data-w="90"></i></div></div>
-        <div class="skill"><div class="row"><span>LLMs &amp; Prompt Engineering</span><em data-count="88">0</em></div><div class="bar"><i data-w="88"></i></div></div>
-        <div class="skill"><div class="row"><span>RAG Systems</span><em data-count="88">0</em></div><div class="bar"><i data-w="88"></i></div></div>
-        <div class="skill"><div class="row"><span>Agentic AI</span><em data-count="82">0</em></div><div class="bar"><i data-w="82"></i></div></div>
-        <div class="skill"><div class="row"><span>LangChain</span><em data-count="85">0</em></div><div class="bar"><i data-w="85"></i></div></div>
-        <div class="skill"><div class="row"><span>FastAPI / Flask</span><em data-count="80">0</em></div><div class="bar"><i data-w="80"></i></div></div>
-        <div class="skill"><div class="row"><span>ChromaDB &amp; Vector DBs</span><em data-count="82">0</em></div><div class="bar"><i data-w="82"></i></div></div>
-        <div class="skill"><div class="row"><span>HTML / CSS / JavaScript</span><em data-count="72">0</em></div><div class="bar"><i data-w="72"></i></div></div>
-      </div>
-      <div class="marquee"><div class="track" id="track"></div></div>
-    </div>
-
-    <!-- EDUCATION + EXPERIENCE -->
-    <div class="two">
-      <div class="block reveal" id="education">
-        <p class="idx">03 — Education</p>
-        <h3 class="title">My <span class="grad">Education</span></h3>
-        <div class="timeline">
-          <div class="t-item">
-            <span class="date">Mar 2026 – Mar 2029</span>
-            <h4>BS Computer Science</h4>
-            <p class="sub">Virtual University of Pakistan</p>
-            <p>Building a strong base in algorithms, data structures and software engineering, alongside hands-on AI/ML work.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="block reveal" id="experience">
-        <p class="idx">04 — Experience</p>
-        <h3 class="title">My <span class="grad">Experience</span></h3>
-        <div class="timeline">
-          <div class="t-item">
+    <!-- EXPERIENCE — zigzag timeline -->
+    <div class="block reveal sec-exp" id="experience">
+      <p class="idx">02 — Experience</p>
+      <h3 class="title">My <span class="grad">Experience</span></h3>
+      <div class="ztimeline">
+        <div class="z-item">
+          <div class="z-dot"></div>
+          <div class="z-card">
             <span class="date">Present</span>
             <h4>AI/ML &amp; Generative AI Engineer</h4>
             <p class="sub">Independent Projects</p>
             <p>Designed and deployed RAG chatbots and AI apps (BrainX, Orin, Akademus.ai) using Python, FastAPI, Flask, LangChain and ChromaDB.</p>
+            <div class="tech"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>ChromaDB</span></div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- EDUCATION — stamp card -->
+    <div class="block reveal sec-edu" id="education">
+      <p class="idx">03 — Education</p>
+      <h3 class="title">My <span class="grad">Education</span></h3>
+      <div class="edu-card">
+        <div class="edu-badge">BS<span>CS</span></div>
+        <div>
+          <span class="date">Mar 2026 – Mar 2029</span>
+          <h4>BS Computer Science</h4>
+          <p class="sub">Virtual University of Pakistan</p>
+          <p>Building a strong base in algorithms, data structures and software engineering, alongside hands-on AI/ML work.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS — floating bubble field -->
+    <div class="block reveal sec-skills" id="skills">
+      <p class="idx">04 — Skills</p>
+      <h3 class="title">Tech <span class="grad">Skills</span></h3>
+      <div class="bubble-field" id="bubbleField">
+        <div class="bf-col" data-cat="AI / ML">
+          <p class="bf-label">AI / ML</p>
+          <div class="bf-zone" data-items="Machine Learning,Deep Learning,NLP,Computer Vision,Generative AI,Agentic AI"></div>
+        </div>
+        <div class="bf-col" data-cat="Development">
+          <p class="bf-label">Development</p>
+          <div class="bf-zone" data-items="Python,APIs,Backend Dev,Automation"></div>
+        </div>
+        <div class="bf-col" data-cat="AI Systems">
+          <p class="bf-label">AI Systems</p>
+          <div class="bf-zone" data-items="RAG,AI Agents,LLM Apps,Prompt Eng.,AI Workflows"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOLS — flip grid -->
+    <div class="block reveal sec-tools" id="tools">
+      <p class="idx">05 — Tools</p>
+      <h3 class="title">Tools I <span class="grad">Use</span></h3>
+      <div class="tool-grid">
+        <div class="tool-card"><i>🐍</i><span>Python</span></div>
+        <div class="tool-card"><i>⌥</i><span>Git</span></div>
+        <div class="tool-card"><i>🐙</i><span>GitHub</span></div>
+        <div class="tool-card"><i>🧩</i><span>VS Code</span></div>
+        <div class="tool-card"><i>⚡</i><span>FastAPI</span></div>
+        <div class="tool-card"><i>🔗</i><span>LangChain</span></div>
+        <div class="tool-card"><i>🧠</i><span>OpenAI</span></div>
+        <div class="tool-card"><i>📊</i><span>ChromaDB</span></div>
+      </div>
+    </div>
+
+    <!-- AI LAB — animated terminal -->
+    <div class="block reveal sec-lab" id="lab">
+      <p class="idx">06 — AI Lab</p>
+      <h3 class="title">Creative <span class="grad">AI Lab</span></h3>
+      <p class="about">A live look at how an agent thinks — retrieve, reason, respond.</p>
+      <div class="term">
+        <div class="bar-top"><i></i><i></i><i></i><span>agent-runtime</span></div>
+        <div class="term-body" id="termBody"></div>
+      </div>
+    </div>
+
     <!-- PROJECTS -->
-    <div class="block reveal" id="projects">
-      <p class="idx">05 — Projects</p>
+    <div class="block reveal sec-projects" id="projects">
+      <p class="idx">07 — Projects</p>
       <h3 class="title">Featured <span class="grad">Projects</span></h3>
       <div class="grid projects">
 
@@ -181,7 +251,7 @@
 
     <!-- CONNECT -->
     <div class="block reveal contact" id="connect">
-      <p class="idx">06 — Contact</p>
+      <p class="idx">08 — Contact</p>
       <div class="env">
         <span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span>
         <div class="env-ico">✉</div>
