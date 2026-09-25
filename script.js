@@ -18,7 +18,7 @@ function go(n) {
       { duration: 550, easing: 'ease-in-out', fill: 'forwards' }).onfinish = () => busy = false;
   };
 }
-$('#touch').addEventListener('click', () => go(1));
+$$('.go-page2').forEach(b => b.addEventListener('click', () => go(1)));
 $('#back').addEventListener('click', () => go(0));
 $('#logo').addEventListener('click', () => go(0));
 
@@ -43,52 +43,21 @@ let ri = 0, ci = 0, del = false;
   setTimeout(type, del ? 35 : 80);
 })();
 
-/* ---------- AI Core: orbiting skills ---------- */
-function orbit(el, items) {
-  items.forEach((t, i) => {
-    const a = (i / items.length) * Math.PI * 2;
-    const s = document.createElement('div');
-    s.className = 'sat';
-    s.style.left = 50 + 50 * Math.cos(a) + '%';
-    s.style.top = 50 + 50 * Math.sin(a) + '%';
-    s.innerHTML = `<span>${t}</span>`;
-    el.appendChild(s);
-  });
-}
-orbit($('#o1'), ['Python', 'LLMs', 'RAG', 'Agentic AI', 'LangChain', 'FastAPI']);
-orbit($('#o2'), ['ChromaDB', 'Embeddings', 'Streamlit', 'Groq']);
-
-/* ---------- AI Core: neural network ---------- */
-(function buildNet() {
-  const svg = $('#net'), layers = [4, 5, 3], xs = [38, 100, 162], NS = 'http://www.w3.org/2000/svg';
-  const pos = layers.map((n, l) => Array.from({ length: n }, (_, i) => [xs[l], 100 + (i - (n - 1) / 2) * 30]));
-  for (let l = 0; l < pos.length - 1; l++)
-    pos[l].forEach(a => pos[l + 1].forEach(b => {
-      const ln = document.createElementNS(NS, 'line');
-      ln.setAttribute('x1', a[0]); ln.setAttribute('y1', a[1]); ln.setAttribute('x2', b[0]); ln.setAttribute('y2', b[1]);
-      ln.style.animationDelay = (Math.random() * -1.2) + 's';
-      svg.appendChild(ln);
-    }));
-  pos.flat().forEach(p => {
-    const c = document.createElementNS(NS, 'circle');
-    c.setAttribute('cx', p[0]); c.setAttribute('cy', p[1]); c.setAttribute('r', 4);
-    c.style.animationDelay = (Math.random() * 2) + 's';
-    svg.appendChild(c);
-  });
-})();
-
-/* ---------- Live agent log ---------- */
-const logs = ['Loading vectors…', 'Embedding query…', 'Retrieving top-k…', 'Ranking context…', 'Generating answer…', 'Response ready ✓'];
-let li = 0;
-setInterval(() => { $('#log').textContent = logs[li = (li + 1) % logs.length]; }, 1700);
-
-/* ---------- Mouse: cursor glow + stage tilt ---------- */
-const gc = $('#gc'), stage = $('#stage');
+/* ---------- Robot: idle blink + subtle parallax ---------- */
+const robotStage = $('#robotStage');
 document.addEventListener('mousemove', e => {
-  gc.style.left = e.clientX + 'px'; gc.style.top = e.clientY + 'px';
+  if (!robotStage) return;
   const x = (e.clientX / innerWidth - .5), y = (e.clientY / innerHeight - .5);
-  stage.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 18}deg)`;
+  robotStage.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
 });
+(function blink() {
+  const eyes = $$('.rb-eye');
+  if (eyes.length) {
+    eyes.forEach(e => e.classList.add('blink'));
+    setTimeout(() => eyes.forEach(e => e.classList.remove('blink')), 180);
+  }
+  setTimeout(blink, 2600 + Math.random() * 2600);
+})();
 
 /* ---------- Scroll reveal + section animations ---------- */
 function countUp(el) {
@@ -117,19 +86,67 @@ function typeCode() {
   let i = 0;
   (function f() { $('#code').innerHTML = highlight(codeText.slice(0, ++i)); if (i < codeText.length) setTimeout(f, 28); })();
 }
+
+/* ---------- Skills: floating bubble field ---------- */
+let bubblesBuilt = false;
+function buildBubbles() {
+  if (bubblesBuilt) return; bubblesBuilt = true;
+  $$('.bf-zone').forEach(zone => {
+    const items = zone.dataset.items.split(',');
+    items.forEach((t, i) => {
+      const b = document.createElement('span');
+      b.className = 'bubble';
+      b.textContent = t;
+      const size = 0.82 + Math.random() * 0.5;
+      b.style.setProperty('--sz', size.toFixed(2));
+      b.style.left = (8 + Math.random() * 64) + '%';
+      b.style.top = (i * (100 / items.length) + Math.random() * 8) + '%';
+      b.style.animationDuration = (4 + Math.random() * 3).toFixed(1) + 's';
+      b.style.animationDelay = (-Math.random() * 4).toFixed(1) + 's';
+      zone.appendChild(b);
+    });
+  });
+}
+
+/* ---------- AI Lab: animated terminal log ---------- */
+const termLines = [
+  { p: '&gt; query', t: '"summarize the latest RAG paper"' },
+  { p: 'embed', t: 'encoding query → 1536-dim vector' },
+  { p: 'retrieve', t: 'top-k=5 chunks from ChromaDB ✓' },
+  { p: 'rank', t: 'reranking context by relevance' },
+  { p: 'agent', t: 'planning next tool call…' },
+  { p: 'llm', t: 'generating grounded response' },
+  { p: 'done', t: 'response streamed ✓ (412ms)' },
+];
+let termBuilt = false;
+function buildTerminal() {
+  if (termBuilt) return; termBuilt = true;
+  const body = $('#termBody');
+  let i = 0;
+  function addLine() {
+    const l = termLines[i % termLines.length];
+    const row = document.createElement('div');
+    row.className = 'term-row';
+    row.innerHTML = `<b>${l.p}</b><span>${l.t}</span>`;
+    body.appendChild(row);
+    while (body.children.length > 7) body.removeChild(body.firstChild);
+    body.scrollTop = body.scrollHeight;
+    i++;
+    setTimeout(addLine, 1300);
+  }
+  addLine();
+}
+
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (!e.isIntersecting || e.target.classList.contains('show')) return;
   const el = e.target; el.classList.add('show');
-  $$('[data-w]', el).forEach(b => b.style.width = b.dataset.w + '%');
   $$('[data-count]', el).forEach(countUp);
   if (el.id === 'about') typeCode();
+  if (el.id === 'skills') buildBubbles();
+  if (el.id === 'lab') buildTerminal();
 }), { threshold: .2 });
 function observe() { $$('.reveal').forEach(el => io.observe(el)); }
 observe();
-
-/* ---------- Skills marquee ---------- */
-const tech = ['Python', 'LLMs', 'RAG', 'Agentic AI', 'LangChain', 'FastAPI', 'Flask', 'Streamlit', 'ChromaDB', 'Vector DBs', 'Groq', 'JavaScript'];
-$('#track').innerHTML = [...tech, ...tech].map(t => `<span>${t}</span>`).join('');
 
 /* ---------- Project cards: 3D tilt + spotlight ---------- */
 $$('.tilt').forEach(c => {
@@ -162,9 +179,13 @@ addEventListener('scroll', () => {
   const h = document.documentElement;
   $('#prog').style.width = (scrollY / (h.scrollHeight - innerHeight) * 100) + '%';
   let idx = 0;
-  secs.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * .45) idx = i; });
+  secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .45) idx = i; });
   dots.forEach((d, i) => d.classList.toggle('on', i === idx));
 });
+
+/* ---------- Cursor glow ---------- */
+const gc = $('#gc');
+document.addEventListener('mousemove', e => { gc.style.left = e.clientX + 'px'; gc.style.top = e.clientY + 'px'; });
 
 /* ---------- Particle network background ---------- */
 const cv = $('#bg'), ctx = cv.getContext('2d');
