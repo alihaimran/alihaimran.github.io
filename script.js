@@ -43,20 +43,49 @@ let ri = 0, ci = 0, del = false;
   setTimeout(type, del ? 35 : 80);
 })();
 
-/* ---------- Robot: idle blink + subtle parallax ---------- */
-const robotStage = $('#robotStage');
+/* ---------- AI core: orbit satellites + connecting lines ---------- */
+(function buildCore() {
+  const layer = $('#satLayer'), svg = $('#coreLines');
+  if (!layer || !svg) return;
+  const NS = 'http://www.w3.org/2000/svg';
+  const sats = ['Python', 'LLMs', 'RAG', 'Agentic AI', 'LangChain', 'FastAPI', 'ChromaDB', 'Vision'];
+  sats.forEach((t, i) => {
+    const a = (i / sats.length) * Math.PI * 2 - Math.PI / 2;
+    const r = 43;
+    const x = 50 + r * Math.cos(a), y = 50 + r * Math.sin(a);
+    const line = document.createElementNS(NS, 'line');
+    line.setAttribute('x1', 50); line.setAttribute('y1', 50);
+    line.setAttribute('x2', x); line.setAttribute('y2', y);
+    line.setAttribute('class', 'core-line');
+    line.style.animationDelay = (-Math.random() * 2) + 's';
+    svg.appendChild(line);
+    const tag = document.createElement('span');
+    tag.className = 'sat-tag';
+    tag.style.left = x + '%'; tag.style.top = y + '%';
+    tag.style.animationDelay = (-Math.random() * 5) + 's';
+    tag.textContent = t;
+    layer.appendChild(tag);
+  });
+})();
+
+/* ---------- Core field: subtle parallax tilt ---------- */
+const coreField = $('#coreField');
 document.addEventListener('mousemove', e => {
-  if (!robotStage) return;
+  if (!coreField) return;
   const x = (e.clientX / innerWidth - .5), y = (e.clientY / innerHeight - .5);
-  robotStage.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+  coreField.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
 });
-(function blink() {
-  const eyes = $$('.rb-eye');
-  if (eyes.length) {
-    eyes.forEach(e => e.classList.add('blink'));
-    setTimeout(() => eyes.forEach(e => e.classList.remove('blink')), 180);
-  }
-  setTimeout(blink, 2600 + Math.random() * 2600);
+
+/* ---------- HUD coordinate ticker (decorative telemetry) ---------- */
+(function ticker() {
+  const el = $('#hudCoords');
+  if (!el) return;
+  const baseLat = 31.5204, baseLng = 74.3587;
+  setInterval(() => {
+    const lat = (baseLat + (Math.random() - .5) * 0.002).toFixed(4);
+    const lng = (baseLng + (Math.random() - .5) * 0.002).toFixed(4);
+    el.textContent = `${lat}° N · ${lng}° E`;
+  }, 2200);
 })();
 
 /* ---------- Scroll reveal + section animations ---------- */
