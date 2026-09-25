@@ -22,15 +22,15 @@ $('#touch').addEventListener('click', () => go(1));
 $('#back').addEventListener('click', () => go(0));
 $('#logo').addEventListener('click', () => go(0));
 
-/* ---------- Theme: rose / black ---------- */
+/* ---------- Theme: maroon / beige ---------- */
 const themeBtn = $('#themeBtn');
 function setTheme(t) {
   document.body.dataset.theme = t;
-  themeBtn.textContent = t === 'rose' ? '◐ Black' : '◐ Rose';
+  themeBtn.textContent = t === 'maroon' ? '◐ Beige' : '◐ Maroon';
   try { localStorage.setItem('theme', t); } catch (e) {}
 }
-themeBtn.addEventListener('click', () => setTheme(document.body.dataset.theme === 'rose' ? 'black' : 'rose'));
-try { setTheme(localStorage.getItem('theme') || 'rose'); } catch (e) {}
+themeBtn.addEventListener('click', () => setTheme(document.body.dataset.theme === 'maroon' ? 'beige' : 'maroon'));
+try { setTheme(localStorage.getItem('theme') || 'maroon'); } catch (e) {}
 
 /* ---------- Typing roles ---------- */
 const roles = ['intelligent AI/ML systems', 'RAG & LLM applications', 'autonomous AI agents', 'products people can use'];
@@ -82,7 +82,7 @@ const logs = ['Loading vectors…', 'Embedding query…', 'Retrieving top-k…',
 let li = 0;
 setInterval(() => { $('#log').textContent = logs[li = (li + 1) % logs.length]; }, 1700);
 
-/* ---------- Mouse: cursor glow + stage tilt + eyes-free parallax ---------- */
+/* ---------- Mouse: cursor glow + stage tilt ---------- */
 const gc = $('#gc'), stage = $('#stage');
 document.addEventListener('mousemove', e => {
   gc.style.left = e.clientX + 'px'; gc.style.top = e.clientY + 'px';
