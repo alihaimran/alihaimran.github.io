@@ -7,263 +7,201 @@
 <meta name="description" content="Aliha Imran - AI/ML Engineer and Generative AI Developer. RAG, LLMs, Agentic AI.">
 <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="maroon" data-page="0">
+<body data-theme="dark">
 
-<canvas id="bg"></canvas>
-<div class="cursor-glow" id="gc"></div>
-<div class="wipe" id="wipe"></div>
 <div class="progress" id="prog"></div>
 <div class="toast" id="toast">Email copied ✓</div>
 
-<header class="top">
-  <div class="logo" id="logo">Aliha<span>.</span></div>
-  <div class="top-r">
-    <button id="back" class="pill">← Home</button>
-    <button id="themeBtn" class="pill">◐ Beige</button>
+<header class="nav" id="nav">
+  <a href="#home" class="logo">Aliha<span>.</span></a>
+  <nav class="links-nav" id="menu">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#connect">Contact</a>
+  </nav>
+  <div class="nav-r">
+    <button id="themeBtn" class="pill" aria-label="Toggle theme">○ Light</button>
+    <button id="burger" class="burger" aria-label="Menu"><i></i><i></i></button>
   </div>
 </header>
 
-<nav class="dots" id="dots">
-  <a href="#about" data-t="About"></a>
-  <a href="#experience" data-t="Experience"></a>
-  <a href="#education" data-t="Education"></a>
-  <a href="#skills" data-t="Skills"></a>
-  <a href="#tools" data-t="Tools"></a>
-  <a href="#lab" data-t="AI Lab"></a>
-  <a href="#projects" data-t="Projects"></a>
-  <a href="#connect" data-t="Connect"></a>
-</nav>
-
 <main>
-<!-- ================= PAGE 1 ================= -->
-<section class="page active" id="p0">
 
-  <!-- ---- block A: full-screen AI HUD, first thing you see ---- -->
-  <div class="hero-robot" id="heroRobot">
-    <span class="hud-corner tl"></span>
-    <span class="hud-corner tr"></span>
-    <span class="hud-corner bl"></span>
-    <span class="hud-corner br"></span>
-
-    <div class="hud-status"><span class="live"></span> SYSTEM ONLINE</div>
-    <div class="hud-coords" id="hudCoords">31.5204° N · 74.3587° E</div>
-    <div class="hud-model">MODEL — aliha.ai · build 2026</div>
-
-    <div class="hr-tag">AI / ML Engineer &nbsp;·&nbsp; GenAI &nbsp;·&nbsp; Agentic Systems</div>
-
-    <div class="core-field" id="coreField">
-      <svg class="core-lines" id="coreLines" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
-      <div class="ring r1"></div>
-      <div class="ring r2"></div>
-      <div class="ring r3"></div>
-      <div class="scan"></div>
-
-      <div class="core-orb">
-        <svg class="core-mark" viewBox="0 0 60 60">
-          <polygon class="core-hex" points="30,7 51,19 51,41 30,53 9,41 9,19"></polygon>
-          <line class="core-spoke" x1="30" y1="13" x2="30" y2="23"></line>
-          <line class="core-spoke" x1="30" y1="37" x2="30" y2="47"></line>
-          <line class="core-spoke" x1="15" y1="30" x2="23" y2="30"></line>
-          <line class="core-spoke" x1="37" y1="30" x2="45" y2="30"></line>
-          <circle class="core-dot" cx="30" cy="30" r="5.5"></circle>
-        </svg>
-      </div>
-
-      <div class="sat-layer" id="satLayer"></div>
-    </div>
-
-    <a class="scroll-cue" href="#heroIntro">
-      <span>Scroll to explore</span>
-      <i></i>
-    </a>
-  </div>
-
-  <!-- ---- block B: the intro ---- -->
-  <div class="hero-intro" id="heroIntro">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-txt">
     <div class="status"><span class="live"></span> Open to AI/ML opportunities</div>
     <p class="hello">Hello, I'm</p>
-    <h1>Aliha <span class="grad">Imran</span></h1>
+    <h1>Aliha<br><span class="outline">Imran</span></h1>
     <h2>I build <span id="typed"></span><span class="caret">|</span></h2>
     <p class="intro">AI/ML Developer &amp; Generative AI Engineer building intelligent solutions for a smarter tomorrow. I turn LLMs, RAG pipelines and autonomous agents into real, live products.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn ghost" href="#connect">Get in touch →</a>
+    </div>
     <div class="chips">
       <span>Python</span><span>LLMs</span><span>RAG</span><span>Agentic AI</span>
-      <span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span>
+      <span>LangChain</span><span>FastAPI</span><span>ChromaDB</span>
     </div>
-    <button class="btn primary big-cta go-page2"><span class="live"></span>Get in touch<b>→</b></button>
-    <p class="hint">01 <i></i> 02 — my full profile, experience &amp; work</p>
+  </div>
+  <div class="hero-3d">
+    <canvas id="gl"></canvas>
+    <div class="hud tl">MODEL — aliha.ai</div>
+    <div class="hud br">BUILD 2026</div>
+  </div>
+  <a class="scroll-cue" href="#about"><i></i></a>
+</section>
+
+<!-- ABOUT -->
+<section class="block reveal" id="about">
+  <p class="idx">01 — About</p>
+  <h3 class="title">About Me</h3>
+  <div class="about-grid">
+    <div>
+      <p class="about">I'm a Computer Science student and AI/ML Engineer focused on Generative AI. I build LLM-powered applications, Retrieval-Augmented Generation pipelines and agentic workflows, from the backend API to a clean frontend. I love shipping projects that are live, fast and genuinely useful.</p>
+      <div class="stats">
+        <div><strong data-count="3">0</strong><span>Live Projects</span></div>
+        <div><strong data-count="10">0</strong><span>Technologies</span></div>
+        <div><strong data-count="1">0</strong><span>BS CS in progress</span></div>
+      </div>
+    </div>
+    <div class="code-card">
+      <div class="bar-top"><i></i><i></i><i></i><span>aliha.js</span></div>
+      <pre id="code"></pre>
+    </div>
   </div>
 </section>
 
-<!-- ================= PAGE 2 ================= -->
-<section class="page" id="p1">
-  <div class="wrap">
-
-    <!-- ABOUT — split panel -->
-    <div class="block reveal sec-about" id="about">
-      <p class="idx">01 — About</p>
-      <h3 class="title">About <span class="grad">Me</span></h3>
-      <div class="about-grid">
-        <div>
-          <p class="about">I'm a Computer Science student and AI/ML Engineer focused on Generative AI. I build LLM-powered applications, Retrieval-Augmented Generation pipelines and agentic workflows, from the backend API to a clean frontend. I love shipping projects that are live, fast and genuinely useful.</p>
-          <div class="stats">
-            <div><strong data-count="3">0</strong><span>Live Projects</span></div>
-            <div><strong data-count="10">0</strong><span>Technologies</span></div>
-            <div><strong data-count="3">0</strong><span>Years BS CS</span></div>
-          </div>
-        </div>
-        <div class="code-card">
-          <div class="bar-top"><i></i><i></i><i></i><span>aliha.js</span></div>
-          <pre id="code"></pre>
-        </div>
-      </div>
+<!-- EXPERIENCE + EDUCATION -->
+<section class="block reveal" id="experience">
+  <p class="idx">02 — Experience</p>
+  <h3 class="title">Experience &amp; Education</h3>
+  <div class="two">
+    <div class="item">
+      <span class="date">Present</span>
+      <h4>AI/ML &amp; Generative AI Engineer</h4>
+      <p class="sub">Independent Projects</p>
+      <p>Designed and deployed RAG chatbots and AI apps (BrainX, Orin, Akademus.ai) using Python, FastAPI, Flask, LangChain and ChromaDB.</p>
+      <div class="tech"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>ChromaDB</span></div>
     </div>
-
-    <!-- EXPERIENCE — zigzag timeline -->
-    <div class="block reveal sec-exp" id="experience">
-      <p class="idx">02 — Experience</p>
-      <h3 class="title">My <span class="grad">Experience</span></h3>
-      <div class="ztimeline">
-        <div class="z-item">
-          <div class="z-dot"></div>
-          <div class="z-card">
-            <span class="date">Present</span>
-            <h4>AI/ML &amp; Generative AI Engineer</h4>
-            <p class="sub">Independent Projects</p>
-            <p>Designed and deployed RAG chatbots and AI apps (BrainX, Orin, Akademus.ai) using Python, FastAPI, Flask, LangChain and ChromaDB.</p>
-            <div class="tech"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>ChromaDB</span></div>
-          </div>
-        </div>
-      </div>
+    <div class="item" id="education">
+      <span class="date">Mar 2026 – Mar 2029</span>
+      <h4>BS Computer Science</h4>
+      <p class="sub">Virtual University of Pakistan</p>
+      <p>Building a strong base in algorithms, data structures and software engineering, alongside hands-on AI/ML work.</p>
     </div>
-
-    <!-- EDUCATION — stamp card -->
-    <div class="block reveal sec-edu" id="education">
-      <p class="idx">03 — Education</p>
-      <h3 class="title">My <span class="grad">Education</span></h3>
-      <div class="edu-card">
-        <div class="edu-badge">BS<span>CS</span></div>
-        <div>
-          <span class="date">Mar 2026 – Mar 2029</span>
-          <h4>BS Computer Science</h4>
-          <p class="sub">Virtual University of Pakistan</p>
-          <p>Building a strong base in algorithms, data structures and software engineering, alongside hands-on AI/ML work.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SKILLS — floating bubble field -->
-    <div class="block reveal sec-skills" id="skills">
-      <p class="idx">04 — Skills</p>
-      <h3 class="title">Tech <span class="grad">Skills</span></h3>
-      <div class="bubble-field" id="bubbleField">
-        <div class="bf-col" data-cat="AI / ML">
-          <p class="bf-label">AI / ML</p>
-          <div class="bf-zone" data-items="Machine Learning,Deep Learning,NLP,Computer Vision,Generative AI,Agentic AI"></div>
-        </div>
-        <div class="bf-col" data-cat="Development">
-          <p class="bf-label">Development</p>
-          <div class="bf-zone" data-items="Python,APIs,Backend Dev,Automation"></div>
-        </div>
-        <div class="bf-col" data-cat="AI Systems">
-          <p class="bf-label">AI Systems</p>
-          <div class="bf-zone" data-items="RAG,AI Agents,LLM Apps,Prompt Eng.,AI Workflows"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TOOLS — flip grid -->
-    <div class="block reveal sec-tools" id="tools">
-      <p class="idx">05 — Tools</p>
-      <h3 class="title">Tools I <span class="grad">Use</span></h3>
-      <div class="tool-grid">
-        <div class="tool-card"><i>🐍</i><span>Python</span></div>
-        <div class="tool-card"><i>⌥</i><span>Git</span></div>
-        <div class="tool-card"><i>🐙</i><span>GitHub</span></div>
-        <div class="tool-card"><i>🧩</i><span>VS Code</span></div>
-        <div class="tool-card"><i>⚡</i><span>FastAPI</span></div>
-        <div class="tool-card"><i>🔗</i><span>LangChain</span></div>
-        <div class="tool-card"><i>🧠</i><span>OpenAI</span></div>
-        <div class="tool-card"><i>📊</i><span>ChromaDB</span></div>
-      </div>
-    </div>
-
-    <!-- AI LAB — animated terminal -->
-    <div class="block reveal sec-lab" id="lab">
-      <p class="idx">06 — AI Lab</p>
-      <h3 class="title">Creative <span class="grad">AI Lab</span></h3>
-      <p class="about">A live look at how an agent thinks — retrieve, reason, respond.</p>
-      <div class="term">
-        <div class="bar-top"><i></i><i></i><i></i><span>agent-runtime</span></div>
-        <div class="term-body" id="termBody"></div>
-      </div>
-    </div>
-
-    <!-- PROJECTS -->
-    <div class="block reveal sec-projects" id="projects">
-      <p class="idx">07 — Projects</p>
-      <h3 class="title">Featured <span class="grad">Projects</span></h3>
-      <div class="grid projects">
-
-        <article class="card project tilt">
-          <div class="num">01</div>
-          <div class="tag">Chatbot · Flask</div>
-          <h4>BrainX</h4>
-          <p>AI chatbot with a Flask backend and a clean HTML/CSS/JS frontend, deployed live on PythonAnywhere.</p>
-          <div class="tech"><span>Flask</span><span>Python</span><span>JS</span></div>
-          <div class="links">
-            <a href="https://alihaimran.pythonanywhere.com" target="_blank" rel="noopener">Live Demo ↗</a>
-            <a href="https://github.com/alihaimran/BrainX.git" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
-        <article class="card project tilt">
-          <div class="num">02</div>
-          <div class="tag">RAG · FastAPI</div>
-          <h4>Orin Chatbot</h4>
-          <p>RAG-based assistant powered by a FastAPI backend, Groq LLM and ChromaDB vector search.</p>
-          <div class="tech"><span>FastAPI</span><span>Groq</span><span>ChromaDB</span></div>
-          <div class="links">
-            <a href="https://alihaimran.github.io/orin-chatbot/orin-chat.html" target="_blank" rel="noopener">Live Demo ↗</a>
-          </div>
-        </article>
-
-        <article class="card project tilt">
-          <div class="num">03</div>
-          <div class="tag">AI · Streamlit</div>
-          <h4>Akademus.ai</h4>
-          <p>AI-powered academic assistant built with Streamlit and LLMs, live on Streamlit Cloud.</p>
-          <div class="tech"><span>Streamlit</span><span>LLMs</span><span>Python</span></div>
-          <div class="links">
-            <a href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank" rel="noopener">Live Demo ↗</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- CONNECT -->
-    <div class="block reveal contact" id="connect">
-      <p class="idx">08 — Contact</p>
-      <div class="env">
-        <span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span>
-        <div class="env-ico">✉</div>
-      </div>
-      <h3 class="title">Let's <span class="grad">Connect</span></h3>
-      <p class="about">Open to AI/ML Engineer and Agentic AI opportunities. Let's build something intelligent together.</p>
-      <div class="mail-row">
-        <a class="mail" href="mailto:alihaimran676@gmail.com">alihaimran676@gmail.com</a>
-        <button class="pill" id="copy">Copy</button>
-      </div>
-      <div class="cta">
-        <a class="btn primary magnetic" href="mailto:alihaimran676@gmail.com">Email Me</a>
-        <a class="btn ghost magnetic" href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="btn ghost magnetic" href="https://github.com/alihaimran" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
-    </div>
-
-    <footer>© 2026 Aliha Imran · Built with ♥ and AI</footer>
   </div>
 </section>
+
+<!-- SKILLS + TOOLS -->
+<section class="block reveal" id="skills">
+  <p class="idx">03 — Skills</p>
+  <h3 class="title">Skills &amp; Tools</h3>
+  <div class="skill-grid">
+    <div class="skill-col">
+      <p class="bf-label">AI / ML</p>
+      <div class="tags"><span>Machine Learning</span><span>Deep Learning</span><span>NLP</span><span>Computer Vision</span><span>Generative AI</span><span>Agentic AI</span></div>
+    </div>
+    <div class="skill-col">
+      <p class="bf-label">Development</p>
+      <div class="tags"><span>Python</span><span>APIs</span><span>Backend Dev</span><span>Automation</span></div>
+    </div>
+    <div class="skill-col">
+      <p class="bf-label">AI Systems</p>
+      <div class="tags"><span>RAG</span><span>AI Agents</span><span>LLM Apps</span><span>Prompt Eng.</span><span>AI Workflows</span></div>
+    </div>
+  </div>
+  <div class="tool-grid" id="tools">
+    <div class="tool-card"><b>Py</b><span>Python</span></div>
+    <div class="tool-card"><b>Gt</b><span>Git</span></div>
+    <div class="tool-card"><b>GH</b><span>GitHub</span></div>
+    <div class="tool-card"><b>VS</b><span>VS Code</span></div>
+    <div class="tool-card"><b>FA</b><span>FastAPI</span></div>
+    <div class="tool-card"><b>LC</b><span>LangChain</span></div>
+    <div class="tool-card"><b>AI</b><span>OpenAI</span></div>
+    <div class="tool-card"><b>DB</b><span>ChromaDB</span></div>
+  </div>
+</section>
+
+<!-- AI LAB -->
+<section class="block reveal" id="lab">
+  <p class="idx">04 — AI Lab</p>
+  <h3 class="title">Creative AI Lab</h3>
+  <p class="about">A live look at how an agent thinks — retrieve, reason, respond.</p>
+  <div class="term">
+    <div class="bar-top"><i></i><i></i><i></i><span>agent-runtime</span></div>
+    <div class="term-body" id="termBody"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="block reveal" id="projects">
+  <p class="idx">05 — Projects</p>
+  <h3 class="title">Featured Projects</h3>
+  <div class="projects">
+
+    <article class="card tilt">
+      <div class="inner">
+        <div class="num">01</div>
+        <div class="tag">Chatbot · Flask</div>
+        <h4>BrainX</h4>
+        <p>AI chatbot with a Flask backend and a clean HTML/CSS/JS frontend, deployed live on PythonAnywhere.</p>
+        <div class="tech"><span>Flask</span><span>Python</span><span>JS</span></div>
+        <div class="plinks">
+          <a href="https://alihaimran.pythonanywhere.com" target="_blank" rel="noopener">Live Demo ↗</a>
+          <a href="https://github.com/alihaimran/BrainX.git" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card tilt">
+      <div class="inner">
+        <div class="num">02</div>
+        <div class="tag">RAG · FastAPI</div>
+        <h4>Orin Chatbot</h4>
+        <p>RAG-based assistant powered by a FastAPI backend, Groq LLM and ChromaDB vector search.</p>
+        <div class="tech"><span>FastAPI</span><span>Groq</span><span>ChromaDB</span></div>
+        <div class="plinks">
+          <a href="https://alihaimran.github.io/orin-chatbot/orin-chat.html" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card tilt">
+      <div class="inner">
+        <div class="num">03</div>
+        <div class="tag">AI · Streamlit</div>
+        <h4>Akademus.ai</h4>
+        <p>AI-powered academic assistant built with Streamlit and LLMs, live on Streamlit Cloud.</p>
+        <div class="tech"><span>Streamlit</span><span>LLMs</span><span>Python</span></div>
+        <div class="plinks">
+          <a href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block reveal contact" id="connect">
+  <p class="idx">06 — Contact</p>
+  <h3 class="title">Let's Connect</h3>
+  <p class="about">Open to AI/ML Engineer and Agentic AI opportunities. Let's build something intelligent together.</p>
+  <div class="mail-row">
+    <a class="mail" href="mailto:alihaimran676@gmail.com">alihaimran676@gmail.com</a>
+    <button class="pill" id="copy">Copy</button>
+  </div>
+  <div class="cta center">
+    <a class="btn primary" href="mailto:alihaimran676@gmail.com">Email Me</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn ghost" href="https://github.com/alihaimran" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</section>
+
+<footer>© 2026 Aliha Imran · Built with ♥ and AI</footer>
 </main>
 
 <script src="script.js"></script>
