@@ -18,11 +18,11 @@
   <nav>
     <a href="#home" class="on">Home</a>
     <a href="#about">About</a>
-    <a href="#experience">Experience</a>
+    <a href="#services">Services</a>
     <a href="#projects">Projects</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a href="#contact" class="obtn">Hire me →</a>
 </header>
 
 <main>
@@ -52,7 +52,7 @@
     <h4 class="d-h">Dashboard</h4>
     <div class="d-stats">
       <div class="dc"><small>EXPERIENCE</small><strong>3 yrs</strong><svg viewBox="0 0 64 24"><path d="M0 20 L10 14 L20 17 L32 8 L44 12 L54 4 L64 7"/></svg></div>
-      <div class="dc"><small>LIVE PROJECTS</small><strong>3</strong><svg viewBox="0 0 64 24"><path d="M0 16 L12 18 L22 10 L34 13 L46 6 L64 9"/></svg></div>
+      <div class="dc"><small>LIVE PROJECTS</small><strong>4</strong><svg viewBox="0 0 64 24"><path d="M0 16 L12 18 L22 10 L34 13 L46 6 L64 9"/></svg></div>
       <div class="dc"><small>TECHNOLOGIES</small><strong>10+</strong><svg viewBox="0 0 64 24"><path d="M0 18 L14 12 L26 15 L38 7 L50 10 L64 3"/></svg></div>
       <div class="dc"><small>AVG RESPONSE</small><strong>412ms</strong><svg viewBox="0 0 64 24"><path d="M0 8 L12 12 L24 7 L36 14 L48 10 L64 16"/></svg></div>
     </div>
@@ -60,6 +60,7 @@
       <div class="dc big">
         <h5>Latest projects</h5><p class="mut">Everything below is live and open.</p>
         <ul class="plist">
+          <li><span class="pi">J</span><div><b>Jamahtech ZM</b><small>Client website + AI</small></div><em>Live</em></li>
           <li><span class="pi">B</span><div><b>BrainX</b><small>Flask chatbot</small></div><em>Live</em></li>
           <li><span class="pi">O</span><div><b>Orin</b><small>RAG assistant</small></div><em>Live</em></li>
           <li><span class="pi">A</span><div><b>Akademus.ai</b><small>Academic assistant</small></div><em>Live</em></li>
@@ -120,9 +121,29 @@
     </div>
     <div class="card abt g">
       <h3>About</h3>
-      <p class="mut">I'm a CS student and AI/ML engineer focused on generative AI. I build LLM-powered apps, RAG pipelines and agent workflows, then ship them with a clean backend and a frontend people enjoy.</p>
+      <p class="mut">I'm a CS student and AI/ML engineer focused on generative AI, working at devaspir. I build LLM-powered apps, RAG pipelines and agent workflows, then ship them with a clean backend and a frontend people enjoy.</p>
       <div class="chips"><span>Python</span><span>APIs</span><span>Backend</span><span>Automation</span><span>Prompt Eng.</span><span>AI Workflows</span><span>Git</span></div>
     </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <h2>My Services</h2>
+  <p class="sub">Two things I do best, from first prototype to a live product.</p>
+  <div class="two">
+    <article class="card svc g">
+      <span class="ico"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>
+      <h3>AI/ML Engineer</h3>
+      <p class="mut sm">Machine learning and generative AI solutions built around your data and your use case.</p>
+      <ul class="ticks"><li>LLM apps and chatbots</li><li>RAG pipelines with vector search</li><li>NLP and model integration</li><li>FastAPI and Flask backends</li></ul>
+    </article>
+    <article class="card svc g feat">
+      <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6M12 2v2M3 8h2M19 8h2"/></svg></span>
+      <h3>Agentic AI Engineer</h3>
+      <p class="mut sm">Autonomous agents that plan, call tools and finish tasks, not just answer questions.</p>
+      <ul class="ticks"><li>Multi-step AI agents</li><li>Tool calling and automation</li><li>AI workflows with LangChain</li><li>Deployed and ready to use</li></ul>
+    </article>
   </div>
 </section>
 
@@ -131,6 +152,13 @@
   <h2>Projects You Can Open</h2>
   <p class="sub">Live demos, real backends, no mockups.</p>
   <div class="plans">
+    <article class="card plan g feat">
+      <small class="mut">Client site · AI assistant</small>
+      <h3>Jamahtech ZM</h3>
+      <p class="mut sm">Website and AI CV advisor for a CV-making and digital services business in Zambia.</p>
+      <ul class="ticks"><li>Services, pricing and WhatsApp ordering</li><li>AI assistant that gives CV suggestions</li><li>Live on Velixir</li></ul>
+      <a class="obtn full" href="https://jamahtechzm.velixir.run" target="_blank" rel="noopener">Live demo →</a>
+    </article>
     <article class="card plan g">
       <small class="mut">Chatbot · Flask</small>
       <h3>BrainX</h3>
@@ -139,12 +167,12 @@
       <a class="dbtn full" href="https://alihaimran.pythonanywhere.com" target="_blank" rel="noopener">Live demo</a>
       <a class="lnk" href="https://github.com/alihaimran/BrainX.git" target="_blank" rel="noopener">View on GitHub ↗</a>
     </article>
-    <article class="card plan g feat">
+    <article class="card plan g">
       <small class="mut">RAG · FastAPI</small>
       <h3>Orin Chatbot</h3>
       <p class="mut sm">RAG assistant answering from your own documents.</p>
       <ul class="ticks"><li>FastAPI backend</li><li>Groq LLM</li><li>ChromaDB vector search</li></ul>
-      <a class="obtn full" href="https://alihaimran.github.io/orin-chatbot/orin-chat.html" target="_blank" rel="noopener">Live demo →</a>
+      <a class="dbtn full" href="https://alihaimran.github.io/orin-chatbot/orin-chat.html" target="_blank" rel="noopener">Live demo</a>
     </article>
     <article class="card plan g">
       <small class="mut">AI · Streamlit</small>
@@ -153,6 +181,30 @@
       <ul class="ticks"><li>Streamlit interface</li><li>LLM powered</li><li>Live on Streamlit Cloud</li></ul>
       <a class="dbtn full" href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank" rel="noopener">Live demo</a>
     </article>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <h2>What People Say</h2>
+  <p class="sub">Feedback from people I've worked with.</p>
+  <!-- REPLACE the three quotes, names and roles below with real feedback from your clients or colleagues -->
+  <div class="three">
+    <figure class="card rev g">
+      <div class="stars">★★★★★</div>
+      <blockquote>Replace this with a real quote from a client about the quality and speed of your work.</blockquote>
+      <figcaption><span class="pi">C</span><div><b>Client Name</b><small>Role, Company</small></div></figcaption>
+    </figure>
+    <figure class="card rev g">
+      <div class="stars">★★★★★</div>
+      <blockquote>Replace this with a real quote from a colleague at devaspir about working with you.</blockquote>
+      <figcaption><span class="pi">C</span><div><b>Colleague Name</b><small>Role, devaspir</small></div></figcaption>
+    </figure>
+    <figure class="card rev g">
+      <div class="stars">★★★★★</div>
+      <blockquote>Replace this with a real quote from the Jamahtech ZM owner about the website you built.</blockquote>
+      <figcaption><span class="pi">J</span><div><b>Owner Name</b><small>Jamahtech ZM</small></div></figcaption>
+    </figure>
   </div>
 </section>
 
