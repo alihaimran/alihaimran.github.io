@@ -7,142 +7,169 @@
 <meta name="description" content="Aliha Imran, AI/ML Engineer at devaspir. 3 years building LLM apps, RAG systems and agentic AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="light" id="light"></div>
 <div class="toast" id="toast">Email copied</div>
 
 <header class="nav">
-  <a href="#home" class="logo">Aliha<i></i></a>
+  <a href="#home" class="logo">ALIHA<i></i></a>
   <nav>
+    <a href="#home" class="on">Home</a>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <a href="#contact" class="nav-cta">Hire me</a>
+  <a href="#contact" class="obtn">Hire me →</a>
 </header>
 
 <main>
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="beam b1"></div><div class="beam b2"></div>
+  <div class="shaft s1"></div><div class="shaft s2"></div>
   <div class="hero-in">
-    <a class="badge" href="#experience"><b>Open to work</b> AI/ML Engineer at devaspir</a>
-    <h1>Intelligent systems,<br>built to ship.</h1>
-    <p class="lead">I'm Aliha Imran. For 3 years I've built LLM apps, RAG pipelines and AI agents that people actually use, from the API to the interface.</p>
+    <a class="badge" href="#experience"><b>Open to work</b><span>AI/ML Engineer at devaspir ›</span></a>
+    <h1>Intelligent Systems<br>Built to Ship.</h1>
+    <p class="lead">I'm Aliha Imran. For 3 years I've built LLM apps, RAG pipelines and AI agents, from the API to the interface.</p>
     <div class="btns">
-      <a class="btn solid" href="#projects">See my work</a>
-      <a class="btn line" href="#contact">Get in touch</a>
+      <a class="dbtn" href="#projects">View projects</a>
+      <a class="obtn" href="#contact">Get in touch →</a>
     </div>
   </div>
-  <div class="planet"></div>
+  <div class="ring"></div>
 </section>
 
+<!-- DASHBOARD (scroll 3D) -->
 <section class="stage" id="stage">
-  <div class="panel" id="panel">
-    <div class="p-bar"><i></i><i></i><i></i><span>devaspir / agent-runtime</span></div>
-    <div class="p-body">
-      <div class="p-log" id="log"></div>
-      <div class="p-side">
-        <div class="tile"><small>Experience</small><strong>3 years</strong></div>
-        <div class="tile"><small>Live projects</small><strong>3</strong></div>
-        <div class="tile"><small>Response</small><strong>412 ms</strong></div>
+  <div class="dash" id="dash">
+    <div class="d-top">
+      <span class="logo sm">ALIHA<i></i></span>
+      <div class="d-tabs"><b>Overview</b><span>Projects</span><span>Skills</span><span>Experience</span></div>
+      <span class="avatar">AI</span>
+    </div>
+    <h4 class="d-h">Dashboard</h4>
+    <div class="d-stats">
+      <div class="dc"><small>EXPERIENCE</small><strong>3 yrs</strong><svg viewBox="0 0 64 24"><path d="M0 20 L10 14 L20 17 L32 8 L44 12 L54 4 L64 7"/></svg></div>
+      <div class="dc"><small>LIVE PROJECTS</small><strong>3</strong><svg viewBox="0 0 64 24"><path d="M0 16 L12 18 L22 10 L34 13 L46 6 L64 9"/></svg></div>
+      <div class="dc"><small>TECHNOLOGIES</small><strong>10+</strong><svg viewBox="0 0 64 24"><path d="M0 18 L14 12 L26 15 L38 7 L50 10 L64 3"/></svg></div>
+      <div class="dc"><small>AVG RESPONSE</small><strong>412ms</strong><svg viewBox="0 0 64 24"><path d="M0 8 L12 12 L24 7 L36 14 L48 10 L64 16"/></svg></div>
+    </div>
+    <div class="d-grid">
+      <div class="dc big">
+        <h5>Latest projects</h5><p class="mut">Everything below is live and open.</p>
+        <ul class="plist">
+          <li><span class="pi">B</span><div><b>BrainX</b><small>Flask chatbot</small></div><em>Live</em></li>
+          <li><span class="pi">O</span><div><b>Orin</b><small>RAG assistant</small></div><em>Live</em></li>
+          <li><span class="pi">A</span><div><b>Akademus.ai</b><small>Academic assistant</small></div><em>Live</em></li>
+        </ul>
+      </div>
+      <div class="dc big">
+        <h5>Skill focus</h5>
+        <div class="bars">
+          <div style="--h:92%"><i></i><span>LLM</span></div><div style="--h:85%"><i></i><span>RAG</span></div>
+          <div style="--h:78%"><i></i><span>Agents</span></div><div style="--h:88%"><i></i><span>API</span></div>
+          <div style="--h:70%"><i></i><span>ML</span></div><div style="--h:64%"><i></i><span>NLP</span></div>
+          <div style="--h:52%"><i></i><span>CV</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="marquee"><div class="track">
-  <span>Python</span><span>LLMs</span><span>RAG</span><span>Agentic AI</span><span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span><span>Flask</span><span>Groq</span>
-  <span>Python</span><span>LLMs</span><span>RAG</span><span>Agentic AI</span><span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span><span>Flask</span><span>Groq</span>
-</div></div>
+<!-- TECH STRIP -->
+<div class="trust">
+  <p>Built with tools I use every day</p>
+  <div class="logos"><span>Python</span><span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span><span>Flask</span><span>Groq</span></div>
+</div>
 
+<!-- ABOUT / EXPERIENCE BENTO -->
 <section class="sec" id="about">
-  <h2 class="h">Building AI that holds up in production.</h2>
-  <div class="about">
-    <p>I'm an AI/ML Engineer working at <b>devaspir</b>, focused on generative AI. I design retrieval pipelines, wire LLMs to real data, and build agent workflows, then ship them with a clean backend and a frontend people enjoy using.</p>
-    <p>Alongside work I'm studying BS Computer Science at Virtual University of Pakistan, so the fundamentals stay as sharp as the tools.</p>
-    <div class="stats">
-      <div><strong data-n="3">0</strong><span>Years of experience</span></div>
-      <div><strong data-n="3">0</strong><span>Live projects</span></div>
-      <div><strong data-n="10">0</strong><span>Technologies</span></div>
+  <h2>Who I Am &amp; What I Do</h2>
+  <p class="sub">AI/ML Engineer at devaspir. Retrieval, agents and LLM apps that hold up in production.</p>
+  <div class="bento" id="experience">
+    <div class="card exp g">
+      <h3>Experience</h3>
+      <p class="mut">AI/ML &amp; Generative AI Engineer</p>
+      <div class="big-n"><span data-n="3">0</span> years</div>
+      <div class="pillrow"><b>Present</b><span>devaspir</span></div>
+      <p class="mut sm">Designed and deployed RAG chatbots and AI apps (BrainX, Orin, Akademus.ai) with Python, FastAPI, Flask, LangChain and ChromaDB.</p>
+    </div>
+    <div class="card edu g">
+      <h3>Education</h3>
+      <p class="mut">BS Computer Science</p>
+      <div class="pillrow"><b>Mar 2026 – Mar 2029</b></div>
+      <p class="mut sm">Virtual University of Pakistan. Algorithms, data structures and software engineering, alongside hands-on AI/ML work.</p>
+    </div>
+    <div class="card fun g">
+      <svg viewBox="0 0 120 150" class="funnel" aria-hidden="true">
+        <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb066"/><stop offset="1" stop-color="#ff5a1f"/></linearGradient></defs>
+        <path d="M6 6 H114 L74 78 V118 L46 132 V78 Z" fill="url(#fg)"/>
+        <rect x="38" y="98" width="44" height="44" rx="12" fill="#14100d" stroke="#ffffff22"/>
+        <circle cx="60" cy="120" r="7" fill="none" stroke="#ff8a4a" stroke-width="3"/>
+      </svg>
+      <h3>RAG pipelines</h3>
+      <p class="mut sm">Embed, retrieve, rank, respond. Grounded answers from your own data.</p>
+    </div>
+    <div class="card ski g">
+      <h3>AI / ML skills</h3>
+      <ul class="menu">
+        <li class="act">Machine Learning</li><li>Deep Learning</li><li>NLP</li><li>Computer Vision</li><li>Generative AI</li><li>Agentic AI</li>
+      </ul>
+    </div>
+    <div class="card abt g">
+      <h3>About</h3>
+      <p class="mut">I'm a CS student and AI/ML engineer focused on generative AI. I build LLM-powered apps, RAG pipelines and agent workflows, then ship them with a clean backend and a frontend people enjoy.</p>
+      <div class="chips"><span>Python</span><span>APIs</span><span>Backend</span><span>Automation</span><span>Prompt Eng.</span><span>AI Workflows</span><span>Git</span></div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="experience">
-  <h2 class="h">Experience</h2>
-  <div class="tl">
-    <article class="tl-item glow">
-      <div class="tl-meta"><span>Present</span><em>3 years</em></div>
-      <div>
-        <h3>AI/ML &amp; Generative AI Engineer</h3>
-        <p class="co">devaspir</p>
-        <p>Designed and deployed RAG chatbots and AI apps (BrainX, Orin, Akademus.ai) using Python, FastAPI, Flask, LangChain and ChromaDB.</p>
-      </div>
-    </article>
-    <article class="tl-item glow">
-      <div class="tl-meta"><span>Mar 2026 – Mar 2029</span></div>
-      <div>
-        <h3>BS Computer Science</h3>
-        <p class="co">Virtual University of Pakistan</p>
-        <p>Algorithms, data structures and software engineering, alongside hands-on AI/ML work.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="sec" id="skills">
-  <h2 class="h">What I work with.</h2>
-  <div class="cards3">
-    <div class="glow sk"><h3>AI / ML</h3><p>Machine Learning, Deep Learning, NLP, Computer Vision, Generative AI, Agentic AI</p></div>
-    <div class="glow sk"><h3>AI systems</h3><p>RAG, AI agents, LLM apps, prompt engineering, AI workflows</p></div>
-    <div class="glow sk"><h3>Development</h3><p>Python, APIs, backend development, automation, Git and GitHub</p></div>
-  </div>
-</section>
-
+<!-- PROJECTS -->
 <section class="sec" id="projects">
-  <h2 class="h">Projects you can open and use.</h2>
-  <div class="cards3 proj">
-    <article class="glow pj">
-      <div class="shot"><span>BrainX</span></div>
+  <h2>Projects You Can Open</h2>
+  <p class="sub">Live demos, real backends, no mockups.</p>
+  <div class="plans">
+    <article class="card plan g">
+      <small class="mut">Chatbot · Flask</small>
       <h3>BrainX</h3>
-      <p>AI chatbot with a Flask backend and a clean HTML/CSS/JS frontend, live on PythonAnywhere.</p>
-      <div class="tags"><span>Flask</span><span>Python</span><span>JS</span></div>
-      <div class="lk"><a href="https://alihaimran.pythonanywhere.com" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/alihaimran/BrainX.git" target="_blank" rel="noopener">GitHub</a></div>
+      <p class="mut sm">AI chatbot with a Flask backend and a clean HTML/CSS/JS frontend.</p>
+      <ul class="ticks"><li>Flask backend</li><li>HTML, CSS and JS frontend</li><li>Live on PythonAnywhere</li></ul>
+      <a class="dbtn full" href="https://alihaimran.pythonanywhere.com" target="_blank" rel="noopener">Live demo</a>
+      <a class="lnk" href="https://github.com/alihaimran/BrainX.git" target="_blank" rel="noopener">View on GitHub ↗</a>
     </article>
-    <article class="glow pj">
-      <div class="shot"><span>Orin</span></div>
+    <article class="card plan g feat">
+      <small class="mut">RAG · FastAPI</small>
       <h3>Orin Chatbot</h3>
-      <p>RAG assistant on a FastAPI backend, with Groq LLM and ChromaDB vector search.</p>
-      <div class="tags"><span>FastAPI</span><span>Groq</span><span>ChromaDB</span></div>
-      <div class="lk"><a href="https://alihaimran.github.io/orin-chatbot/orin-chat.html" target="_blank" rel="noopener">Live demo</a></div>
+      <p class="mut sm">RAG assistant answering from your own documents.</p>
+      <ul class="ticks"><li>FastAPI backend</li><li>Groq LLM</li><li>ChromaDB vector search</li></ul>
+      <a class="obtn full" href="https://alihaimran.github.io/orin-chatbot/orin-chat.html" target="_blank" rel="noopener">Live demo →</a>
     </article>
-    <article class="glow pj">
-      <div class="shot"><span>Akademus</span></div>
+    <article class="card plan g">
+      <small class="mut">AI · Streamlit</small>
       <h3>Akademus.ai</h3>
-      <p>AI academic assistant built with Streamlit and LLMs, live on Streamlit Cloud.</p>
-      <div class="tags"><span>Streamlit</span><span>LLMs</span><span>Python</span></div>
-      <div class="lk"><a href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank" rel="noopener">Live demo</a></div>
+      <p class="mut sm">AI academic assistant for study and research.</p>
+      <ul class="ticks"><li>Streamlit interface</li><li>LLM powered</li><li>Live on Streamlit Cloud</li></ul>
+      <a class="dbtn full" href="https://akademus-ai-4inqb3pykipc6ytexzyzb6.streamlit.app" target="_blank" rel="noopener">Live demo</a>
     </article>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="planet small"></div>
-  <div class="c-in">
-    <h2 class="h">Let's build something intelligent.</h2>
-    <p class="lead">Open to AI/ML Engineer and Agentic AI roles.</p>
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="ring r2"></div>
+  <div class="cta-in">
+    <h2>Let's Build Something<br>Intelligent Together.</h2>
+    <p class="sub">Open to AI/ML Engineer and Agentic AI roles.</p>
     <div class="mail-row">
       <a class="mail" href="mailto:alihaimran676@gmail.com">alihaimran676@gmail.com</a>
-      <button class="btn line sm" id="copy">Copy</button>
+      <button class="dbtn sm2" id="copy">Copy</button>
     </div>
     <div class="btns">
-      <a class="btn solid" href="mailto:alihaimran676@gmail.com">Email me</a>
-      <a class="btn line" href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn line" href="https://github.com/alihaimran" target="_blank" rel="noopener">GitHub</a>
+      <a class="obtn" href="mailto:alihaimran676@gmail.com">Email me →</a>
+      <a class="dbtn" href="https://www.linkedin.com/in/aliha-imran-400793410" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="dbtn" href="https://github.com/alihaimran" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>
