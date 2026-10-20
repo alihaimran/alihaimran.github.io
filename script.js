@@ -2,54 +2,34 @@ const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* cursor light */
-addEventListener('pointermove', e => {
-  const l = $('#light');
-  l.style.setProperty('--x', e.clientX + 'px');
-  l.style.setProperty('--y', e.clientY + 'px');
-});
-
-/* lit-edge cards follow the cursor */
-$$('.glow').forEach(c => c.addEventListener('pointermove', e => {
+/* cards: light follows the cursor */
+$$('.g').forEach(c => c.addEventListener('pointermove', e => {
   const r = c.getBoundingClientRect();
   c.style.setProperty('--mx', e.clientX - r.left + 'px');
   c.style.setProperty('--my', e.clientY - r.top + 'px');
 }));
 
-/* scroll-driven 3D panel: tilted -> flat */
-const stage = $('#stage'), panel = $('#panel');
+/* dashboard: tilted -> flat while scrolling */
+const stage = $('#stage'), dash = $('#dash');
 function tilt() {
   const r = stage.getBoundingClientRect();
-  const p = still ? 1 : Math.min(1, Math.max(0, (innerHeight * 0.95 - r.top) / (innerHeight * 0.6)));
-  panel.style.setProperty('--p', p.toFixed(3));
+  const p = still ? 1 : Math.min(1, Math.max(0, (innerHeight * 0.92 - r.top) / (innerHeight * 0.55)));
+  dash.style.setProperty('--p', p.toFixed(3));
 }
 addEventListener('scroll', tilt, { passive: true });
 addEventListener('resize', tilt);
 tilt();
 
-/* agent log inside the panel */
-const lines = [
-  ['query', '"summarize the latest RAG paper"'],
-  ['embed', 'encoding query to a 1536-dim vector'],
-  ['retrieve', 'top-k=5 chunks from ChromaDB'],
-  ['rank', 'reranking context by relevance'],
-  ['agent', 'planning the next tool call'],
-  ['llm', 'generating a grounded answer'],
-  ['done', 'response streamed in 412 ms'],
-];
-const log = $('#log');
-lines.forEach(([k, t]) => {
-  const d = document.createElement('div');
-  d.innerHTML = `<b>${k}</b>${t}`;
-  log.appendChild(d);
-});
-let logged = false;
-function playLog() {
-  if (logged) return; logged = true;
-  $$('div', log).forEach((d, i) => setTimeout(() => d.classList.add('on'), still ? 0 : i * 450));
-}
+/* skill bars grow when the dashboard is in view */
+const bars = $$('.bars i');
+bars.forEach(b => b.style.setProperty('--g', still ? 1 : 0));
+new IntersectionObserver((es, o) => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  bars.forEach(b => b.style.setProperty('--g', 1));
+  o.disconnect();
+}), { threshold: .5 }).observe(dash);
 
-/* count up stats */
+/* count up */
 function countUp(el) {
   const to = +el.dataset.n, t0 = performance.now();
   (function f(t) {
@@ -60,16 +40,16 @@ function countUp(el) {
 }
 new IntersectionObserver((es, o) => es.forEach(e => {
   if (!e.isIntersecting) return;
-  if (e.target.id === 'panel') playLog();
-  else $$('[data-n]', e.target).forEach(countUp);
-  o.unobserve(e.target);
-}), { threshold: .35 }).observe(panel);
-const so = new IntersectionObserver((es, o) => es.forEach(e => {
-  if (!e.isIntersecting) return;
-  $$('[data-n]', e.target).forEach(countUp);
-  o.unobserve(e.target);
-}), { threshold: .4 });
-so.observe($('.stats'));
+  countUp(e.target); o.unobserve(e.target);
+}), { threshold: .6 }).observe($('[data-n]'));
+
+/* active nav link */
+const links = $$('.nav nav a'), secs = links.map(a => $(a.getAttribute('href')));
+addEventListener('scroll', () => {
+  let idx = 0;
+  secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .4) idx = i; });
+  links.forEach((a, i) => a.classList.toggle('on', i === idx));
+}, { passive: true });
 
 /* copy email */
 $('#copy').addEventListener('click', async () => {
