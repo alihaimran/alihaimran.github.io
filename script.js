@@ -2,6 +2,18 @@ const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* mobile menu */
+const nav = $('#nav'), burger = $('#burger');
+function setMenu(open) {
+  nav.classList.toggle('open', open);
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+burger.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+$$('#menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
 /* cards: light follows the cursor */
 $$('.g').forEach(c => c.addEventListener('pointermove', e => {
   const r = c.getBoundingClientRect();
@@ -30,6 +42,7 @@ new IntersectionObserver((es, o) => es.forEach(e => {
 }), { threshold: .5 }).observe(dash);
 
 /* count up (experience years) */
+const counter = $('[data-n]');
 function countUp(el) {
   const to = +el.dataset.n, t0 = performance.now();
   (function f(t) {
@@ -38,13 +51,16 @@ function countUp(el) {
     if (p < 1) requestAnimationFrame(f);
   })(t0);
 }
-new IntersectionObserver((es, o) => es.forEach(e => {
-  if (!e.isIntersecting) return;
-  countUp(e.target); o.unobserve(e.target);
-}), { threshold: .6 }).observe($('[data-n]'));
+if (!still) {
+  counter.textContent = '0';
+  new IntersectionObserver((es, o) => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    countUp(e.target); o.unobserve(e.target);
+  }), { threshold: .6 }).observe(counter);
+}
 
 /* active nav link */
-const links = $$('.nav nav a'), secs = links.map(a => $(a.getAttribute('href')));
+const links = $$('#menu a'), secs = links.map(a => $(a.getAttribute('href')));
 addEventListener('scroll', () => {
   let idx = 0;
   secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .4) idx = i; });
