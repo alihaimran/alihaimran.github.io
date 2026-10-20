@@ -115,15 +115,7 @@ img,svg{max-width:100%}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{font-size:.76rem;padding:4px 12px;border:1px solid var(--line);border-radius:30px;background:#14100d;color:#cfc9c4}
 
-/* skills: image cards + categories */
-.aistack{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
-.aic{display:flex;flex-direction:column;padding:0}
-.aic .shot-btn{aspect-ratio:16/10;border-bottom:1px solid var(--line)}
-.aic:hover .shot-btn img{transform:scale(1.05)}
-.aic-body{display:flex;flex-direction:column;gap:8px;padding:22px 22px 24px;flex:1}
-.aic-body h3{font-size:1.5rem;font-weight:700;margin:0}
-.aic-body .chips{margin-top:auto;padding-top:10px}
-.aic-tag{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:1px;color:var(--o2);border:1px solid rgba(255,140,70,.35);padding:2px 10px;border-radius:20px}
+/* skills */
 .stack{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .stk{grid-column:span 2;display:flex;flex-direction:column;gap:14px}
 .stk:nth-child(n+4){grid-column:span 3}
@@ -147,18 +139,16 @@ img,svg{max-width:100%}
 .plan .chips{margin:0 0 14px;flex:1;align-content:flex-start}
 .lnk{font-size:.85rem;color:var(--o2);text-align:center}.lnk:hover{text-decoration:underline}
 
-/* gallery */
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+/* gallery (3 images) */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .shot{margin:0;padding:0;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden;position:relative;
   box-shadow:inset 0 -26px 44px -30px rgba(255,106,43,.38)}
-.shot.feat{grid-column:1/-1}
-.shot-btn{display:block;width:100%;aspect-ratio:16/10;padding:0;border:0;cursor:zoom-in;overflow:hidden;
+.shot-btn{display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;cursor:zoom-in;overflow:hidden;
   background:linear-gradient(135deg,#1b1714,#0c0a09)}
-.shot.feat .shot-btn{aspect-ratio:21/9}
-.shot-btn img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
-.shot:hover .shot-btn img{transform:scale(1.04)}
+.shot-btn img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.shot:hover .shot-btn img{transform:scale(1.05)}
 .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;text-align:left;pointer-events:none;
-  background:linear-gradient(180deg,transparent,rgba(0,0,0,.85))}
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.88))}
 .shot figcaption b{display:block;font-weight:700}
 .shot figcaption small{color:#cfc9c4;font-size:.8rem}
 
@@ -199,8 +189,8 @@ img,svg{max-width:100%}
   .nav.open nav{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:8px 5vw 16px;background:#050403;border-bottom:1px solid var(--line)}
   .nav.open nav a{padding:13px 0;border-top:1px solid var(--line);font-size:1rem}
   .d-stats{grid-template-columns:1fr 1fr}.d-grid,.plans,.two{grid-template-columns:1fr}
-  .aistack,.gallery{grid-template-columns:1fr}
-  .shot.feat .shot-btn{aspect-ratio:16/10}
+  .gallery{grid-template-columns:1fr}
+  .shot-btn{aspect-ratio:16/10}
   .stack{grid-template-columns:1fr 1fr}.stk,.stk:nth-child(n+4){grid-column:auto}.stk:last-child{grid-column:1/-1}
   .steps{grid-template-columns:1fr 1fr}
   .bento{grid-template-columns:1fr;grid-template-areas:"exp" "edu" "fun" "ski" "abt"}
