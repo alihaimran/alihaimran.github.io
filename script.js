@@ -29,7 +29,7 @@ new IntersectionObserver((es, o) => es.forEach(e => {
   o.disconnect();
 }), { threshold: .5 }).observe(dash);
 
-/* count up */
+/* count up (experience years) */
 function countUp(el) {
   const to = +el.dataset.n, t0 = performance.now();
   (function f(t) {
