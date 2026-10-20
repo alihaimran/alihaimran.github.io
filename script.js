@@ -59,7 +59,7 @@ if (!still) {
   }), { threshold: .6 }).observe(counter);
 }
 
-/* image lightbox (skills + gallery) */
+/* gallery image lightbox */
 const lb = $('#lightbox'), lbImg = $('#lbImg');
 function closeLb() { lb.hidden = true; lbImg.src = ''; }
 $$('.shot-btn').forEach(b => b.addEventListener('click', () => {
