@@ -1,6 +1,7 @@
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const WA_NUMBER = '923094146324'; // +92 309 4146324
 
 /* mobile menu */
 const nav = $('#nav'), burger = $('#burger');
@@ -81,8 +82,26 @@ addEventListener('scroll', () => {
   links.forEach((a, i) => a.classList.toggle('on', i === idx));
 }, { passive: true });
 
-/* copy email */
-$('#copy').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText('alihaimran676@gmail.com'); } catch (e) {}
-  const t = $('#toast'); t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1800);
+/* toast + copy buttons (email, phone) */
+const toast = $('#toast');
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1800);
+}
+$$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(b.dataset.copy); } catch (e) {}
+  showToast(b.dataset.msg || 'Copied');
+}));
+
+/* contact form -> opens WhatsApp with a prefilled message */
+const form = $('#waForm');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = $('#fName'), topic = $('#fTopic').value, msg = $('#fMsg').value.trim();
+  name.classList.toggle('err', !name.value.trim());
+  if (!name.value.trim()) { name.focus(); return; }
+  const text = `Hi Aliha, I'm ${name.value.trim()}.\nI'm reaching out about: ${topic}.` + (msg ? `\n\n${msg}` : '');
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
 });
+$('#fName').addEventListener('input', e => e.target.classList.remove('err'));
